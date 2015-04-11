@@ -1,0 +1,12 @@
+# Site settings
+title: Dimas Abreu Dutra
+email: dimasad@ufmg.br
+description: >
+  Professor do Departamento de Engenharia Mecânica da Universidade Federal
+  de Minas Gerais.
+baseurl: ""
+url: "http://dimasad.github.io"
+
+# Build settings
+markdown: kramdown
+permalink: pretty

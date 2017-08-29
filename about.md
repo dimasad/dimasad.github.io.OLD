@@ -4,4 +4,4 @@ title: Sobre
 permalink: /about/
 ---
 
-Professor Adjunto do Departemento de Engenharia Mecânica da UFMG.
+Professor do Departemento de Engenharia Mecânica da UFMG.

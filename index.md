@@ -1,7 +1,7 @@
 ---
-layout: post
+layout: default
 ---
 
 ## Disciplinas
 
-*   [Eletrônica Industrial](disciplinas/eletronica).
+*   [Eletrônica Industrial](eletronica).

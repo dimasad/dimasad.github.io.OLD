@@ -7,11 +7,20 @@ Introdução
 ----------
 
 Esta prática consistirá de vários procedimentos curtos para explorar
-algumas funções do Arduino.
-À medida que algumas funcionalidades forem aprendidas pequenos desafios
-serão lançados e vocês deverão resolver da maneira que conseguir.
-Caso tenham dificuldade podem me pedir ajuda ou ver minha solução para o
-problema.
+funções do Arduino e o uso de dispositivos.
+Há uma descrição de algumas funcionalidades do Arduino e de sua linguagem,
+com exemplos que podem ser executados para ilustrar sua aplicação e alguns
+conceitos subjacentes.
+Junto com as explicações há pequenos desafios (com múltiplas soluções possíveis)
+para exercitar os conteúdo e seu uso.
+A ordem em que os procedimentos devem ser feitos ou o material consultado
+é livre.
+Caso tenham dificuldade podem pedir ajuda ao professor ou ver
+algumas soluções possíveis para os problemas apontados no final de cada desafio.
 
-Funções
--------
+Funções do Arduino
+------------------
+
+### Medição de tempo
+
+

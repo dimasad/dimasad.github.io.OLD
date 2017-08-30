@@ -124,13 +124,37 @@ de -90 graus a 90 e de volta a -90, com velocidade em torno de
 Tente resolver esse problema utilizando cada um dos três métodos sugeridos
 acima.
 
+**Comando do servo pelo potenciômetro.**
+Conecte um potenciômetro ao Arduino e comande a posição do servo de acordo
+com a posição do potenciômetro: quando o potenciômetro estiver na posição
+central o servo também deverá estar, e o acompanhar em qualquer giro.
+Tente resolver esse problema utilizando cada um dos três métodos sugeridos
+acima.
+
+#### Sensor ultrassônico
+
+**Medição de posição com um programa síncrono.**
+Meça a posição de um objeto utilizando o HC-SR04, implementando o código
+dentro da função `loop()`.
+
+**Medição de posição com interrupções.**
+Meça a posição de um objeto utilizando o HC-SR04, utilizando interrupções
+com a [função attachInterrupt].
+
 [doc-delay]: https://www.arduino.cc/en/Reference/Delay
+
 [doc-delayMicroseconds]: https://www.arduino.cc/en/Reference/DelayMicroseconds
+
 [doc-millis]: https://www.arduino.cc/en/Reference/Millis
+
 [doc-micros]: https://www.arduino.cc/en/Reference/Micros
+
 [doc-analogRead]: https://www.arduino.cc/en/Reference/AnalogRead
+
+[função attachInterrupt]: https://www.arduino.cc/en/Reference/AttachInterrupt
+
+[biblioteca Servo]: https://www.arduino.cc/en/Reference/Servo
 
 [tutorial de servos da Sparkfun]: https://learn.sparkfun.com/tutorials/hobby-servo-tutorial
 
-[biblioteca Servo]: https://www.arduino.cc/en/Reference/Servo
 [datasheet do HC-SR04]: /assets/datasheet/HCSR04.pdf

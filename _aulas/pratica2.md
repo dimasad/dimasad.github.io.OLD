@@ -1,10 +1,9 @@
 ---
 layout: default
-title: Prática 2
 ---
 
-Introdução
-----------
+Prática 2
+=========
 
 Esta prática consistirá de vários procedimentos curtos para explorar
 funções do Arduino e o uso de dispositivos.
@@ -116,6 +115,7 @@ Depois, enviando  pulsos com a função `micros`.
 Por fim, utilizando a [biblioteca Servo].
 Altere o valor da posição com cada método e veja se o servo se move como
 esperado.
+[Veja aqui][sol-servo1] algumas soluções possíveis para esse problema.
 
 **Sweep com velocidade constante.**
 Conecte um servomotor ao Arduino e faça sua posição variar continuamente
@@ -158,3 +158,5 @@ com a [função attachInterrupt].
 [tutorial de servos da Sparkfun]: https://learn.sparkfun.com/tutorials/hobby-servo-tutorial
 
 [datasheet do HC-SR04]: /assets/datasheet/HCSR04.pdf
+
+[sol-servo1]: ../../aulas/sol-servo1/

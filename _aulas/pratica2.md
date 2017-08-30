@@ -34,9 +34,24 @@ no site do Arduino.
 
 É possível também consultar o relógio interno do Arduino para fim de
 temporização.
-As funções `millis()` e `micros`
+As funções `millis()` e `micros()` retornam o tempo decorrido em milisegundos
+e microsegundos desde que o processador foi inicializado, respectivamente.
+Ao utilizá-las é importante utilizar variáveis do tipo `long`, de 32 bits, ao
+invés do tipo `int`, de 16 bits, pois senão a capacidade de representação
+da variável é ultrapassada muito rapidamente.
 Confira também a documentação oficial dessas funções:
 [millis](https://www.arduino.cc/en/Reference/Millis) e da
 [micros](https://www.arduino.cc/en/Reference/Micros).
 
+#### Leitura de níveis analógicos de tensão
+
+O Arduino Uno, utilizado nas práticas, possui 6 entradas analógicas.
+Essas entradas funcionam como voltímetros digitais que medem níveis de tensão
+entre 0V e 5V.
+O conversor analógico/digital do Arduino possui resolução de 10 bits, o que
+significa que os valores lidos variam de 0 a 1023 ($$2^{10}$$ valores
+possíveis).
+A função `analogRead(pino)` retorna a leitura analógica do canal especificado.
+Confira a [documentação oficial](https://www.arduino.cc/en/Reference/AnalogRead)
+dessa função para mais informações.
 

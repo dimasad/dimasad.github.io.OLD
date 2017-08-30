@@ -28,8 +28,7 @@ de se controlar o tempo e sincronizar ações utilizando o Arduino.
 Para atrasos rápidos temos também a função `delayMicroseconds(x)`, cuja
 única diferença é que o argumento especifica um atraso em microssegundos.
 Para mais detalhes confira a documentação oficial da função
-[delay](https://www.arduino.cc/en/Reference/Delay) e da
-[delayMicroseconds](https://www.arduino.cc/en/Reference/DelayMicroseconds)
+[delay][doc-delay] e da [delayMicroseconds][doc-delayMicroseconds]
 no site do Arduino.
 
 É possível também consultar o relógio interno do Arduino para fim de
@@ -40,8 +39,7 @@ Ao utilizá-las é importante utilizar variáveis do tipo `long`, de 32 bits, ao
 invés do tipo `int`, de 16 bits, pois senão a capacidade de representação
 da variável é ultrapassada muito rapidamente.
 Confira também a documentação oficial dessas funções:
-[millis](https://www.arduino.cc/en/Reference/Millis) e da
-[micros](https://www.arduino.cc/en/Reference/Micros).
+[millis][doc-millis] e da [micros][doc-micros].
 
 #### Leitura de níveis analógicos de tensão
 
@@ -52,7 +50,7 @@ O conversor analógico/digital do Arduino possui resolução de 10 bits, o que
 significa que os valores lidos variam de 0 a 1023 ($$2^{10}$$ valores
 possíveis).
 A função `analogRead(pino)` retorna a leitura analógica do canal especificado.
-Confira a [documentação oficial](https://www.arduino.cc/en/Reference/AnalogRead)
+Confira a [documentação oficial][doc-analogRead]
 dessa função para mais informações.
 
 Dispositivos
@@ -102,4 +100,37 @@ pela metade da velocidade do som $$a$$.
 Se o eco não é detectado o sinal do pino de eco permanece em nível lógico alto
 depois do gatilho.
 
+Confira o [datasheet do HC-SR04] para maiores detalhes sobre seu funcionamento.
+
+
+Desafios
+--------
+
+#### Servomotor
+
+**Posição constante.**
+Como primeiro teste, conecte um servo ao Arduino e o comande para uma posição
+constante utilizando 3 métodos.
+Primeiro, enviando pulsos com a função `delayMicroseconds`.
+Depois, enviando  pulsos com a função `micros`.
+Por fim, utilizando a [biblioteca Servo].
+Altere o valor da posição com cada método e veja se o servo se move como
+esperado.
+
+**Sweep com velocidade constante.**
+Conecte um servomotor ao Arduino e faça sua posição variar continuamente
+de -90 graus a 90 e de volta a -90, com velocidade em torno de
+60 graus por segundo.
+Tente resolver esse problema utilizando cada um dos três métodos sugeridos
+acima.
+
+[doc-delay]: https://www.arduino.cc/en/Reference/Delay
+[doc-delayMicroseconds]: https://www.arduino.cc/en/Reference/DelayMicroseconds
+[doc-millis]: https://www.arduino.cc/en/Reference/Millis
+[doc-micros]: https://www.arduino.cc/en/Reference/Micros
+[doc-analogRead]: https://www.arduino.cc/en/Reference/AnalogRead
+
 [tutorial de servos da Sparkfun]: https://learn.sparkfun.com/tutorials/hobby-servo-tutorial
+
+[biblioteca Servo]: https://www.arduino.cc/en/Reference/Servo
+[datasheet do HC-SR04]: /assets/datasheet/HCSR04.pdf

@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: Prática 2
 ---
 
@@ -21,6 +21,22 @@ algumas soluções possíveis para os problemas apontados no final de cada desaf
 Funções do Arduino
 ------------------
 
-### Medição de tempo
+#### Medição e atraso de tempo
+
+A função `delay(x)` utilizada na primeira prática é a maneira mais simples
+de se controlar o tempo e sincronizar ações utilizando o Arduino.
+Para atrasos rápidos temos também a função `delayMicroseconds(x)`, cuja
+única diferença é que o argumento especifica um atraso em microsegundos.
+Para mais detalhes confira a documentação oficial da função
+[delay](https://www.arduino.cc/en/Reference/Delay) e da
+[delayMicroseconds](https://www.arduino.cc/en/Reference/DelayMicroseconds)
+no site do Arduino.
+
+É possível também consultar o relógio interno do Arduino para fim de
+temporização.
+As funções `millis()` e `micros`
+Confira também a documentação oficial dessas funções:
+[millis](https://www.arduino.cc/en/Reference/Millis) e da
+[micros](https://www.arduino.cc/en/Reference/Micros).
 
 

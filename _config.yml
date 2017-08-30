@@ -1,11 +1,12 @@
 # Site settings
-title: Dimas Abreu Archanjo Dutra
+title: Página do Dimas
 email: dimasad@ufmg.br
-description: >
-  Professor do Departamento de Engenharia Mecânica da Universidade Federal
-  de Minas Gerais.
+description: ""
 baseurl: ""
 url: "http://dimasad.github.io"
+show_downloads: false
+google_analytics: false
+theme: jekyll-theme-slate
 
 collections:
   aulas:
@@ -14,3 +15,6 @@ collections:
 # Build settings
 markdown: kramdown
 permalink: pretty
+kramdown:
+  syntax_highlighter_opts:
+    default_lang: c++

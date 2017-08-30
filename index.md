@@ -2,6 +2,7 @@
 layout: default
 ---
 
-## Disciplinas
+Práticas de Eletrônica
+======================
 
-*   [Eletrônica Industrial](eletronica).
+*  [Prática 2](aulas/pratica2)

@@ -15,9 +15,20 @@ O desafio está abaixo.
 > Altere o valor da posição com cada método e veja se o servo se move como
 > esperado.
 
-As soluções abaixo utilizam uma montagem com o comando do servo no canal 9.
+As soluções utilizam uma montagem com o comando do servo no canal 9,
+como mostrado na figura abaixo.
 
-#### Utilizando delayMicroseconds
+![protoboard-servo-arduino]
+
+Para simplificar a conversão de ângulo para duração do pulso a função [map]
+foi utilizada.
+Essa função realiza uma conversão linear semelhante à regra de três.
+Confira sua documentação para maiores detalhes.
+
+### Utilizando delayMicroseconds
+
+Essa solução utiliza a função `delayMicroseconds()` de maneira semelhante
+à temporização do LED da prática 1.
 
 ```
 void setup() {
@@ -26,7 +37,7 @@ void setup() {
 
 void loop() {
   int ang = 60; // ângulo desejado (no caso, 60 graus)
-  int duracao = map(ang, -90, 90, 600, 2400); // Converte para
+  int duracao = map(ang, 0, 180, 600, 2400); // Converte para
                                               // duração do pulso.
   digitalWrite(9, HIGH);
   delayMicroseconds(duracao);
@@ -36,7 +47,11 @@ void loop() {
 
 ```
 
-#### Utilizando micros
+### Utilizando micros
+
+Nessa solução, o operador `%` ([modulo]) é utilizado para se obter o tempo
+desde o ínicio de cada ciclo.
+Esse operador retorna o resto da divisão inteira com um número.
 
 ```
 void setup() {
@@ -45,7 +60,7 @@ void setup() {
 
 void loop() {
   int ang = 60; // ângulo desejado (no caso, 60 graus)
-  int duracao = map(ang, -90, 90, 600, 2400); // Converte para
+  int duracao = map(ang, 0, 180, 600, 2400); // Converte para
                                               // duração do pulso.
 
   int tciclo = micros() % 20000;
@@ -54,4 +69,31 @@ void loop() {
 
 ```
 
+
+### Utilizando a biblioteca Servo
+
+```
+// Carrega a biblioteca servo
+#include <Servo.h> 
+
+// Declara um objeto servo
+Servo servo1; 
+
+void setup() {
+  // Configura o pino 9 para controle do servo1
+  servo1.attach(9);
+}
+
+void loop() {
+  int ang = 60; // ângulo desejado (no caso, 60 graus)
+  servo1.write(ang); // Comanda o servo para o ângulo desejado
+}
+
+```
+
+
+[map]: https://www.arduino.cc/en/Reference/Map
+[modulo]: https://www.arduino.cc/en/Reference/Modulo
 [biblioteca Servo]: https://www.arduino.cc/en/Reference/Servo
+
+[protoboard-servo-arduino]: /aulas/protoboard-servo-arduino.png

@@ -67,12 +67,16 @@ Dessa forma, a posição do eixo é medida e controlada por um sistema
 realimentado que atua no motor.
 
 Esses dispositivos possuem 3 terminais: alimentação, terra e sinal.
+A alimentação é o terminal central, de cor vermelha.
+O terra é o terminal correspondente ao cabo preto ou marrom e o sinal
+corresponde ao fio amarelo ou laranja.
 A referência de posição é enviada pelo terminal de sinal como um pulso.
 A duração do pulso codifica a posição desejada do eixo.
-Um pulso de 1500 microssegundos corresponde à posição central do eixo, enquanto
+Um pulso de 1500 microssegundos corresponde à posição central do eixo, de
+90 graus, enquanto
 que as durações de 600 microssegundos e 2400 microssegundos correspondem, 
-respectivamente, a deflexões de aproximadamente -90 graus e
-90 graus.
+respectivamente, a deflexões de aproximadamente 0 graus e
+180 graus.
 Os pulsos devem estar espaçados de pelo menos 20 milissegundos entre si.
 
 Usar um pulso de duração variável permite diferenciar o comando nulo de perda
@@ -118,9 +122,9 @@ Altere o valor da posição com cada método e veja se o servo se move como
 esperado.
 [Veja aqui][sol-servo1] algumas soluções possíveis para esse problema.
 
-**Sweep com velocidade constante.**
+**Varredura com velocidade constante.**
 Conecte um servomotor ao Arduino e faça sua posição variar continuamente
-de -90 graus a 90 e de volta a -90, com velocidade em torno de
+de 0 a 180 graus e de volta a 0 graus, com velocidade em torno de
 60 graus por segundo.
 Tente resolver esse problema utilizando cada um dos três métodos sugeridos
 acima.

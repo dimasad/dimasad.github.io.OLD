@@ -27,8 +27,8 @@ de se controlar o tempo e sincronizar ações utilizando o Arduino.
 Para atrasos rápidos temos também a função `delayMicroseconds(x)`, cuja
 única diferença é que o argumento especifica um atraso em microssegundos.
 Para mais detalhes confira a documentação oficial da função
-[delay][doc-delay] e da [delayMicroseconds][doc-delayMicroseconds]
-no site do Arduino.
+[delay] e da [delayMicroseconds] no site do Arduino ou o [tutorial Blink]
+que usa a função delay para piscar um LED.
 
 É possível também consultar o relógio interno do Arduino para fim de
 temporização.
@@ -37,8 +37,9 @@ e microssegundos desde que o processador foi inicializado, respectivamente.
 Ao utilizá-las é importante utilizar variáveis do tipo `long`, de 32 bits, ao
 invés do tipo `int`, de 16 bits, pois senão a capacidade de representação
 da variável é ultrapassada muito rapidamente.
-Confira também a documentação oficial dessas funções:
-[millis][doc-millis] e da [micros][doc-micros].
+Para entender melhor o uso dessas funções veja
+[alguns exemplos][exemplos-relogio] que preparei.
+Confira também a documentação oficial das funções [millis] e [micros].
 
 #### Leitura de níveis analógicos de tensão
 
@@ -49,8 +50,8 @@ O conversor analógico/digital do Arduino possui resolução de 10 bits, o que
 significa que os valores lidos variam de 0 a 1023 ($$2^{10}$$ valores
 possíveis).
 A função `analogRead(pino)` retorna a leitura analógica do canal especificado.
-Confira a [documentação oficial][doc-analogRead]
-dessa função para mais informações.
+Confira a documentação oficial [dessa função][analogRead] para
+mais informações.
 
 Dispositivos
 ------------
@@ -141,22 +142,19 @@ dentro da função `loop()`.
 Meça a posição de um objeto utilizando o HC-SR04, utilizando interrupções
 com a [função attachInterrupt].
 
-[doc-delay]: https://www.arduino.cc/en/Reference/Delay
-
-[doc-delayMicroseconds]: https://www.arduino.cc/en/Reference/DelayMicroseconds
-
-[doc-millis]: https://www.arduino.cc/en/Reference/Millis
-
-[doc-micros]: https://www.arduino.cc/en/Reference/Micros
-
-[doc-analogRead]: https://www.arduino.cc/en/Reference/AnalogRead
-
-[função attachInterrupt]: https://www.arduino.cc/en/Reference/AttachInterrupt
+[delay]: https://www.arduino.cc/en/Reference/Delay
+[delayMicroseconds]: https://www.arduino.cc/en/Reference/DelayMicroseconds
+[millis]: https://www.arduino.cc/en/Reference/Millis
+[micros]: https://www.arduino.cc/en/Reference/Micros
+[analogRead]: https://www.arduino.cc/en/Reference/AnalogRead
+[attachInterrupt]: https://www.arduino.cc/en/Reference/AttachInterrupt
 
 [biblioteca Servo]: https://www.arduino.cc/en/Reference/Servo
+[tutorial Blink]: https://www.arduino.cc/en/Tutorial/Blink
 
 [tutorial de servos da Sparkfun]: https://learn.sparkfun.com/tutorials/hobby-servo-tutorial
 
 [datasheet do HC-SR04]: /assets/datasheet/HCSR04.pdf
 
-[sol-servo1]: ../../aulas/sol-servo1/
+[sol-servo1]: /aulas/sol-servo1
+[exemplos-relogio]: /aulas/exemplos-relogio

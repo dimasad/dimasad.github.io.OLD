@@ -144,7 +144,7 @@ dentro da função `loop()`.
 
 **Medição de posição com interrupções.**
 Meça a posição de um objeto utilizando o HC-SR04, utilizando interrupções
-com a [função attachInterrupt].
+com a função [attachInterrupt].
 
 [delay]: https://www.arduino.cc/en/Reference/Delay
 [delayMicroseconds]: https://www.arduino.cc/en/Reference/DelayMicroseconds

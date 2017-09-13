@@ -1,0 +1,34 @@
+\begin{tikzpicture}
+  \draw (0,0) 
+    node[vcc] (vcc) {\SI{3.3}{V}}
+    -- ++(0, -0.5)
+    to[esource, l=motor, n=motor] ++(0, -1.5)
+    node[npn, anchor=C] (trans) {};
+
+  \draw (motor.center)
+    node {M};
+
+  \draw (trans.C)
+    to[short, *-] ++(-1, 0)
+    to[diode] ++(0, 1.5)
+    |- (vcc.center)
+    node[circ] {};
+
+  \draw (trans.E)
+    node[ground] {};
+
+  \draw (trans.B)
+    to[R, l=\SI{180}{\ohm}] ++(-1.6, 0)
+    node[ocirc] {}
+    node[anchor=east] {Ard. D9};
+
+  \draw (3, 0) 
+    node[vcc] (vcc) {\SI{5}{V}}
+    to[pR, n=pot] ++(0, -3.55)
+    node[ground] {};
+
+  \draw (pot.W)
+    -- ++(0.1, 0)
+    node[ocirc] {}
+    node[anchor=west] {Ard. A0};
+\end{tikzpicture}

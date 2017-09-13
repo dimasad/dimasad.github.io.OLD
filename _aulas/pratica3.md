@@ -37,7 +37,7 @@ e a tensão do nível lógico alto.
 A razão cíclica de 0% corresponde ao nível lógico baixo de de 100% corresponde
 ao nível lógico alto.
 
-![pwm img]
+![pwm-img]
 Fonte: [Sparkfun][Tutorial PWM], licença [CC BY-SA 4.0]
 
 O microcontrolador do Arduino possui um periférico para gerar onda com
@@ -52,18 +52,41 @@ Antes de utilizá-la é necessário configurar o pino como saída através da fu
 
 Confira a documentação oficial da função [analogWrite] para maiores informações.
 Para ilustrar o uso da modulação por largura de pulso, veja a
-[página de exemplo][ex pwm led] da modulação por largura de pulso para alterar
+[página de exemplo][ex-pwm-led] da modulação por largura de pulso para alterar
 o brilho de um led.
 
 #### Acionamento do motor por PWM
 
+Abaixo temos um circuito para acionamento de um motor com o Arduino.
+Quando o transistor está no modo de saturação uma tensão próxima de 3,3V
+é aplicada no motor.
+Há um diodo de roda livre em paralelo com o motor para proteger a chave, já
+que o motor é uma carga indutiva.
+Há também um potenciômetro que será utilizado como entrada analógica.
+
+![schem-motor-npn-pot]
+
+Para montar esse circuto utilize o transistor NPN [BC639] e o diodo [1N4007].
+
+**Atividade:**
+Implemente o acionamento do pino 9 do Arduino com modulação por
+largura de pulso para que a razão cíclica seja proporcional à posição do
+potenciômetro.
+Caso tenha dificuldade nesta tarefa, veja [uma solução possível][sol-pwd-pot]
+para esse problema.
 
 
+[BC639]: /assets/datasheet/BC639_npn.pdf
+[1N4007]: /assets/datasheet/1N4007_diode.pdf
+[pwm-img]: /assets/images/pwm_sparkfun.jpg
+[schem-motor-npn-pot]: /schem/motor-npn-pot.svg
 
-[pwm img]: /assets/images/pwm_sparkfun.jpg
-[ex pwm led]: /aulas/exemplo-pwm-led
+[sol-pwd-pot]: /aulas/sol-pwm-pot
+[ex-pwm-led]: /aulas/exemplo-pwm-led
+
 
 [analogWrite]: https://www.arduino.cc/en/Reference/AnalogWrite
+[analogRead]: https://www.arduino.cc/en/Reference/AnalogRead
 
 [Tutorial PWM]: https://learn.sparkfun.com/tutorials/pulse-width-modulation
 

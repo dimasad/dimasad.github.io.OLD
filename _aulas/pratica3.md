@@ -75,9 +75,22 @@ potenciômetro.
 Caso tenha dificuldade nesta tarefa, veja [uma solução possível][sol-pwd-pot]
 para esse problema.
 
+Tacômetro ótico
+---------------
+
+Junto com cada motor está um conjunto de interruptor ótico [ITR9608],
+que possui um par LED-fototransistor.
+Quando a luz do LED chega no fototransistor, ele opera como chave fechada,
+quando a luz é interrompida pela hélice o fototransistor opera no modo corte,
+como chave aberta.
+Dessa forma, é possível medir a velocidade da hélice contando o tempo entre
+mudanças de estado do fototransistor.
+
+Para medir esse tempo, é necessário o uso de interrupções.
 
 [BC639]: /assets/datasheet/BC639_npn.pdf
 [1N4007]: /assets/datasheet/1N4007_diode.pdf
+[ITR9608]: /assets/datasheet/ITR9608_optical_interrupter.pdf
 [pwm-img]: /assets/images/pwm_sparkfun.jpg
 [schem-motor-npn-pot]: /schem/motor-npn-pot.svg
 

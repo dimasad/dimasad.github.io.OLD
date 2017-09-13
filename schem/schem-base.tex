@@ -1,0 +1,79 @@
+\documentclass{article}
+
+\usepackage[portuguese]{babel}
+\usepackage{lmodern}
+
+\usepackage[np]{numprint}
+\usepackage{siunitx}
+  \sisetup{output-decimal-marker={,}}
+\usepackage{mathtools}
+\usepackage{amssymb}
+
+\usepackage{enumitem}
+  \setlist{noitemsep,nolistsep}
+\usepackage[usenames,dvipsnames,svgnames]{xcolor}
+\usepackage{verbatim}
+\usepackage{textcomp}
+\usepackage{listings}
+  \lstset{
+    columns=fullflexible,
+    frame=single, backgroundcolor=\color{LemonChiffon}, upquote=true,
+    numbers=right, numberstyle=\tiny, numbersep=6pt,
+    language=c++, basicstyle=\ttfamily, keywordstyle=\color{blue}\ttfamily,
+    stringstyle=\color{Purple}\ttfamily,
+    commentstyle=\color{Green}\ttfamily
+  }
+
+%% Plots, figures and Tikz
+\usepackage{tikz}
+  \tikzset{
+    every picture/.append style={scale=2}, 
+    every node/.style={transform shape}
+  }
+  \usetikzlibrary{arrows}
+    \tikzset{>=stealth}
+  \usetikzlibrary{external}
+    \tikzexternalize
+    \tikzset{external/only named}
+    \tikzset{external/mode=list and make}
+    \tikzset{external/prefix=}
+    \tikzset{external/system call=%
+        {lualatex \tikzexternalcheckshellescape -synctex=1 %
+        -interaction=batchmode -jobname "\image" "\texsource"}%
+    }
+  \usetikzlibrary{plotmarks}
+  \usetikzlibrary{positioning}
+\usepackage{pgfplots}
+  \usepgfplotslibrary{groupplots}
+  \usepgfplotslibrary{statistics}
+  \pgfplotsset{compat=newest}
+  \pgfplotsset{
+    log ticks with fixed point,
+    clip marker paths=true,
+  }
+\usepackage{circuitikz}
+  \ctikzset{american voltages}
+
+
+\usepackage[colorlinks=true, linkcolor=black]{hyperref}
+
+
+\renewcommand{\topfraction}{0.9} %max fraction of floats at top
+\renewcommand{\bottomfraction}{0.9} %max fraction of floats at bottom
+\setcounter{topnumber}{2}
+\setcounter{bottomnumber}{2}
+
+
+%% My tikz picture infrastructure
+\newcommand{\inputtikzpicture}[1]{%
+  \tikzsetnextfilename{#1}%
+  \tikzpicturedependsonfile{#1.tex}%
+  \input{#1.tex}%
+}
+
+
+\begin{document}
+
+\inputtikzpicture{pwm-led}
+
+\end{document}

@@ -1,0 +1,12 @@
+*.pdf
+*.dpth
+*.synctex.gz
+*.aux
+*.auxlock
+*.makefile
+*.out
+*.md5
+*.log
+*.figlist
+*.log
+*.dep

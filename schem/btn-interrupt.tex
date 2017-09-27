@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+  \draw (0,0) 
+    node[vcc] {\SI{5}{V}}
+    to[push button] ++(0, -1.5)
+    node[circ] (n1) {}
+    to[R=\SI{10}{\kohm}] ++(0, -1.5)
+    node[ground] {};
+
+  \draw (n1)
+    to[short, -o] ++(-1, 0)
+    node[anchor=east] {Arduino Digital 2};
+\end{tikzpicture}

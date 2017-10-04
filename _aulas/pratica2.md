@@ -158,7 +158,7 @@ com a função [attachInterrupt].
 
 [tutorial de servos da Sparkfun]: https://learn.sparkfun.com/tutorials/hobby-servo-tutorial
 
-[datasheet do HC-SR04]: /assets/datasheet/HCSR04.pdf
+[datasheet do HC-SR04]: /datasheet/HCSR04.pdf
 
 [sol-servo1]: /aulas/sol-servo1
 [exemplos-relogio]: /aulas/exemplos-relogio

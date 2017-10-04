@@ -88,9 +88,9 @@ mudanças de estado do fototransistor.
 
 Para medir esse tempo, é necessário o uso de interrupções.
 
-[BC639]: /assets/datasheet/BC639_npn.pdf
-[1N4007]: /assets/datasheet/1N4007_diode.pdf
-[ITR9608]: /assets/datasheet/ITR9608_optical_interrupter.pdf
+[BC639]: /datasheet/BC639.pdf
+[1N4007]: /datasheet/1N4007.pdf
+[ITR9608]: /datasheet/ITR9608.pdf
 [pwm-img]: /assets/images/pwm_sparkfun.jpg
 [schem-motor-npn-pot]: /schem/motor-npn-pot.svg
 

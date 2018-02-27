@@ -29,6 +29,15 @@ sua origem fixa no C.G. do veículo e são obtidos rotacionando os eixos do corp
 de forma que o eixo $$x_W$$ esteja alinhado com a velocidade instantânea da
 aeronave em relação à atmosfera.
 
+Na figura abaixo temos a representação gráfica dos eixos da terra, corpo e
+vento. Também estão representados o ângulo de arfagem $$\theta$$, entre os
+eixos da terra e do corpo, o ângulo de ataque $$\alpha$$, entre os eixos do
+vento e do corpo, e o ângulo de trajetória $$\gamma$$, entre os eixos da terra
+e do vento.
+
+![eixos-img]
+
+
 Suposições
 ----------
 
@@ -80,3 +89,4 @@ Equações do movimento translacional
 Equações do movimento rotacional
 --------------------------------
 
+[eixos-img]: /assets/images/eixos.svg

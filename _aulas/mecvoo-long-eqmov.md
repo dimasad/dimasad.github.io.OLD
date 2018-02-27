@@ -31,12 +31,12 @@ aeronave em relação à atmosfera.
 
 Na figura abaixo temos a representação gráfica dos eixos da terra, corpo e
 vento. Também estão representados o ângulo de arfagem $$\theta$$, entre os
-eixos da terra e do corpo, o ângulo de ataque $$\alpha$$, entre os eixos do
-vento e do corpo, e o ângulo de trajetória $$\gamma$$, entre os eixos da terra
-e do vento.
+eixos da terra e do corpo; o ângulo de ataque $$\alpha$$, entre os eixos do
+vento e do corpo; e o ângulo de trajetória $$\gamma$$, entre os eixos da terra
+e do vento. O eixo $$y$$ de todos os sistemas de coordenadas é paralelo e
+aponta na direção da asa direita.
 
 ![eixos-img]
-
 
 Suposições
 ----------
@@ -88,5 +88,6 @@ Equações do movimento translacional
 
 Equações do movimento rotacional
 --------------------------------
+
 
 [eixos-img]: /assets/images/eixos.svg

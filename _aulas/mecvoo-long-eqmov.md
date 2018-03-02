@@ -85,6 +85,19 @@ lenta.
 Equações do movimento translacional
 -----------------------------------
 
+A equação que rege o movimento translacional de um corpo rígido é a segunda lei
+de Newton:
+
+\begin{equation}
+  m\overset{\scriptscriptstyle \bullet E}{\vec v} = \sum_i \vec F_i,
+\end{equation}
+
+onde $$m$$ é a massa do corpo, $$\vec v$$ é o vetor velocidade do centro de
+gravidade (CG) do corpo, e $$\vec F_i$$, são as forças externas que agem sobre
+o corpo. Um detalhe importante é que as leis de Newton são válidas somente em
+referenciais inerciais, que no nosso caso é o referencial da terra (E). Por
+isso, a derivada da velocidade deve ser observada do referencial da terra,
+o que é representado pelo $$E$$ ao lado do ponto em cima do vetor.
 
 Equações do movimento rotacional
 --------------------------------

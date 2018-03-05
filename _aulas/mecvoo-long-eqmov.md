@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Mecânica do voo -- Equações do movimento longitudinal
 ---
 
 Mecânica do voo -- Equações do movimento longitudinal
@@ -51,7 +52,7 @@ e posteriormente validar o modelo com ensaios no sistema.
 Neste primeiro momento, faremos as seguintes considerações:
 
 * a terra é plana e é um referencial inercial;
-* a aeronave é um corpo rígido;
+* a aeronave é um corpo rígido de massa constante;
 * o movimento da aeronave está restrito ao plano vertical;
 * não há vento, ou seja, a velocidade da atmosfera em relação à terra é nula.
 
@@ -90,6 +91,7 @@ de Newton:
 
 \begin{equation}
   m\overset{\scriptscriptstyle \bullet E}{\vec v} = \sum_i \vec F_i,
+  \label{eq:mov-trans-terra}
 \end{equation}
 
 onde $$m$$ é a massa do corpo, $$\vec v$$ é o vetor velocidade do centro de
@@ -97,10 +99,53 @@ gravidade (CG) do corpo, e $$\vec F_i$$, são as forças externas que agem sobre
 o corpo. Um detalhe importante é que as leis de Newton são válidas somente em
 referenciais inerciais, que no nosso caso é o referencial da terra (E). Por
 isso, a derivada da velocidade deve ser observada do referencial da terra,
-o que é representado pelo $$E$$ ao lado do ponto em cima do vetor.
+o que é representado pelo $$E$$ ao lado do ponto em cima do vetor. Caso haja
+dúvidas, consulte a seção de [notação].
+
+As principais forças atuando em um avião de asa fixa são as forças
+aerodinâmicas $$\vec F_A$$, a força peso $$\vec W$$ e as forças propulsivas
+$$\vec T$$. Dessa forma, a eq. \eqref{eq:mov-trans-terra} pode ser expandida
+para 
+
+\begin{equation}
+  m\overset{\scriptscriptstyle \bullet E}{\vec v} = \vec F_A + \vec W + \vec T.
+  \label{eq:mov-trans-terra-expand}
+\end{equation}
+
 
 Equações do movimento rotacional
 --------------------------------
 
+Para o movimento rotacional de um corpo rígido, temos que o somatório dos
+momentos externos $$\vec M_i$$ é igual à variação do momento angular do corpo
+$$\vec h$$:
+
+\begin{equation}
+  \overset{\scriptscriptstyle \bullet E}{\vec h} = \sum_i \vec M_i.
+  \label{eq:mov-rot-terra}
+\end{equation}
+
+Como nossa aeronave, em primeiro momento, se rotaciona somente em torno do eixo
+$$y$$, temos que o momento angular do corpo é dado por
+
+\begin{equation}
+  \vec h = q I_y \hat j,
+  \label{eq:momento-angular-long}
+\end{equation}
+
+onde $$q = \dot \theta$$ é a velocidade angular de arfagem, $$I_y$$ é o momento
+de inércia do corpo em torno do eixo $$y$$ e $$\hat j$$ é o vetor unitário em
+$$y$$. Como no movimento translacional, temos que os momentos externos que agem
+sobre nossa aeronave são os momentos aerodinâmicos $$\vec M_A$$ e os momentos
+propulsivos $$\vec M_T$$. Substituindo \eqref{eq:momento-angular-long} em
+\eqref{eq:mov-rot-terra}, temos então
+
+\begin{equation}
+  q I_y \hat j = \vec M_A + \vec M_T.
+  \label{eq:mov-rot-terra-exp}
+\end{equation}
+
 
 [eixos-img]: /assets/images/eixos.svg
+
+[notação]: /aulas/mecvoo-notacal/

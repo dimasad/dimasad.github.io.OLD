@@ -32,7 +32,7 @@ para remover ambiguidades ou facilitar a escrita no quadro.
   representado ao lado do ponto, em cima da variável. Se o vetor $$\vec r$$,
   representado no sistema de coordenadas $$B$$, é dado por
 
-  $$\vec r = r_{x_B} \hat i_B + r_{j_B} \hat j_B + r_{z_B} \hat k_B,
+  $$\vec r = r_{x_B} \hat i_B + r_{j_B} \hat j_B + r_{z_B} \hat k_B,$$
 
   então sua derivada do observada do referencial $$B$$, é 
   

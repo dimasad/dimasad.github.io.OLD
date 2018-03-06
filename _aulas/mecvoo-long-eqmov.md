@@ -102,8 +102,8 @@ isso, a derivada da velocidade deve ser observada do referencial da terra,
 o que é representado pelo $$E$$ ao lado do ponto em cima do vetor. Caso haja
 dúvidas, consulte a seção de [notação].
 
-As principais forças atuando em um avião de asa fixa são as forças
-aerodinâmicas $$\vec F_A$$, a força peso $$\vec W$$ e as forças propulsivas
+As principais forças atuando em um avião de asa fixa são a força
+aerodinâmica $$\vec F_A$$, a força peso $$\vec W$$ e a força propulsiva
 $$\vec T$$. Dessa forma, a eq. \eqref{eq:mov-trans-terra} pode ser expandida
 para 
 
@@ -112,6 +112,8 @@ para
   \label{eq:mov-trans-terra-expand}
 \end{equation}
 
+Cada uma dessas forças será detalhada nas próximas seções para se obter um
+modelo fechado para simulação e análise.
 
 Equações do movimento rotacional
 --------------------------------
@@ -145,6 +147,8 @@ propulsivos $$\vec M_T$$. Substituindo \eqref{eq:momento-angular-long} em
   \label{eq:mov-rot-terra-exp}
 \end{equation}
 
+Nas próximas seções detalharemos os componentes de cada um dos momentos externos
+que agem sobre a aeronave.
 
 [eixos-img]: /assets/images/eixos.svg
 

@@ -24,11 +24,20 @@ para remover ambiguidades ou facilitar a escrita no quadro.
 * A representação de um vetor em um sistema de coordenadas é indicada por
   chaves. O vetor $$\vec r$$ representado no referencial $$E$$, por exemplo, é
 
-  $$\{\vec r\}_E = \begin{bmatrix} r_{x_E}\\ r_{y_E} \\ r_{z_E} \end{bmatrix}.$$
+  $$
+  \{\vec r\}_E = \begin{bmatrix} r_{x_E} \\ r_{y_E} \\ r_{z_E} \end{bmatrix}.
+  $$
 
 * O referencial do qual a derivada temporal de um vetor é observada é
-  representado ao lado do ponto, em cima da variável. A derivada do vetor
-  $$\vec r$$ observada do referencial $$B$$, por exemplo, é representada por
+  representado ao lado do ponto, em cima da variável. Se o vetor $$\vec r$$,
+  representado no sistema de coordenadas $$B$$, é dado por
+
+  $$\vec r = r_{x_B} \hat i_B + r_{j_B} \hat j_B + r_{z_B} \hat k_B,
+
+  então sua derivada do observada do referencial $$B$$, é 
   
-  $$\overset{\scriptscriptstyle \bullet B}{\vec r}.$$
+  $$
+  \overset{\scriptscriptstyle \bullet B}{\vec r} =
+  \dot r_{x_B} \hat i_B + \dot r_{j_B} \hat j_B + \dot r_{z_B} \hat k_B.
+  $$
 

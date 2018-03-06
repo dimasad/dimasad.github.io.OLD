@@ -141,7 +141,7 @@ propulsivos $$\vec M_T$$. Substituindo \eqref{eq:momento-angular-long} em
 \eqref{eq:mov-rot-terra}, temos então
 
 \begin{equation}
-  q I_y \hat j = \vec M_A + \vec M_T.
+  \dot q I_y \hat j = \vec M_A + \vec M_T.
   \label{eq:mov-rot-terra-exp}
 \end{equation}
 

@@ -150,6 +150,6 @@ propulsivos $$\vec M_T$$. Substituindo \eqref{eq:momento-angular-long} em
 Nas próximas seções detalharemos os componentes de cada um dos momentos externos
 que agem sobre a aeronave.
 
-[eixos-img]: /assets/images/eixos.svg
+[eixos-img]: /assets/images/eixos.png
 
 [notação]: /aulas/mecvoo-notacal/

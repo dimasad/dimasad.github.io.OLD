@@ -6,7 +6,8 @@ Notas de Aula de Mecânica do Voo
 --------------------------------
 
 *  [Notação](aulas/mecvoo-notacao)
-*  [Equações do Movimento Longitudinal](aulas/mecvoo-long-eqmov)
+*  [Equações do movimento longitudinal](aulas/mecvoo-long-eqmov)
+*  [Mudança de sistemas de coordenadas no plano](aulas/mecvoo-rot-long)
 
 
 Práticas de Eletrônica

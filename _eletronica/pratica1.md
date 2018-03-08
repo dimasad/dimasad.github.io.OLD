@@ -33,7 +33,8 @@ Figura abaixo.
 {%
    include figure.html
    file="arduino_uno.png"
-   caption="Um Arduino Uno. Fonte: learn.sparkfun.com, licença Creative
+   caption="Um Arduino Uno. 
+            Fonte: [learn.sparkfun.com](learn.sparkfun.com), licença Creative
             Commons Attribution Share-Alike."
 %}
 

@@ -3,6 +3,21 @@
 
 @import "jekyll-theme-slate";
 
+.figure-img
+{
+    margin: 0 auto;
+    display: block;
+}
+
+.figure-caption
+{
+    margin: 0 auto;
+    display: block;
+    font-style: italic;
+    font-size: small;
+    text-align: center;
+}
+
 .center-image
 {
     margin: 0 auto;

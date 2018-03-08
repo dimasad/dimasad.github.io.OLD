@@ -96,4 +96,4 @@ void loop() {
 [modulo]: https://www.arduino.cc/en/Reference/Modulo
 [biblioteca Servo]: https://www.arduino.cc/en/Reference/Servo
 
-[protoboard-servo-arduino]: /aulas/protoboard-servo-arduino.png
+[protoboard-servo-arduino]: ../protoboard-servo-arduino.png

@@ -9,8 +9,11 @@ google_analytics: false
 theme: jekyll-theme-slate
 
 collections:
-  aulas:
+  mecvoo:
     output: true
+  eletronica:
+    output: true
+
 
 # Build settings
 markdown: kramdown

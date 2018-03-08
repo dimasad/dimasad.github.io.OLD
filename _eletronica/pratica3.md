@@ -94,8 +94,8 @@ Para medir esse tempo, é necessário o uso de interrupções.
 [pwm-img]: /assets/images/pwm_sparkfun.jpg
 [schem-motor-npn-pot]: /schem/motor-npn-pot.svg
 
-[sol-pwd-pot]: /aulas/sol-pwm-pot
-[ex-pwm-led]: /aulas/exemplo-pwm-led
+[sol-pwd-pot]: ../sol-pwm-pot
+[ex-pwm-led]: ../exemplo-pwm-led
 
 
 [analogWrite]: https://www.arduino.cc/en/Reference/AnalogWrite

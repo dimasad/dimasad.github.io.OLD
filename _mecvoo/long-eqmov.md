@@ -152,4 +152,4 @@ que agem sobre a aeronave.
 
 [eixos-img]: /assets/images/eixos.png
 
-[notação]: /aulas/mecvoo-notacal/
+[notação]: /aulas/notacao/

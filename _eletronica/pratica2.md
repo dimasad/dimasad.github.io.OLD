@@ -160,5 +160,5 @@ com a função [attachInterrupt].
 
 [datasheet do HC-SR04]: /datasheet/HCSR04.pdf
 
-[sol-servo1]: /aulas/sol-servo1
-[exemplos-relogio]: /aulas/exemplos-relogio
+[sol-servo1]: ../sol-servo1
+[exemplos-relogio]: ../exemplos-relogio

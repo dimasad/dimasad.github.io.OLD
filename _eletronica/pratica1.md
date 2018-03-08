@@ -33,9 +33,8 @@ Figura abaixo.
 {%
    include figure.html
    file="arduino_uno.png"
-   description="
-      Um Arduino Uno. Fonte: [learn.sparkfun.com], licença Creative Commons 
-      Attribution Share-Alike."
+   caption="Um Arduino Uno. Fonte: learn.sparkfun.com, licença Creative
+            Commons Attribution Share-Alike."
 %}
 
 **Como se programa o Arduino?**
@@ -61,7 +60,7 @@ como comentário do código.
 {%
    include figure.html
    file="arduino_ide_windows_comentado.svg"
-   description="IDE do Arduino e alguns de seus elementos importantes."
+   caption="IDE do Arduino e alguns de seus elementos importantes."
 %}
 
 **Exemplo de comunicação com o Arduino.**
@@ -107,7 +106,7 @@ Se tudo ocorreu corretamente, o texto "Hello World" deverá ser recebido.
 {%
    include figure.html
    file="serial_monitor_comentado.svg"
-   description="Monitor serial do Arduino."
+   caption="Monitor serial do Arduino."
 %}
 
 **Executando um programa um pouco mais complexo.**

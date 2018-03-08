@@ -1,3 +1,9 @@
-<img src="/assets/images/{{ include.file }}" alt="{{ include.description }}"
-     class="figure-img">
-<span class="figure-caption">{{ include.description }}</span>
+<figure class="{{ include.class }}">
+  <img src="/assets/images/{{ include.file }}" alt="{{ include.description }}"
+       class="figure-img">  
+  {% if include.caption %}
+  <figcaption class="figure-caption">
+    {{ include.caption }}
+  </figcaption>
+  {% endif %}  
+</figure>

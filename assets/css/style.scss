@@ -3,6 +3,17 @@
 
 @import "jekyll-theme-slate";
 
+body {
+  counter-reset: figs;
+}
+
+figure {
+  figcaption::before {
+    counter-increment: figs;
+    content: "Figura " counter(figs) ": ";
+  }
+}
+
 .figure-img
 {
     margin: 0 auto;
@@ -23,3 +34,4 @@
     margin: 0 auto;
     display: block;
 }
+

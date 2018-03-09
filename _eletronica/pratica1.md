@@ -145,6 +145,13 @@ incrementado, e a execução do programa pausada por 250 ms até
 a função ser re-executada novamente.
 Carregue o código e observe sua saída com o monitor serial.
 
+> ### Desafio
+>
+> Faça a variável `i` alterar incrementar seu valor de 0 a 10 e depois de
+> volta ao 0 novamente, periodicamente. Consulte a documentação da linguagem
+> e API do Arduino em [arduino.cc/en/Reference/]. Em especial, veja a sintaxe
+> das estrutras de controle de fluxo como [if] e dos operadores de comparação
+> como [>] e [<].
 
 Acionamento de um LED
 ---------------------
@@ -207,7 +214,7 @@ tolerância do valor.
    include figure.html
    file="codigo_de_cores_resistores.png"
    caption="Código de cores para identificação da resistência de resistores.
-            Fonte: [www.digikey.com]."
+            Fonte: [digikey.com]."
 %}
 
 ### Diretamente na fonte
@@ -217,7 +224,7 @@ estão representados na figura abaixo.
 O Arduino será utilizado como fonte de tensão.
 Para iniciar, separe os seguintes materiais:
 
-* um resistor de 180Ω,
+* um resistor de 180 Ω,
 * um LED,
 * um protoboard,
 * um Arduino,
@@ -279,37 +286,22 @@ void loop() {
    caption="Montagem para acionamento do LED com uma saída digital do Arduino."
 %}
 
-Utilizando um laço _for_, na mesma montagem, podemos fazer o LED 
-piscar várias vezes.
-A sintaxe desse comando na linguagem C pode ser vista no código abaixo.
-O código que será executado no corpo do `for` é delimitado por
-chaves `{}`.
-Carregue o código no Arduino, veja seu funcionamento, e veja como alterá-lo
-para mudar seu comportamento.
+> #### Desafio
+>
+> Quando o LED pisca muito rapidamente vemos somente a luminosidade média que
+> ele emite. Usando a função [delayMicroseconds], altere o programa para que
+> o LED fique aceso por 100 μs e apagado por 900 μs. Em seguida, faça um
+> programa para que a luminosidade média do LED varie continuamente de 0 a
+> 100% no intervalo de 1 s, piscando sempre com um período de 1 ms.
 
 
-```
-void setup() {
-  pinMode(10, OUTPUT); // Define o pino digital 10 como saída
-}
-
-void loop() {
-  // A variavel inteira i ira começar de 0 e incrementar de 1
-  // enquanto for menor que 5
-  for (int i=0; i<5; i=i+1) {
-      digitalWrite(10, HIGH); // Acende o LED
-      delay(100);  // Aguarda 100ms
-
-      digitalWrite(10, LOW); // Apaga o LED
-      delay(100);  // Aguarda 100ms
-  }
-  
-  delay(1000); // Aguarda 1s
-}
-```
-
+[arduino.cc/en/Reference/]: http://arduino.cc/en/Reference/
 [arduino_uno]: /assets/images/arduino_uno.png
 [ATmega328P]: http://www.microchip.com/wwwproducts/en/ATmega328p
 [commons.wikimedia.org]: http://commons.wikimedia.org
-[www.digikey.com]: http://www.digikey.com
+[delayMicroseconds]: https://www.arduino.cc/en/Reference/DelayMicroseconds
+[digikey.com]: http://www.digikey.com
+[if]: http://arduino.cc/reference/en/language/structure/control-structure/if
 [learn.sparkfun.com]: http://learn.sparkfun.com/
+[>]: http://arduino.cc/reference/en/language/structure/comparison-operators/greaterthan
+[<]: http://arduino.cc/reference/en/language/structure/comparison-operators/lessthan

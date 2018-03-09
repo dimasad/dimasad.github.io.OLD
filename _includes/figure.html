@@ -1,9 +1,9 @@
 <figure class="{{ include.class }}">
   <img src="/assets/images/{{ include.file }}" alt="{{ include.description }}"
-       class="figure-img">  
+       class="figure-img {{ include.img_class }}">  
   {% if include.caption %}
-  <figcaption class="figure-caption">
-    {{ include.caption | markdownify }}
+  <figcaption class="figure-caption" markdown="span">
+    {{ include.caption }}
   </figcaption>
   {% endif %}  
 </figure>

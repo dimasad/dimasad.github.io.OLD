@@ -13,4 +13,4 @@ Notas de Aula de Mecânica do Voo
 Práticas de Eletrônica
 ----------------------
 
-*  [Prática 2](eletronica/pratica2)
+*  [Familiarização com o Laboratório](eletronica/pratica1)

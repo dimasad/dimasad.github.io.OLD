@@ -29,14 +29,23 @@ figure {
     text-align: center;
 }
 
-.figure-caption p
-{
-  display: inline;
-}
-
 .center-image
 {
     margin: 0 auto;
     display: block;
 }
 
+.max-width-400px
+{
+    max-width: 400px;
+}
+
+.max-width-300px
+{
+    max-width: 300px;
+}
+
+.max-width-200px
+{
+    max-width: 200px;
+}

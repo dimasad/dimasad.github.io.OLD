@@ -138,8 +138,8 @@ $$y$$, temos que o momento angular do corpo é dado por
 onde $$q = \dot \theta$$ é a velocidade angular de arfagem, $$I_y$$ é o momento
 de inércia do corpo em torno do eixo $$y$$ e $$\hat j$$ é o vetor unitário em
 $$y$$. Como no movimento translacional, temos que os momentos externos que agem
-sobre nossa aeronave são os momentos aerodinâmicos $$\vec M_A$$ e os momentos
-propulsivos $$\vec M_T$$. Substituindo \eqref{eq:momento-angular-long} em
+sobre nossa aeronave são o momento aerodinâmico $$\vec M_A$$ e os momento
+propulsivo $$\vec M_T$$. Substituindo \eqref{eq:momento-angular-long} em
 \eqref{eq:mov-rot-terra}, temos então
 
 \begin{equation}
@@ -151,5 +151,4 @@ Nas próximas seções detalharemos os componentes de cada um dos momentos exter
 que agem sobre a aeronave.
 
 [eixos-img]: /assets/images/eixos.png
-
 [notação]: /aulas/notacao/

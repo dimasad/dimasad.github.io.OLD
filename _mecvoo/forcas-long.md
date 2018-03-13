@@ -87,7 +87,7 @@ Os parâmetros do modelo aerodinâmico linear são conhecidos como as derivadas
 de estabilidade e controle, pois
 
 $$
-\begin{align}
+\begin{align*}
   C_{L_\alpha} &=
   \left.
   \frac{\partial C_L}{\partial \alpha}\right|_{\operatorname{ref}}, &
@@ -105,7 +105,51 @@ $$
   C_{L_V} &=
   \left.
   \frac{\partial C_L}{\partial \hat V}\right|_{\operatorname{ref}}. &
-  \end{align}
+\end{align*}
+$$
+
+Um detalhe importante é que os modelos lineares dos coeficientes adimensionais
+são escritos em função das variáveis de voo adimensionais. Por isso, $$\alpha$$
+e $$\delta_e$$ devem estar representados em radianos e $$\hat {\dot\alpha}$$,
+$$\hat q$$ e $$\hat V$$ são os adimensionais definidos como
+
+$$
+\begin{align}
+  \hat{\dot\alpha} &= \frac{\bar c \dot\alpha}{2V}, &
+  \hat q &= \frac{\bar c q}{2V}, &
+  \hat V &= \frac{V}{V_{\operatorname{ref}}}.
+\end{align}
+$$
+
+Força Propulsiva
+----------------
+Em nosso modelo longitudinal, consideraremos que a força propulsiva faz um
+ângulo $$\epsilon_T$$ em relação ao eixo $$x_B$$.
+
+{%
+   include figure.html
+   file="thrust.svg"
+   caption="Ângulo entre o vetor $$\vec T$$ e os eixos do corpo."
+%}
+
+Com algumas análises trigonométricas simples, podemos encontrar a representação
+dessa força nos eixos do corpo
+
+$$
+  \{\vec T\}_B =
+  \begin{bmatrix}
+    T \cos (\epsilon_T) \newline T \sin (\epsilon_T)
+  \end{bmatrix}.
+$$
+
+Onde $$T$$ é a magnitude da força propulsiva $$\vec T$$.
+Rotacionando para o eixo da terra, temos que
+
+$$
+  \{\vec T\}_E =
+  \begin{bmatrix}
+    T\cos(\theta - \epsilon_T) \newline -T\sin (\theta - \epsilon_T)
+  \end{bmatrix}.
 $$
 
 [seção anterior]: ../long-eqmov

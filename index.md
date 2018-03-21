@@ -20,9 +20,17 @@ adicionado ao longo do semestre. Qualquer erro favor me informar por [e-mail].
 
 
 
-Práticas de Eletrônica
-----------------------
+Eletrônica
+----------
+
+### Práticas
 
 *  [Familiarização com o Laboratório](eletronica/pratica1)
+
+
+### Trabalhos
+
+* [Trabalho 1](eletronica/trabalho1)
+
 
 [e-mail]: mailto:dimasad@ufmg.br

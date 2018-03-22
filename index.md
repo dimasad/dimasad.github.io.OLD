@@ -25,12 +25,16 @@ Eletrônica
 
 ### Práticas
 
-*  [Familiarização com o Laboratório](eletronica/pratica1)
+* [Familiarização com o Laboratório](eletronica/pratica1).
+* [Medição de tempo e comando de servos](eletronica/tempo).
+* [Entradas analógicas e o uso do potenciômetro](eletronica/leitura_analogica).
 
 
+{::comment}
 ### Trabalhos
 
 * [Trabalho 1](eletronica/trabalho1)
+{:/comment}
 
 
 [e-mail]: mailto:dimasad@ufmg.br

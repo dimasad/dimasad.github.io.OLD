@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+  \draw (0,0) 
+    node[vcc] (vcc) {\SI{5}{V}}
+    to[pR, n=pot] ++(3, 0)
+    node[ground] {};
+
+  \draw (pot.W)
+    to[short, *-o] ++(0, 0.5)
+    node[anchor=south] {Ard. A0};
+\end{tikzpicture}

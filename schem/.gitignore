@@ -1,6 +1,7 @@
 *.pdf
 *.dpth
 *.synctex.gz
+*.synctex(busy)
 *.aux
 *.auxlock
 *.makefile

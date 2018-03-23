@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+  \draw (0,0) 
+    node[vcc] (vcc) {\SI{5}{V}}
+    to[R, l=$R_1$] ++(2.5, 0)
+    coordinate (n1)
+    to[R, l=$R_2$] ++(2.5, 0)
+    node[ground] {};
+
+  \draw (n1)
+    to[short, *-o] ++(0, 0.5)
+    node[anchor=south] {Ard. A0};
+\end{tikzpicture}

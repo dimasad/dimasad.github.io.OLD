@@ -31,11 +31,9 @@ Eletrônica
 * [Interrupções](eletronica/interrupcoes).
 
 
-{::comment}
 ### Trabalhos
 
 * [Trabalho 1](eletronica/trabalho1)
-{:/comment}
 
 
 [e-mail]: mailto:dimasad@ufmg.br

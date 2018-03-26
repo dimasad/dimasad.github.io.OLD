@@ -14,11 +14,10 @@ Notas de Aula de Mecânica do Voo
 **Trabalhos:**
 
 * [Trabalho 1](mecvoo/trabalho1)
+* [Trabalho 2](mecvoo/trabalho2)
 
 Obs.: A escrita dessas notas de aula está em andamento, mais material será
 adicionado ao longo do semestre. Qualquer erro favor me informar por [e-mail].
-
-
 
 Eletrônica
 ----------

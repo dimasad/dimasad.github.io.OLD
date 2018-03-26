@@ -1,0 +1,8 @@
+\begin{tikzpicture}
+  \draw (0,0) 
+    to[battery, l=$V_a$, invert] ++(0, 3.2)
+    to[push button] ++(2, 0)
+    to[L=$L$, i>^=$i$] ++(0, -1.6)
+    to[R=$R$] ++(0, -1.6)
+    -| (0, 0);
+\end{tikzpicture}

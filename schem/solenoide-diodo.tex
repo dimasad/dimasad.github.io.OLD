@@ -1,0 +1,15 @@
+\begin{tikzpicture}
+  \draw (0,0) 
+    to[battery, l=$V_a$, invert] ++(0, 3.2)
+    to[push button] ++(2, 0)
+    coordinate (n1)
+    to[L=$L$, i>^=$i_s$, *-] ++(0, -1.6)
+    to[R=$R$, -*] ++(0, -1.6)
+    coordinate (n2)
+    -| (0, 0);
+
+  \draw (n1)
+    -- ++(1.5, 0)
+    to[D*, i^<=$i_d$, invert] ++(0, -3.2)
+    -| (n2);
+\end{tikzpicture}

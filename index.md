@@ -1,15 +1,26 @@
 ---
 layout: default
+title: Página do Dimas
 ---
 
 
-Notas de Aula de Mecânica do Voo
---------------------------------
+Mecânica do Voo
+---------------
 
-*  [Notação](mecvoo/notacao)
-*  [Equações do movimento longitudinal](mecvoo/long-eqmov)
-*  [Mudança de sistemas de coordenadas no plano](mecvoo/rot-long)
-*  [Forças do Modelo Longitudinal](mecvoo/forcas-long)
+*  [Notação e lista de símbolos](mecvoo/notacao)
+
+**Modelo longitudinal de um avião**
+
+* [Equações do movimento longitudinal](mecvoo/long-eqmov)
+* [Mudança de sistemas de coordenadas no plano](mecvoo/rot-long)
+* [Forças do modelo longitudinal](mecvoo/forcas-long)
+
+{::comment}
+**Ferramentas e análise**
+
+* [Simulação de sistemas dinâmicos](mecvoo/sim)
+{:/comment}
+
 
 **Trabalhos:**
 

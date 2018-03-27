@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Mecânica do voo -- Forças do Modelo Longitudinal
+title: Mecânica do voo -- Forças do modelo longitudinal
 ---
 
-Mecânica do voo -- Forças e Momentos do Modelo Longitudinal
-===========================================================
+{{ page.title }}
+================
 
 Para completar as equações do movimento desenvolvidas na [seção anterior]
 precisamos escrever as forças e momentos externos atuantes sobre a aeronave

@@ -3,7 +3,7 @@ tinterv = [0, 30]; % Intervalo de tempo da simulacao
 xinicial = [0; 1]; % Valor inicial do vetor de estados
 
 % Simula o sistema dinamico
-[tsim, xsim] = ode45(@fs, tinterv, xinicial);
+[tsim, xsim] = ode45(@fm, tinterv, xinicial);
 
 %% Plota simulacao no tempo
 figure(1);

@@ -15,11 +15,9 @@ Mecânica do Voo
 * [Mudança de sistemas de coordenadas no plano](mecvoo/rot-long)
 * [Forças do modelo longitudinal](mecvoo/forcas-long)
 
-{::comment}
 **Ferramentas e análise**
 
 * [Simulação de sistemas dinâmicos](mecvoo/sim)
-{:/comment}
 
 
 **Trabalhos:**

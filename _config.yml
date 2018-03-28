@@ -1,7 +1,7 @@
 # Site settings
 title: Página do Dimas
 email: dimasad@ufmg.br
-description: "Notas de aula e Arduino"
+description: "Notas de aula e laboratório"
 baseurl: ""
 url: "http://dimasad.github.io"
 show_downloads: false

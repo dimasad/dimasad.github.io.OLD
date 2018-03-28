@@ -1,4 +1,4 @@
-function xponto = fs(t, x)
+function xponto = fm(t, x)
 % Define os parametros do sistema
 a = 1; 
 b = -1;

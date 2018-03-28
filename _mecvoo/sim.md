@@ -267,5 +267,6 @@ oficial da [instalação de pacotes].
 [NumPy]: http://www.numpy.org/
 [ode45]: http://www.mathworks.com/help/matlab/ref/ode45.html
 [oscilador de Duffing]: http://www.scholarpedia.org/article/Duffing_oscillator
+[R]: http://www.r-project.org/
 [Runge--Kutta]: http://en.wikipedia.org/wiki/Runge-Kutta_methods
 [tutorial de indexação]: http://www.mathworks.com/help/matlab/learn_matlab/array-indexing.html

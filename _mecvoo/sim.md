@@ -233,6 +233,15 @@ simulações no espaço de estados.
 %}
 
 {::comment}
+
+Implementação em Python
+-----------------------
+
+Computação científica em python é geralmente implementada utilizando dois 
+pacotes bem consolidados: NumPy e Scipy. Existem várias maneiras de
+instalar esses pacotes, a mais simples (na minha opinião) é utilizando a 
+distribuição [Anaconda] ou [Enthought Canopy].
+
 Implementação em Julia
 ----------------------
 
@@ -256,8 +265,10 @@ oficial da [instalação de pacotes].
 
 {:/comment}
 
+[Anaconda]: https://www.anaconda.com/download/
 [artigo sobre indexação]: http://www.mathworks.com/company/newsletters/articles/matrix-indexing-in-matlab.html
 [Dormand--Prince]: https://en.wikipedia.org/wiki/Dormand-Prince_method
+[Enthought Canopy]: https://store.enthought.com/downloads/
 [ex1]: http://github.com/dimasad/dimasad.github.io/tree/master/_mecvoo/exemplos/matlab/sim
 [function handle]: https://www.mathworks.com/help/matlab/function-handles.html
 [instalação de pacotes]: http://docs.julialang.org/en/stable/manual/packages/

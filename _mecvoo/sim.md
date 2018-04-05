@@ -269,7 +269,7 @@ oficial da [instalação de pacotes].
 [artigo sobre indexação]: http://www.mathworks.com/company/newsletters/articles/matrix-indexing-in-matlab.html
 [Dormand--Prince]: https://en.wikipedia.org/wiki/Dormand-Prince_method
 [Enthought Canopy]: https://store.enthought.com/downloads/
-[ex1]: http://github.com/dimasad/dimasad.github.io/tree/master/_mecvoo/exemplos/matlab/sim
+[ex1]: http://github.com/dimasad/dimasad.github.io/tree/master/_mecvoo/exemplos-matlab/sim
 [function handle]: https://www.mathworks.com/help/matlab/function-handles.html
 [instalação de pacotes]: http://docs.julialang.org/en/stable/manual/packages/
 [Julia]: http://julialang.org

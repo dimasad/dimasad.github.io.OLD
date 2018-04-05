@@ -55,7 +55,8 @@ sobre os outros métodos de simulação do Matlab e suas vantagens, veja a
 
 Abaixo temos exemplos de como utilizar o Matlab para realizar integração 
 numérica de equações diferenciais ordinárias. O código desses exemplos está
-[disponível para download][ex1]. Baixe todos os scripts e coloque na mesma pasta.
+[disponível para download][ex1]. Baixe todos os scripts e coloque na mesma
+pasta.
 
 ### Simulação com entrada senoidal
 

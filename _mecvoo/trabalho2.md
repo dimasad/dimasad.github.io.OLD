@@ -59,4 +59,4 @@ $$
 $$
 
 Entregue um documento escrito com todos cálculos e equações utilizadas 
-indicados. O trabalho deverá ser entregue em sala na aula do dia 10 de abril.
+indicados. O trabalho deverá ser entregue em sala na aula do dia 12 de abril.

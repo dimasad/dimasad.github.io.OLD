@@ -84,7 +84,7 @@ chave é aberta.
      src="https://www.youtube.com/embed/aSmMFog10D0?rel=0"
      frameborder="0" allow="encrypted-media" allowfullscreen>
   </iframe>
-  <p>Mini solenóide em funcionamento.</p>
+  <p>Chaveamento de uma solenóide sem diodo de roda livre.</p>
 </center>
 
 Atividade: acionamento de uma solenóide com um diodo

@@ -1,0 +1,20 @@
+\begin{tikzpicture}
+  \draw (0, 0) 
+    node[ground] {}
+    to[V=\SI{10}{V}, invert, *-] ++(0, 4)
+    to[short] ++(2, 0)
+    coordinate (m+)
+    to[Telmech=M] ++(0, -2)
+    coordinate (m-)
+    to[Tnigfete, solderdot, invert, mirror, *-, n=T] ++(0, -2)
+    to[short] (0, 0);
+
+  \draw (m+)
+    to[short, *-] ++(2, 0)
+    to[diode, invert] ++(0, -2)
+    to[short, -*] (m-);
+
+  \draw (T.G)
+    to[R, -o] ++(1.8, 0)
+    node[anchor=west] {Ard. D9};
+\end{tikzpicture}

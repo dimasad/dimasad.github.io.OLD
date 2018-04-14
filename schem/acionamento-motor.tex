@@ -1,7 +1,7 @@
 \begin{tikzpicture}
   \draw (0, 0) 
     node[ground] {}
-    to[V=\SI{10}{V}, invert, *-] ++(0, 4)
+    to[battery, l=\SI{5}{V}, invert, *-] ++(0, 4)
     to[short] ++(2, 0)
     coordinate (m+)
     to[Telmech=M] ++(0, -2)
@@ -11,7 +11,7 @@
 
   \draw (m+)
     to[short, *-] ++(2, 0)
-    to[diode, invert] ++(0, -2)
+    to[D, invert] ++(0, -2)
     to[short, -*] (m-);
 
   \draw (T.G)

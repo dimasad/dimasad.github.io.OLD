@@ -1,0 +1,40 @@
+\begin{tikzpicture}
+  \draw (0, 0) 
+    to[battery, l=\SI{5}{V}, invert] ++(0, 6.5)
+    to[short] ++(2, 0)
+    node[circ] (n1) {}
+    -- ++(0, -0.25)
+    coordinate (m+)
+    to[R=$R_a$] ++(0, -1.5)
+    to[L=$L_a$] ++(0, -1.5)
+    to[V=$k_e\omega$] ++(0, -1.5)
+    coordinate (m-)
+    -- ++(0, -0.25)
+    node[circ] (n2) {}
+    to[Tnigfete, solderdot, invert, mirror, *-, n=T] ++(0, -2)
+    -| (0, 0)
+    node[ground, pos=0.5] {}
+    node[circ, pos=0.5] {};
+
+  \draw (n1)
+    to[short] ++(2.5, 0)
+    to[D, invert] ++(0, -5)
+    |-  (n2);
+    
+  \draw (T.G)
+    to[R, -o] ++(1.8, 0)
+    node[anchor=west] {Ard. D9};
+
+  \path (m+)
+    -- ++(1.4, 0)
+    coordinate (corner 1);
+
+  \path (m-)
+    -- ++(-0.6, 0)
+    coordinate (corner 2);
+
+    \draw[dotted] (corner 1)
+      |- (corner 2)
+      |- (corner 1)
+      node[pos=0.25, rotate=90, anchor=base] {motor};
+\end{tikzpicture}

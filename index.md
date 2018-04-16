@@ -42,6 +42,7 @@ Eletrônica
 ### Trabalhos
 
 * [Trabalho 1](eletronica/trabalho1)
+* [Trabalho 2](eletronica/trabalho2)
 
 
 [e-mail]: mailto:dimasad@ufmg.br

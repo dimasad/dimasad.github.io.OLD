@@ -77,7 +77,7 @@ $$
 \end{align*}
 $$
 
-Gere três gráficos para a simulação de no intervalo de $$t\in [0, 60\si{s}]$$:
+Gere três gráficos para a simulação do intervalo de $$t\in [0, 60\si{s}]$$:
 
 * um gráfico contendo o ângulo de ataque $$\alpha$$, o ângulo de arfagem 
 $$\theta$$ e o ângulo de trajetória $$\gamma$$, em graus;
@@ -103,7 +103,7 @@ $$
 \end{align*}
 $$
 
-Gere três gráficos para a simulação de no intervalo de $$t\in [0, 60\si{s}]$$:
+Gere três gráficos para a simulação do intervalo de $$t\in [0, 60\si{s}]$$:
 
 * um gráfico contendo o ângulo de ataque $$\alpha$$, o ângulo de arfagem 
 $$\theta$$ e o ângulo de trajetória $$\gamma$$, em graus;

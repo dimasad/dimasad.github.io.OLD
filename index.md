@@ -24,6 +24,7 @@ Mecânica do Voo
 
 * [Trabalho 1](mecvoo/trabalho1)
 * [Trabalho 2](mecvoo/trabalho2)
+* [Trabalho de simulação](mecvoo/trabalho-sim)
 
 Obs.: A escrita dessas notas de aula está em andamento, mais material será
 adicionado ao longo do semestre. Qualquer erro favor me informar por [e-mail].
@@ -42,6 +43,7 @@ Eletrônica
 ### Trabalhos
 
 * [Trabalho 1](eletronica/trabalho1)
+* [Trabalho 2](eletronica/trabalho2)
 
 
 [e-mail]: mailto:dimasad@ufmg.br

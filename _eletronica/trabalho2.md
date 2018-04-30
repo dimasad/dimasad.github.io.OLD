@@ -105,6 +105,6 @@ será a corrente de regime e sua oscilação?
 Entrega
 -------
 
-O trabalho deverá ser entregue por escrito na aula do dia 2 de maio de 2018.
+O trabalho deverá ser entregue por escrito na aula do dia 9 de maio de 2018.
 
 [método de Euler]: https://en.wikipedia.org/wiki/Euler_method

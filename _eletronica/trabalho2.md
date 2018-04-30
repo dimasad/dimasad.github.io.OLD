@@ -68,15 +68,21 @@ na partida do motor.
    da corrente no indutor $$i$$.
 2. Assumindo que a constante de tempo do circuito é muito maior que a
    frequência de chaveamento do MOSFET, calcule a variação na corrente do 
-   indutor $$\Delta i$$ durante o período que a chave fica fechada 
-   $$\Delta t_{\operatorname{on}}$$, em função de $$i$$.
+   indutor $$\Delta i_{\operatorname{on}}$$ durante o período que a chave fica
+   fechada $$\Delta t_{\operatorname{on}}$$, em função de $$i$$.
+   Para fazer isso, substitua $$\tfrac{di}{dt}$$ por 
+   $$\tfrac{\Delta i_{\operatorname{on}}}{\Delta t_{\operatorname{on}}}$$ e 
+   encontre a expressão de $$\Delta i_{\operatorname{on}}$$ em função de todas
+   as outras variáveis. Isso equivale a utilizar o [método de Euler] para
+   integração de equações diferenciais, o que é uma boa aproximação para
+   curtos intervalos de tempo.
 3. Quando o pino digital 9 do Arduino está em nível lógico baixo (0V), calcule
    a expressão da variação da corrente do indutor $$\tfrac{di}{dt}$$ em função
    da corrente no indutor $$i$$.
 4. Assumindo que a constante de tempo do circuito é muito maior que a
    frequência de chaveamento do MOSFET, calcule a variação na corrente do 
-   indutor $$\Delta i$$ durante o período que a chave fica aberta
-   $$\Delta t_{\operatorname{off}}$$, em função de $$i$$.
+   indutor $$\Delta i_{\operatorname{off}}$$ durante o período que a chave fica
+   aberta $$\Delta t_{\operatorname{off}}$$, em função de $$i$$.
 5. Quando a porta do MOSFET é acionado por uma onda quadrada de razão cíclica
    $$D \in [0,1]$$ e período $$T$$, ele opera como chave fechada por um 
    tempo $$TD$$ e como chave aberta por um tempo $$T(1-D)$$. Com esse 
@@ -85,6 +91,10 @@ na partida do motor.
    com a variação no intervalo de corte $$\Delta i_{\operatorname{off}}$$ é
    nula. Utilizando essa relação, calcule a corrente de regime em função da
    razão cíclica $$D$$ e a oscilação de corrente em função de $$D$$ e $$T$$.
+   Utilize as respostas das questões 2 e 4 para encontrar o valor de $$i$$
+   que é a solução da equação 
+   
+   $$\Delta i_{\operatorname{off}}+\Delta i_{\operatorname{off}} = 0.$$
 
 ### Rotor em movimento
 
@@ -96,3 +106,5 @@ Entrega
 -------
 
 O trabalho deverá ser entregue por escrito na aula do dia 2 de maio de 2018.
+
+[método de Euler]: https://en.wikipedia.org/wiki/Euler_method

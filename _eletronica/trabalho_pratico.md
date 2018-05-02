@@ -39,16 +39,58 @@ A avaliação consistirá de:
 * um guia de como reproduzir o projeto com um vídeo mostrando os resultados
   finais.
 
+
 Apresentação inicial
 --------------------
 
+A apresentação inicial deverá ser feita em 10 minutos com um período 5 minutos
+de perguntas. O projetor e o quadro da sala poderão ser utilizados.
+Os temas abaixo devem ser abordados:
+
+* os objetivos do projeto,
+* os principais componentes necessários (eletrônicos e mecânicos),
+* uma estimativa de gastos,
+* projetos semelhantes,
+* as referências consultadas (sites, guias, livros, datasheets, etc).
 
 
-[equilibrista]: http://www.instructables.com/id/Arduino-Self-Balancing-Robot-1
+Apresentação final
+------------------
+
+A apresentação final deverá ser feita em 10 minutos com um período 5 minutos
+de perguntas. O projetor e o quadro da sala poderão ser utilizados.
+Se possível, o projeto deverá ser demonstrado em funcionamento. Caso isso não
+seja possível, um vídeo deverá ser exibido. Além disso, deverão ser apresentados
+
+* o que foi revisado do projeto inicial e por quê,
+* os principais componentes utilizados (eletrônicos e mecânicos),
+* as maiores dificuldades e as soluções encontradas,
+* as referências consultadas (sites, guias, livros, datasheets, etc).
+
+
+Documentação do projeto 
+-----------------------
+
+Ao final do projeto deverá ser feita uma documentação do projeto como um guia
+dos passos para se reproduzir o projeto. Esse guia deverá incluir:
+
+* um vídeo do projeto em funcionamento,
+* uma lista de materiais com orçamento aproximado,
+* um diagrama esquemático do montagem elétrica e eletrônica,
+* os códigos-fonte do microcontrolador,
+* o princípio de funcionamento do projeto,
+* referências utilizadas.
+
+Um exemplo legal de projeto bem documentado é o robô [equilibrista] do 
+instructables. O guia e o vídeo devem ser colocados online em sites como 
+[hackster.io], [instructables.com], [maker.pro] ou [github.io].
+
 
 [arduino.cc]: https://create.arduino.cc/projecthub
+[equilibrista]: http://www.instructables.com/id/Arduino-Self-Balancing-Robot-1
 [ESP8266]: https://www.espressif.com/en/products/hardware/esp8266ex/overview
+[github.io]: http://github.io
 [hackster.io]: http://hackster.io
 [instructables.com]: http://www.instructables.com/technology/arduino/
 [maker.pro]: https://maker.pro/arduino/projects
-[NodeMCU]: http://www.nodemcu.com
+[NodeMCU]: http://www.nodemcu.com/index_en.html

@@ -44,6 +44,7 @@ Eletrônica
 
 * [Trabalho 1](eletronica/trabalho1)
 * [Trabalho 2](eletronica/trabalho2)
+* [Trabalho Prático](eletronica/trabalho_pratico)
 
 
 [e-mail]: mailto:dimasad@ufmg.br

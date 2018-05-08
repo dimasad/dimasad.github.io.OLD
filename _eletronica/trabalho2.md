@@ -94,7 +94,7 @@ na partida do motor.
    Utilize as respostas das questões 2 e 4 para encontrar o valor de $$i$$
    que é a solução da equação 
    
-   $$\Delta i_{\operatorname{off}}+\Delta i_{\operatorname{off}} = 0.$$
+   $$\Delta i_{\operatorname{on}}+\Delta i_{\operatorname{off}} = 0.$$
 
 ### Rotor em movimento
 

@@ -83,13 +83,15 @@ $$
 $$
 
 Além disso, escreva as expressões de cada derivada dimensional de estabilidade
-e controle utilizada em função dos estados de referência 
+e controle utilizada em função dos parâmetros do modelo, 
+dos estados de referência
 $${V_c}_{\operatorname{ref}}$$, $$\alpha_{\operatorname{ref}}$$,
-$$\theta_{\operatorname{ref}}$$ e variáveis auxiliares como pressão dinâmica 
-de referência $$\bar q_{\operatorname{ref}}$$, ângulo de trajetória de 
-referência $$\gamma_{\operatorname{ref}}$$ e coeficientes aerodinâmicos de 
-referência $$C_{D_{\operatorname{ref}}}$$, $$C_{L_{\operatorname{ref}}}$$ e
-$$C_{\emm_{\operatorname{ref}}}$$. Utilize como velocidades angulares
+$$\theta_{\operatorname{ref}}$$ e das variáveis auxiliares de referência como
+pressão dinâmica $$\bar q_{\operatorname{ref}}$$, ângulo de trajetória 
+$$\gamma_{\operatorname{ref}}$$ e coeficientes aerodinâmicos
+$$C_{D_{\operatorname{ref}}}$$, $$C_{L_{\operatorname{ref}}}$$ e
+$$C_{\emm_{\operatorname{ref}}}$$.
+Utilize como velocidades angulares
 de referência $$q_{\operatorname{ref}} = 0$$ e 
 $$\dot \alpha_{\operatorname{ref}} = 0$$.
 

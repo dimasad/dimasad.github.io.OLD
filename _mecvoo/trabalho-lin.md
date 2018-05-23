@@ -89,8 +89,7 @@ $$\theta_{\operatorname{ref}}$$ e variáveis auxiliares como pressão dinâmica
 de referência $$\bar q_{\operatorname{ref}}$$, ângulo de trajetória de 
 referência $$\gamma_{\operatorname{ref}}$$ e coeficientes aerodinâmicos de 
 referência $$C_{D_{\operatorname{ref}}}$$, $$C_{L_{\operatorname{ref}}}$$ e
-$$C_{\emm_{\operatorname{ref}}}$$.
-. Utilize como velocidades angulares
+$$C_{\emm_{\operatorname{ref}}}$$. Utilize como velocidades angulares
 de referência $$q_{\operatorname{ref}} = 0$$ e 
 $$\dot \alpha_{\operatorname{ref}} = 0$$.
 

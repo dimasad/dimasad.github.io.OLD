@@ -69,21 +69,28 @@ e controle nos eixos da estabilidade,
 
 $$
 \begin{align*}
-  Z_V &= -\frac{\partial L}{\partial V_c}, &
-  Z_\alpha &= -\frac{\partial L}{\partial \alpha}, &
-  Z_q &= -\frac{\partial L}{\partial q}, 
+  Z_V &= -\left.\frac{\partial L}{\partial V_c}\right|_{\operatorname{ref}} &
+  Z_\alpha &= -\left.\frac{\partial L}{\partial \alpha}
+  \right|_{\operatorname{ref}} &
+  Z_q &= -\left.\frac{\partial L}{\partial q}\right|_{\operatorname{ref}}
   & \dots \\
-  M_V &= \frac{\partial \emm}{\partial V_c}, &
-  M_\alpha &= \frac{\partial \emm}{\partial \alpha}, &
-  M_q &= \frac{\partial \emm}{\partial q},  &\dots
+  M_V &= \left.\frac{\partial \emm}{\partial V_c}\right|_{\operatorname{ref}} &
+  M_\alpha &= \left.\frac{\partial \emm}{\partial \alpha}
+  \right|_{\operatorname{ref}} &
+  M_q &= \left.\frac{\partial \emm}{\partial q}
+  \right|_{\operatorname{ref}}  &\dots
 \end{align*}
 $$
 
 Além disso, escreva as expressões de cada derivada dimensional de estabilidade
 e controle utilizada em função dos estados de referência 
 $${V_c}_{\operatorname{ref}}$$, $$\alpha_{\operatorname{ref}}$$,
-$$\theta_{\operatorname{ref}}$$ e pressão dinâmica de referência 
-$$\bar q_{\operatorname{ref}}$$. Utilize como velocidades angulares
+$$\theta_{\operatorname{ref}}$$ e variáveis auxiliares como pressão dinâmica 
+de referência $$\bar q_{\operatorname{ref}}$$, ângulo de trajetória de 
+referência $$\gamma_{\operatorname{ref}}$$ e coeficientes aerodinâmicos de 
+referência $$C_{D_{\operatorname{ref}}}$$, $$C_{L_{\operatorname{ref}}}$$ e
+$$C_{\emm_{\operatorname{ref}}}$$.
+. Utilize como velocidades angulares
 de referência $$q_{\operatorname{ref}} = 0$$ e 
 $$\dot \alpha_{\operatorname{ref}} = 0$$.
 
@@ -93,4 +100,4 @@ Entrega
 Entregue um documento escrito com o desenvolvimento da linearização. 
 As equações não lineares do movimento são pedidas apenas saber a partir de
 qual expressão as matrizes do sistema linearizado foram obtidas.
-O trabalho deverá ser entregue em sala de aula no dia 24 de maio.
+O trabalho deverá ser entregue em sala de aula no dia 29 de maio.

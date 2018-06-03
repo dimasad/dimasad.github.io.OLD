@@ -1,19 +1,19 @@
 ---
 layout: default
-title: Eletrônica -- Trabalho 3
+title: Eletrônica -- Trabalho 4
 ---
 
 {{page.title}}
 ==============
 
-Este trabalho é um estudo dirigido para se analisar o regulador buck, um
-regulador de tensão chaveado de alta eficiência. O buck é um conversor CC--CC
-abaixador de tensão, seu circuito está mostrado abaixo.
+Este trabalho é um estudo dirigido para se analisar o regulador boost, um
+regulador de tensão chaveado de alta eficiência. O boost é um conversor CC--CC
+aumentador de tensão, seu circuito está mostrado abaixo.
 
 {%
    include figure.html
-   file="buck.svg"
-   caption="Regulador buck."
+   file="boost.svg"
+   caption="Regulador boost."
 %}
 
 A tensão de entrada é $$V_e$$, e a de saída é $$V_s$$. A carga está 

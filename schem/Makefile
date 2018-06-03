@@ -1,7 +1,8 @@
-all: divisor-tensao.svg pwm-led.svg motor-npn-pot.svg potenciometro-a0.svg
+all: divisor-tensao.svg pwm-led.svg motor-npn-pot.svg potenciometro-a0.svg \
+     buck.svg boost.svg
 
 %.svg: %.pdf
-	inkscape $< --export-plain-svg=$@
+	pdftocairo -svg $< $@
 
 include schem-base.makefile
 

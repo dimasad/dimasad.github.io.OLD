@@ -6,15 +6,15 @@ title: Mecânica do voo -- Trabalho de Análise do Sistema Linear
 {{ page.title }}
 ================
 
-
 Considere o modelo não linear do movimento longitudinal de uma aeronave,
 como implementado na etapa de simulação do trabalho, acrescido do modelo
 de tração abaixo:
 
 $$
-T = T_{\operatorname{ref}} + T_V \Delta V_c + T_{\delta_T}\Delta\delta_T
+T = T_{\operatorname{ref}} + T_V \Delta V_c + T_{\delta_T}\Delta\delta_T.
 $$
 
+Os parâmetros da aeronave estão listados abaixo.
 
 $$
 \begin{gather*}
@@ -24,6 +24,9 @@ $$
     \\
     \epsilon_T &= 0\si{\degree} &
     g_0 &= \num[output-decimal-marker={,}]{9,80665}\si{m/s^2} &
+    \\
+    T_V & = \num[output-decimal-marker={,}]{0.22}\si{N.s/m} &
+    T_{\delta_T} &= \num[output-decimal-marker={,}]{1500}\si{N}
   \end{aligned}
   \\
   \begin{aligned}
@@ -51,12 +54,14 @@ $$
 \end{gather*}
 $$
 
-Utilize como entrada do modelo a deflexão de profundor $$\delta_e$$ e a força
-propulsiva $$T$$. 
+Utilize como entrada do modelo a deflexão de profundor $$\delta_e$$ e a posição
+do comando propulsivo $$\delta_T$$. Utilize como estados do modelo a velocidade
+total do CG da aeronave $$V_c$$, o ângulo de ataque $$\alpha$$, a velocidade
+de arfagem da aeronave $$q$$ e o ângulo de arfagem $$\theta$$.
 
 Linearização
 ------------
-Obtenha as matrizes $$A$$ e $$B$$ do modelo linearizado
+Obtenha os valores numéricos das matrizes $$A$$ e $$B$$ do modelo linearizado
 
 $$
 \begin{equation*}
@@ -83,12 +88,19 @@ $$
 \end{align*}
 $$
 
+Modos do sistema
+----------------
 
-Degrau de profundor
+Encontre e identifique cada um dos modos do sistema do movimento longitudinal
+(fugóide e período curto). Obtenha a frequência natural, a frequência 
+amortecida, e o fator de amortecimento de cada modo. Para cada modo, calcule
+os ângulos de fase entre as respostas de cada variável de estado.
+
+Pulso de profundor
 -------------------
 
-Simule o sistema para uma entrada em degrau de profundor e força propulsiva
-constante:
+Simule o modelo não linear e o modelo linear para uma entrada de pulso de
+profundor e força propulsiva constante:
 
 $$
 \begin{align*}
@@ -111,36 +123,13 @@ $$\theta$$ e o ângulo de trajetória $$\gamma$$, em graus;
 * um gráfico contendo a velocidade de arfagem $$q$$ em $$\si{\degree/s}$$;
 * um gráfico contendo a velocidade $$V_c$$ em $$\si{m/s}$$.
 
-Degrau de força propulsiva
---------------------------
-
-Simule o sistema para uma entrada em degrau de força propulsiva e deflexão de
-profundor constante:
-
-$$
-\begin{align*}
-  \delta_e(t) &= \num[output-decimal-marker={,}]{1.81}\si{\degree} \\
-  T(t) &= 
-    \begin{cases}
-      \num[output-decimal-marker={,}]{1134.2}\si{N} &
-      \text{se } 1 \leq t \leq 10 \\
-      \num[output-decimal-marker={,}]{1034.2}\si{N} &
-      \text{caso contrário}.
-    \end{cases}
-\end{align*}
-$$
-
-Gere três gráficos para a simulação do intervalo de $$t\in [0, 60\si{s}]$$:
-
-* um gráfico contendo o ângulo de ataque $$\alpha$$, o ângulo de arfagem 
-$$\theta$$ e o ângulo de trajetória $$\gamma$$, em graus;
-* um gráfico contendo a velocidade de arfagem $$q$$ em $$\si{\degree/s}$$;
-* um gráfico contendo a velocidade $$V_c$$ em $$\si{m/s}$$.
+Plote os resultados do sistema linear com linha tracejada e do sistema não
+linear com linha contínua.
 
 Entrega
 -------
 Entregue no Moodle os códigos fonte das funções e scripts de simulação e um
 documento em formato PDF contendo os gráficos gerados e uma pequena 
-análise dos resultados.
-O trabalho deverá ser entregue até o dia 8 de maio.
-
+análise dos resultados. Compacte todos os arquivos em um único arquivo .zip ou 
+similar para entrega.
+O trabalho deverá ser entregue até o dia 26 de junho.

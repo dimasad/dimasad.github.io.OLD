@@ -18,6 +18,7 @@ Mecânica do Voo
 **Ferramentas e análise**
 
 * [Simulação de sistemas dinâmicos](mecvoo/sim)
+* [Linearização por diferenças finitas](mecvoo/lineariz-diferencas-finitas)
 
 
 **Trabalhos:**

@@ -30,7 +30,7 @@ no espaço de estados, é dada por
 
 $$
 \begin{align}
-  \dot x_1 &= x_1 
+  \dot x_1 &= x_2
   \\
   \dot x_2 &= -dx_2 - bx_1 - ax_1^3 + u_1,
 \end{align}

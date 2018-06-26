@@ -6,8 +6,27 @@ title: Mecânica do voo -- Trabalho Final
 {{ page.title }}
 ================
 
-Implemente um modelo de simulação não linear do movimento longitudinal de uma
-aeronave com os parâmetros abaixo:
+Para esta última etapa do trabalho, há duas alternativas: simular e analisar
+o modelo de 6 graus de liberdade da aeronave leve abaixo ou propor
+algum outro projeto diferente envolvendo os conteúdos aprendidos na disciplina.
+
+Para projetos diferentes há algumas sugestões abaixo.
+* Modelar algum veículo diferente, como helicóptero, foguete, avião 
+  com propulsão vetorizada, dirigível. 
+  Pesquise valores de parâmetros aerodinâmicos e propulsivos ou tente
+  estimar com cálculos teóricos e métodos numéricos.
+* Projetar e simular um sistema de controle realimentado.
+  Várias das referências tem exemplos de projeto de sistemas de controle.
+  Tente utilizar algumas das arquiteturas sugeridas com modelos de outras
+  aeronaves.
+* Simular os transitórios de alguma condição de voo específica, como estol,
+  alijamento de carga, corrida e decolagem ou voo rasante com efeito de solo.
+
+Modelo de 6 Graus de Liberdade
+------------------------------
+Implemente o modelo de simulação não linear da dinâmica de uma
+aeronave com 6 graus de liberdade e os seguintes parâmetros:
+
 
 $$
 \begin{gather*}
@@ -64,13 +83,13 @@ $$
     \\
     C_{n_{\delta_a}} &= \num[output-decimal-marker={,}]{-0.02} & 
     C_{n_{\delta_r}} &= \num[output-decimal-marker={,}]{0.065} &
-    T_V & = \num[output-decimal-marker={,}]{0.22}\si{N.s/m} &
+    T_V & = \num[output-decimal-marker={,}]{-0.22}\si{N.s/m} &
   \end{aligned}
 \end{gather*}
 $$
 
-Utilize como entrada do modelo as deflexões de aileron $\delta_a$ profundor 
-$$\delta_e$$ e leme $$\delta_r$$. Utilize o modelo propulsivo
+Utilize como entrada do modelo as deflexões de aileron $$\delta_a$$ profundor 
+$$\delta_e$$ e leme $$\delta_r$$. Utilize o modelo propulsivo abaixo
 
 $$
 T = T_{\operatorname{ref}} + T_V \Delta V_c + T_{\delta_T}\Delta\delta_T.
@@ -96,34 +115,34 @@ $$
 Pulso de leme
 --------------
 
-Simule o sistema para uma entrada em degrau de profundor e força propulsiva
-constante:
+Simule o sistema para uma entrada de pulso de leme com as demais entradas
+nos seus valores de referência:
 
 $$
 \begin{align*}
-  \delta_e(t) &= 
+  \delta_a(t) &= 0\si{\degree} \\
+  \delta_e(t) &= \num[output-decimal-marker={,}]{1.81}\si{\degree} \\
+  \delta_r(t) &= 
     \begin{cases}
-      \num[output-decimal-marker={,}]{0.81}\si{\degree} &
+      \num[output-decimal-marker={,}]{2}\si{\degree} &
       \text{se } 1 \leq t \leq 2 \\
-      \num[output-decimal-marker={,}]{1.81}\si{\degree} &
+      \num[output-decimal-marker={,}]{0}\si{\degree} &
       \text{caso contrário}
     \end{cases}
    \\
-  T(t) &= \num[output-decimal-marker={,}]{1034.2}\si{N}.
+  \Delta\delta_T(t) &= 0.
 \end{align*}
 $$
 
-Gere três gráficos para a simulação do intervalo de $$t\in [0, 60\si{s}]$$:
-
-* um gráfico contendo o ângulo de ataque $$\alpha$$, o ângulo de arfagem 
-$$\theta$$ e o ângulo de trajetória $$\gamma$$, em graus;
-* um gráfico contendo a velocidade de arfagem $$q$$ em $$\si{\degree/s}$$;
-* um gráfico contendo a velocidade $$V_c$$ em $$\si{m/s}$$.
+Mostre os gráficos de todos os estados para a simulação do intervalo de
+$$t\in [0, 200\si{s}]$$, destacando os intervalos de interesse na resposta
+transitória. Mostre, em especial, a resposta dos estados nos 10 primeiros
+segundos da simulação, onde é possível visualisar melhor a dinâmica rápida
+látero-direcional.
 
 Entrega
 -------
 Entregue no Moodle os códigos fonte das funções e scripts de simulação e um
 documento em formato PDF contendo os gráficos gerados e uma pequena 
 análise dos resultados.
-O trabalho deverá ser entregue até o dia 8 de maio.
-
+O trabalho deverá ser entregue até o dia 8 de julho.

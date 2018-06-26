@@ -25,7 +25,7 @@ $$
     \epsilon_T &= 0\si{\degree} &
     g_0 &= \num[output-decimal-marker={,}]{9,80665}\si{m/s^2} &
     \\
-    T_V & = \num[output-decimal-marker={,}]{0.22}\si{N.s/m} &
+    T_V & = \num[output-decimal-marker={,}]{-0.22}\si{N.s/m} &
     T_{\delta_T} &= \num[output-decimal-marker={,}]{1500}\si{N}
   \end{aligned}
   \\

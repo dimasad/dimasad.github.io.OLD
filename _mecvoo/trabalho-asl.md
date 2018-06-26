@@ -100,7 +100,7 @@ Pulso de profundor
 -------------------
 
 Simule o modelo não linear e o modelo linear para uma entrada de pulso de
-profundor e força propulsiva constante:
+profundor e comando de propulsão constante no valor de referência:
 
 $$
 \begin{align*}
@@ -112,7 +112,7 @@ $$
       \text{caso contrário}
     \end{cases}
    \\
-  T(t) &= \num[output-decimal-marker={,}]{1034.2}\si{N}.
+  \Delta \delta_T(t) &= \num[output-decimal-marker={,}]{0}.
 \end{align*}
 $$
 

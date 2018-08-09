@@ -114,12 +114,12 @@ variar de 0 a 5V.
 %}
 
 
-Desafios
---------
+Atividade
+---------
 
-**Comando do servo pelo potenciômetro.**
+**Comando de um servo pelo potenciômetro.**
 
-Conecte um potenciômetro ao Arduino e comande a posição do servo de acordo
+Conecte um potenciômetro ao Arduino e comande a posição de um servo de acordo
 com a posição do potenciômetro: quando o potenciômetro estiver na posição
 central o servo também deverá estar, e o acompanhar em qualquer giro.
 

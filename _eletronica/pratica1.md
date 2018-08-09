@@ -9,9 +9,9 @@ Eletrônica -- Familiarização com o Laboratório
 
 As práticas iniciais de eletrônica consistem em vários procedimentos guiados
 para explorar funções do Arduino e o uso de dispositivos. Após as explicações
-e procedimentos há alguns desafios (com múltipas soluções possíveis) para
-exercitar
-o conteúdo abordado. Caso haja dificuldade não exitem em chamar o professor.
+e procedimentos há algumas atividades propostas (com múltipas soluções
+possíveis) para exercitar o conteúdo abordado. 
+Caso haja dificuldade não exitem em me chamar.
 
 **Procedimentos:**
 * Procedimento x
@@ -100,7 +100,7 @@ Digite então o código listado acima na IDE e carregue no Arduino com
 opção do menu _File $$\to$$ Upload_ ou com o atalho `Ctrl+U`.
 
 **Monitorando a porta serial.**
-Os dados enviados pelo Arduino com a função `Serial.println` podem, ser vistos
+Os dados enviados pelo Arduino com a função `Serial.println` podem ser vistos
 com o monitor serial, disponível no menu _Tools $$\to$$ Serial Monitor_.
 O _baud rate_ da porta deve ser escolhido com o mesmo valor utilizado
 na função `Serial.begin`, como mostrado na figura abaixo,
@@ -145,7 +145,7 @@ incrementado, e a execução do programa pausada por 250 ms até
 a função ser re-executada novamente.
 Carregue o código e observe sua saída com o monitor serial.
 
-> ### Desafio
+> ### Atividade
 >
 > Faça a variável `i` alterar incrementar seu valor de 0 a 10 e depois de
 > volta ao 0 novamente, periodicamente. Consulte a documentação da linguagem
@@ -286,13 +286,14 @@ void loop() {
    caption="Montagem para acionamento do LED com uma saída digital do Arduino."
 %}
 
-> #### Desafio
+> #### Atividade
 >
 > Quando o LED pisca muito rapidamente vemos somente a luminosidade média que
 > ele emite. Usando a função [delayMicroseconds], altere o programa para que
-> o LED fique aceso por 100 μs e apagado por 900 μs. Em seguida, faça um
+> o LED fique aceso por 100 μs e apagado por 900 μs (intensidade 10%). 
+> Em seguida, faça um
 > programa para que a luminosidade média do LED varie continuamente de 0 a
-> 100% no intervalo de 1 s, piscando sempre com um período de 1 ms.
+> 100% no intervalo de 1 s.
 
 Entradas digitais
 -----------------
@@ -345,10 +346,11 @@ pino de entrada digital número 9 do Arduino é 5 V.
    caption="Montagem para teste das entradas digitais."
 %}
 
-> ### Desafio
+> ### Atividade
 >
 > Monte o LED e o botão e configure o Arduino para que, quando o botão
-> estiver pressionado o LED apague e quando estiver liberado o LED acenda.
+> estiver pressionado o LED apague e quando estiver liberado o LED acenda
+> (estado do LED deverá ser o _oposto_ do estado do botão).
 
 
 [arduino.cc/en/Reference/]: http://arduino.cc/en/Reference/

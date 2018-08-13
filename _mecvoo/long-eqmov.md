@@ -67,13 +67,14 @@ ao redor do Sol só é relevante para dinâmica orbital no sistema solar.
 
 A suposição de corpo rígido é mais dependente do tipo da aeronave. Planadores
 e outras aeronaves de alto alongamento, por exemplo, geralmente possuem um
-alto grau de flexibilidade estrutural. De qualquer jeito, a suposição de corpo
+grau de flexibilidade estrutural considerável. 
+De qualquer jeito, a suposição de corpo
 rígido geralmente representa bem o comportamento dominante do sistema e é
 adequada para análises preliminares.
 
 Por fim, a suposição de que o movimento da aeronave está restrito ao plano
 vertical é bem razoável nas etapas do voo de subida, cruzeiro, descida e
-aproximação inicial. Geralmente o plano longitudinal da aeronave,
+aproximação inicial. Geralmente o plano longitudinal da aeronave
 $$x_B$$--$$z_B$$ é um plano de simetria, de forma que o eixo
 $$y_B$$, perpendicular a este plano, é um eixo principal de inércia.
 Dessa forma, não havendo forças ou momentos laterais é possível que o movimento

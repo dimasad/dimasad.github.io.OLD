@@ -123,33 +123,16 @@ $$
 
 Força Propulsiva
 ----------------
-Em nosso modelo longitudinal, consideraremos que a força propulsiva faz um
-ângulo $$\epsilon_T$$ em relação ao eixo $$x_B$$.
+Em nosso modelo longitudinal, consideraremos que a força propulsiva está
+alinhada com eixo $$x_B$$.
 
 {%
    include figure.html
-   file="thrust.svg"
-   caption="Ângulo entre o vetor $$\vec T$$ e os eixos do corpo."
+   file="thrust_xbody.svg"
+   caption="Força propulsiva $$\vec T$$ e os eixos do corpo."
 %}
 
-Com algumas análises trigonométricas simples, podemos encontrar a representação
-dessa força nos eixos do corpo
-
-$$
-  \{\vec T\}_B =
-  \begin{bmatrix}
-    T \cos (\epsilon_T) \newline T \sin (\epsilon_T)
-  \end{bmatrix}.
-$$
-
-Onde $$T$$ é a magnitude da força propulsiva $$\vec T$$.
-Rotacionando para o eixo da terra, temos que
-
-$$
-  \{\vec T\}_E =
-  \begin{bmatrix}
-    T\cos(\theta - \epsilon_T) \newline -T\sin (\theta - \epsilon_T)
-  \end{bmatrix}.
-$$
+Além disso, assumimos que o sistema moto-propulsor não gera momentos em torno
+do CG da aeronave.
 
 [seção anterior]: ../long-eqmov

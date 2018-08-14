@@ -135,17 +135,17 @@ mostrados na figura abaixo, podemos obter as matrizes de rotação.
 
 $$
 \begin{align}
-  T_{B,E} &= 
+  T_{E,B} &= 
   \begin{bmatrix}
     \cos(\theta) & \sin(\theta) \newline
     -\sin(\theta) & \cos(\theta)
   \end{bmatrix},\\
-  T_{B,W} &= 
+  T_{W,B} &= 
   \begin{bmatrix}
     \cos(\alpha) & \sin(\alpha) \newline
     -\sin(\alpha) & \cos(\alpha)
   \end{bmatrix},\\
-  T_{W,E} &= 
+  T_{E,W} &= 
   \begin{bmatrix}
     \cos(\gamma) & \sin(\gamma) \newline
     -\sin(\gamma) & \cos(\gamma)
@@ -158,17 +158,17 @@ equivalentemente, invertendo o sinal dos ângulos.
 
 $$
 \begin{align}
-  T_{E,B} &= 
+  T_{B,E} &= 
   \begin{bmatrix}
     \cos(\theta) & -\sin(\theta) \newline
     \sin(\theta) & \cos(\theta)
   \end{bmatrix},\\
-  T_{W,B} &= 
+  T_{B,W} &= 
   \begin{bmatrix}
     \cos(\alpha) & -\sin(\alpha) \newline
     \sin(\alpha) & \cos(\alpha)
   \end{bmatrix},\\
-  T_{E,W} &= 
+  T_{W,E} &= 
   \begin{bmatrix}
     \cos(\gamma) & -\sin(\gamma) \newline
     \sin(\gamma) & \cos(\gamma)

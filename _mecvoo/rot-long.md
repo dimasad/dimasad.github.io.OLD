@@ -16,7 +16,11 @@ Considere a situação representada na figura abaixo, em que temos um vetor
 $$\vec v$$ e dois sistemas de coordenadas, $$A$$ e $$B$$, rotacionados de
 um ângulo $$\theta$$ entre si.
 
-![rotacao-img]{: .center-image}
+{%
+   include figure.html
+   file="rotacao.png"
+   caption="Um vetor e dois sistemas de coordenadas."
+%}
 
 Temos que a representação de $$\vec v$$ em cada um dos sistemas é dada por
 
@@ -33,6 +37,7 @@ Temos que a representação de $$\vec v$$ em cada um dos sistemas é dada por
 Utilizando a operação de produto escalar, podemos obter qualquer componente
 de $$\vec v$$:
 
+$$
 \begin{equation}
   \begin{aligned}
     v_{x_A} &= \vec v \cdot \hat i_A, \newline
@@ -42,9 +47,12 @@ de $$\vec v$$:
   \end{aligned}
   \label{obtendo-componentes}
 \end{equation}
+$$
 
 Substituindo \eqref{componentes-A-v} em \eqref{obtendo-componentes},
 temos que
+
+$$
 \begin{equation}
   \begin{aligned}
     v_{x_A} &=
@@ -56,12 +64,14 @@ temos que
   \end{aligned}
   \label{transform-B-A}
 \end{equation}
+$$
 
 Essas equações mostram como fazer a transformação da representação do sistema
 de coordenadas $$B$$ para o $$A$$. Essa transformação \eqref{transform-B-A}
 pode ser colocada na forma matricial:
 
 $$
+\begin{equation}
   \overbrace{
     \begin{bmatrix}v_{x_A} \newline v_{z_A}\end{bmatrix}
   }^{\{\vec v\}_A}
@@ -76,6 +86,7 @@ $$
     \begin{bmatrix}v_{x_B} \newline v_{z_B}\end{bmatrix}
   }^{\{\vec v\}_B}
   ,
+\end{equation}
 $$
 
 onde $$T_{A,B}$$ é a matriz de rotação do sistema $$B$$ para o $$A$$.
@@ -86,6 +97,7 @@ diretores. Escrevendo esses ângulos em função de $$\theta$$, o ângulo de
 rotação entre os sistemas e utilizando relações trigonométricas básicas, temos
 que
 
+$$
 \begin{equation}
   T_{A,B} =
   \begin{bmatrix}
@@ -98,6 +110,7 @@ que
     -\sin(\theta) & \cos(\theta)
   \end{bmatrix}.
 \end{equation}
+$$
 
 Uma propriedade interessante dessa matriz, que pode ser verificada facilmente,
 é que sua inversa é igual a sua transposta e representa a rotação reversa:
@@ -106,4 +119,59 @@ Uma propriedade interessante dessa matriz, que pode ser verificada facilmente,
   T_{A,B}^{-1} = T_{A,B}^{\mathsf{T}} = T_{B,A}.
 \end{equation}
 
-[rotacao-img]: /assets/images/rotacao.png
+Matrizes de Rotação da Dinâmica Longitudinal
+--------------------------------------------
+
+Dadas as definições dos sistemas de coordenadas da dinâmica longitudinal e dos
+ângulos de ataque $$\alpha$$, trajetória $$\gamma$$ e arfagem $$\theta$$,
+mostrados na figura abaixo, podemos obter as matrizes de rotação.
+
+{%
+   include figure.html
+   file="eixos.png"
+   caption="Os sistemas de coordenadas da dinâmica longitudinal da aeronave."
+   img_style="width: 100%"
+%}
+
+$$
+\begin{align}
+  T_{B,E} &= 
+  \begin{bmatrix}
+    \cos(\theta) & \sin(\theta) \newline
+    -\sin(\theta) & \cos(\theta)
+  \end{bmatrix},\\
+  T_{B,W} &= 
+  \begin{bmatrix}
+    \cos(\alpha) & \sin(\alpha) \newline
+    -\sin(\alpha) & \cos(\alpha)
+  \end{bmatrix},\\
+  T_{W,E} &= 
+  \begin{bmatrix}
+    \cos(\gamma) & \sin(\gamma) \newline
+    -\sin(\gamma) & \cos(\gamma)
+  \end{bmatrix}.  
+\end{align}
+$$
+
+As transformações inversas são obtidas se transpondo as matrizes ou,
+equivalentemente, invertendo o sinal dos ângulos.
+
+$$
+\begin{align}
+  T_{E,B} &= 
+  \begin{bmatrix}
+    \cos(\theta) & -\sin(\theta) \newline
+    \sin(\theta) & \cos(\theta)
+  \end{bmatrix},\\
+  T_{W,B} &= 
+  \begin{bmatrix}
+    \cos(\alpha) & -\sin(\alpha) \newline
+    \sin(\alpha) & \cos(\alpha)
+  \end{bmatrix},\\
+  T_{E,W} &= 
+  \begin{bmatrix}
+    \cos(\gamma) & -\sin(\gamma) \newline
+    \sin(\gamma) & \cos(\gamma)
+  \end{bmatrix}.  
+\end{align}
+$$

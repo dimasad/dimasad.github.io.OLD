@@ -37,7 +37,12 @@ vento e do corpo; e o ângulo de trajetória $$\gamma$$, entre os eixos da terra
 e do vento. O eixo $$y$$ de todos os sistemas de coordenadas é paralelo e
 aponta na direção da asa direita.
 
-![eixos-img]
+{%
+   include figure.html
+   file="eixos.png"
+   caption="Os sistemas de coordenadas da dinâmica longitudinal da aeronave."
+   img_style="width: 100%"
+%}
 
 Suposições
 ----------
@@ -151,5 +156,4 @@ propulsivo $$\vec M_T$$. Substituindo \eqref{eq:momento-angular-long} em
 Nas próximas seções detalharemos os componentes de cada um dos momentos externos
 que agem sobre a aeronave.
 
-[eixos-img]: /assets/images/eixos.png
 [notação]: /aulas/notacao/

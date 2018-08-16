@@ -130,6 +130,7 @@ alinhada com eixo $$x_B$$.
    include figure.html
    file="thrust_xbody.svg"
    caption="Força propulsiva $$\vec T$$ e os eixos do corpo."
+   img_style="width: 100%"
 %}
 
 Além disso, assumimos que o sistema moto-propulsor não gera momentos em torno

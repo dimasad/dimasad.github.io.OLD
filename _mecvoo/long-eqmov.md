@@ -3,8 +3,8 @@ layout: default
 title: Mecânica do voo -- Equações do movimento longitudinal
 ---
 
-Mecânica do voo -- Equações do movimento longitudinal
-=====================================================
+{{ page.title }}
+================
 
 Nesta seção iremos obter as equações do movimento para a dinâmica longitudinal
 de um avião. É um modelo simplificado que será mais fácil de analisar e
@@ -156,4 +156,4 @@ propulsivo $$\vec M_T$$. Substituindo \eqref{eq:momento-angular-long} em
 Nas próximas seções detalharemos os componentes de cada um dos momentos externos
 que agem sobre a aeronave.
 
-[notação]: /aulas/notacao/
+[notação]: /mecvoo/notacao/

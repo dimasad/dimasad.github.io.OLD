@@ -14,6 +14,8 @@ Mecânica do Voo
 * [Equações do movimento longitudinal](mecvoo/long-eqmov)
 * [Forças do modelo longitudinal](mecvoo/forcas-long)
 * [Mudança de sistemas de coordenadas no plano](mecvoo/rot-long)
+* [Equações do movimento nos eixos do vento](mecvoo/long-eqmov-vento) 
+  (em construção)
 
 **Ferramentas e análise**
 

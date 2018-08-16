@@ -95,10 +95,12 @@ Equações do movimento translacional
 A equação que rege o movimento translacional de um corpo rígido é a segunda lei
 de Newton:
 
+$$
 \begin{equation}
   m\overset{\scriptscriptstyle \bullet E}{\vec v} = \sum_i \vec F_i,
   \label{eq:mov-trans-terra}
 \end{equation}
+$$
 
 onde $$m$$ é a massa do corpo, $$\vec v$$ é o vetor velocidade do centro de
 gravidade (CG) do corpo, e $$\vec F_i$$, são as forças externas que agem sobre
@@ -107,10 +109,19 @@ referenciais inerciais, que no nosso caso é o referencial da terra (E). Por
 isso, a derivada da velocidade deve ser observada do referencial da terra,
 o que é representado pelo $$E$$ ao lado do ponto em cima do vetor. Caso haja
 dúvidas, consulte a seção de [notação].
+Os componentes longitudinais da Eq. \eqref{eq:mov-trans-terra} são
+$$
+\begin{align}
+  \label{lei-newton-terra}
+  m\dot v_{x_E} &= \textstyle\sum F_{x_E}, &
+  \textstyle
+  m\dot v_{z_E} &= \textstyle\sum F_{z_E}.
+\end{align}
+$$
 
 As principais forças atuando em um avião de asa fixa são a força
 aerodinâmica $$\vec F_A$$, a força peso $$\vec W$$ e a força propulsiva
-$$\vec T$$. Dessa forma, a eq. \eqref{eq:mov-trans-terra} pode ser expandida
+$$\vec T$$. Dessa forma, a Eq. \eqref{eq:mov-trans-terra} pode ser expandida
 para 
 
 \begin{equation}
@@ -118,8 +129,8 @@ para
   \label{eq:mov-trans-terra-expand}
 \end{equation}
 
-Cada uma dessas forças será detalhada nas próximas seções para se obter um
-modelo fechado para simulação e análise.
+Cada uma dessas forças será detalhada [na próxima seção][forcas-long]
+para se obter um modelo fechado para simulação e análise.
 
 Equações do movimento rotacional
 --------------------------------
@@ -157,3 +168,4 @@ Nas próximas seções detalharemos os componentes de cada um dos momentos exter
 que agem sobre a aeronave.
 
 [notação]: /mecvoo/notacao/
+[forcas-long]: /mecvoo/forcas-long/

@@ -20,7 +20,7 @@ Encontre a expressão da derivada da velocidade, vista dos eixos do corpo
 $$\dot q$$.
 Escreva essas expressões em função
 
-* do do momento aerodinâmico de arfagem $$\emm$$ e das forças aerodinâmicas
+* do momento aerodinâmico de arfagem $$\emm$$ e das forças aerodinâmicas
   $$L$$ e $$D$$;
 * do módulo $$T$$ da força propulsiva, assumindo que ela é alinhada com
   o eixo $$x_B$$;

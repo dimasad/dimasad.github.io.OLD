@@ -20,10 +20,11 @@ Mecânica do Voo
 * [Simulação de sistemas dinâmicos](mecvoo/sim)
 * [Linearização por diferenças finitas](mecvoo/lineariz-diferencas-finitas)
 
-{::comment} 
 **Trabalhos:**
 
 * [Trabalho 1](mecvoo/trabalho1)
+
+{::comment} 
 * [Trabalho 2](mecvoo/trabalho2)
 * [Trabalho de simulação](mecvoo/trabalho-sim)
 * [Trabalho de linearização do modelo longitudinal](mecvoo/trabalho-lin)

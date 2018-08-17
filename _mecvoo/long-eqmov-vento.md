@@ -37,8 +37,8 @@ $$
 \label{V}
 V &= \sqrt{v_{x_E}^2 + v_{z_E}^2} \\
 \label{gamma-atan}
-\gamma &= \operatorname{atan}\left(\frac{v_{z_E}}{v_{x_E}}\right)
-        = \operatorname{atan2}\left(v_{z_E}, v_{x_E}\right).
+\gamma &= -\operatorname{atan}\left(\frac{v_{z_E}}{v_{x_E}}\right)
+        = -\operatorname{atan2}\left(v_{z_E}, v_{x_E}\right).
 \end{align}
 $$
 
@@ -84,8 +84,45 @@ Por fim, substituindo a lei de Newton, \eqref{lei-newton-terra}, temos
 $$
 \begin{equation}
   \label{Vdot-FE}
-  \dot V = \cos(\gamma)\textstyle\sum F_{x_E} - \sin(\gamma)\sum F_{z_E}.
+  m\dot V = \cos(\gamma)\textstyle\sum F_{x_E} - \sin(\gamma)\sum F_{z_E}.
 \end{equation}
+$$
+
+Aplicando a rotação de coordenadas nas forças da aeronave, temos que
+
+$$
+\textstyle
+\sum F_{x_W} = \cos(\gamma)\sum F_{x_E} - \sin(\gamma)\sum F_{z_E},
+$$
+
+logo 
+
+$$
+\begin{equation}
+  \label{Vdot-FW}
+  m\dot V = \textstyle\sum F_{x_W}.
+\end{equation}
+$$
+
+Tomando a derivada temporal da Equação \eqref{gamma-atan} e aplicando a regra da
+cadeia, temos que 
+
+$$
+\begin{align}
+  \dot \gamma &= \frac{v_{z_E}}{v_{x_E}^2 + v_{z_E}^2}\dot v_{x_E}
+     - \frac{v_{x_E}}{v_{x_E}^2 + v_{z_E}^2}\dot v_{z_E},
+  \nonumber\\
+  &= -\frac{V\sin\gamma}{V^2}\dot v_{x_E}
+     -\frac{V\cos\gamma}{V^2}\dot v_{z_E},
+  \nonumber\\
+  &= -\frac{\sin\gamma}{V}\dot v_{x_E}
+     -\frac{\cos\gamma}{V}\dot v_{z_E},
+  \nonumber\\
+  &= -\frac{\sin\gamma}{mV}\textstyle\sum F_{x_E}
+     -\frac{\cos\gamma}{mV}\sum F_{z_E},
+  \nonumber\\
+  &= -\frac{1}{mV}\textstyle\sum F_{z_W}.
+\end{align}
 $$
 
 Lei de Newton em Referencial Não Inercial

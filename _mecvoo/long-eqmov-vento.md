@@ -16,13 +16,23 @@ de duas maneiras:
 As equações serão derivadas aqui das duas maneiras. Para realização do 
 [trabalho 1] qualquer uma das duas abordagens pode ser utilizada.
 Nosso ponto de partida é a segunda lei de Newton,
+
 $$
 \begin{align}
   \label{lei-newton-terra}
   m\dot v_{x_E} &= \textstyle\sum F_{x_E}, &
   \textstyle
-  m\dot v_{z_E} &= \textstyle\sum F_{z_E}.
+  m\dot v_{z_E} &= \textstyle\sum F_{z_E},
 \end{align}
+$$
+
+ou, na forma vetorial,
+
+$$
+\begin{equation}
+  \label{lei-newton-terra-vec}
+  m\overset{\scriptscriptstyle \bullet E}{\vec v} = \sum_i \vec F_i.
+\end{equation}
 $$
 
 Lei de Newton em Coordenadas Polares
@@ -118,8 +128,8 @@ $$
   &= -\frac{\sin\gamma}{V}\dot v_{x_E}
      -\frac{\cos\gamma}{V}\dot v_{z_E},
   \nonumber\\
-  &= -\frac{\sin\gamma}{mV}\textstyle\sum F_{x_E}
-     -\frac{\cos\gamma}{mV}\sum F_{z_E},
+  &= -\frac{\sin\gamma}{mV}{\textstyle\sum} F_{x_E}
+     -\frac{\cos\gamma}{mV}{\textstyle\sum} F_{z_E},
   \nonumber\\
   &= -\frac{1}{mV}\textstyle\sum F_{z_W}.
 \end{align}
@@ -128,9 +138,86 @@ $$
 Lei de Newton em Referencial Não Inercial
 -----------------------------------------
 
-**\<Mais conteúdo em breve\>**
+Para relacionar a derivada de um vetor $$\vec r$$ observada de dois referenciais
+que possuem velocidade angular entre si, temos a seguinte relação:
 
+$$
+\begin{equation}
+  \overset{\scriptscriptstyle \bullet A}{\vec r} = 
+  \overset{\scriptscriptstyle \bullet B}{\vec r} + \vec\omega_B^A\times\vec r,
+\end{equation}
+$$
 
+onde $$\overset{\scriptscriptstyle \bullet A}{\vec r}$$ é a derivada do vetor
+observada do referencial $$A$$, 
+$$\overset{\scriptscriptstyle \bullet B}{\vec r}$$ é a derivada do vetor
+observada do referencial $$B$$ e $$\vec\omega_B^A$$ é o vetor da velocidade
+angular do referencial $$B$$ em relação ao $$A$$.
+
+Usando essa relação, temos que 
+
+$$
+\begin{equation}
+  \overset{\scriptscriptstyle \bullet E}{\vec v} = 
+  \overset{\scriptscriptstyle \bullet W}{\vec v} 
+  +\vec\omega_W^E \times \vec v.
+\end{equation}
+$$
+
+Os eixos do vento são definidos de forma que $$\hat i_w$$ está sempre alinhado
+com o vetor velocidade, de forma que
+
+$$
+\begin{equation*}
+  \vec v = V\hat i_w.
+\end{equation*}
+$$
+
+Isso implica que 
+
+$$
+\begin{equation}
+  \overset{\scriptscriptstyle \bullet W}{\vec v} = \dot V\hat i_w.
+\end{equation}
+$$
+
+Por fim, temos que a velocidade angular dos eixos do vento em relação aos 
+da terra é dada pela variação do ângulo entre eles, $$\gamma$$:
+
+$$
+\begin{equation*}
+  \vec\omega_W^E = \dot\gamma \hat j_W,
+\end{equation*}
+$$
+
+de modo que 
+
+$$
+\begin{align*}
+  \vec\omega_W^E \times \vec v &= 
+   (\dot\gamma \hat j_W) \times (V\hat i_W), \\
+   &= V\dot\gamma (\hat j_W \times \hat i_W), \\
+   &= -V\dot\gamma \hat k_W.
+\end{align*}
+$$
+
+Substituindo na lei de Newton na forma vetorial, temos que
+
+$$
+\begin{equation*}
+  \label{lei-newton-vento-vec}
+  m(\dot V\hat i_W -V\dot\gamma \hat k_W) = \sum_i \vec F_i
+\end{equation*}
+$$
+
+ou, para cada componente, 
+
+$$
+\begin{align*}
+  \dot V &= \textstyle\sum F_{x_W},\\
+  mV\dot\gamma &= -\textstyle\sum F_{z_W}.
+\end{align*}
+$$
 
 [long-eqmov]: /mecvoo/long-eqmov/
 [trabalho 1]: /mecvoo/trabalho1/

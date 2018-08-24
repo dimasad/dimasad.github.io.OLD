@@ -42,12 +42,14 @@ Eletrônica
 
 ### Práticas
 
-* [Familiarização com o Laboratório](eletronica/pratica1).
+* [Prática 1: Familiarização com o Laboratório](eletronica/pratica1).
+* [Prática 2: Leitura analógica, Potenciômetro, PWM e Servo][pratica2].
+
+{::comment}
 * [Medição de tempo e comando de servos](eletronica/tempo).
 * [Entradas analógicas e o uso do potenciômetro](eletronica/leitura_analogica).
 * [Interrupções](eletronica/interrupcoes).
 
-{::comment} 
 ### Trabalhos
 
 * [Trabalho 1](eletronica/trabalho1)
@@ -58,3 +60,4 @@ Eletrônica
 {:/comment} 
 
 [e-mail]: mailto:dimasad@ufmg.br
+[pratica2]: eletronica/pratica2

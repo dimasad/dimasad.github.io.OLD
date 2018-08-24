@@ -147,8 +147,9 @@ Carregue o código e observe sua saída com o monitor serial.
 
 > ### Atividade
 >
-> Faça a variável `i` alterar incrementar seu valor de 0 a 10 e depois de
-> volta ao 0 novamente, periodicamente. Consulte a documentação da linguagem
+> Faça a variável `i` alterar incrementar seu valor de 0 a 10 e depois
+> decrementar de 10 a 0 novamente, periodicamente.
+> Consulte a documentação da linguagem
 > e API do Arduino em [arduino.cc/en/Reference/]. Em especial, veja a sintaxe
 > das estrutras de controle de fluxo como [if] e dos operadores de comparação
 > como [>] e [<].

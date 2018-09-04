@@ -16,7 +16,7 @@ $$
   \end{aligned}
   \\
   \begin{aligned}
-    m &= \num[output-decimal-marker={,}]{1200}\si{kg} &
+    m &= \num[output-decimal-marker={,}]{1000}\si{kg} &
     I_y&=\num[output-decimal-marker={,}]{1825}\si{kg.m^2} &
     \rho &= \num[output-decimal-marker={,}]{1}\si{kg/m^3}
   \end{aligned}
@@ -40,13 +40,14 @@ $$
 \end{gather*}
 $$
 
-Utilizando as equações do modelo longitudinal, calcule para a condição
-de voo abaixo o valor de $$\dot \alpha$$, $$C_L$$, $$C_D$$ e $$C_m$$.
+Os coeficientes omitidos são nulos. Utilizando as equações do modelo
+longitudinal não linear, calcule para a condição de voo abaixo o valor
+de $$\dot \alpha$$, $$C_L$$, $$C_D$$ e $$C_m$$.
 
 $$
 \begin{gather*}
   \begin{aligned}
-    \alpha&=\num[output-decimal-marker={,}]{5.73}\si{\degree} &
+    \alpha&=\num[output-decimal-marker={,}]{2.29}\si{\degree} &
     \theta&=\num[output-decimal-marker={,}]{2.86}\si{\degree} &
     \delta_e&=\num[output-decimal-marker={,}]{5.73}\si{\degree} &
   \end{aligned}
@@ -59,4 +60,8 @@ $$
 $$
 
 Entregue um documento escrito com todos cálculos e equações utilizadas 
-indicados. O trabalho deverá ser entregue em sala na aula do dia 12 de abril.
+indicados. O trabalho deverá ser entregue em sala na aula do dia 16 de setembro.
+
+**Dica:** Lembre que o modelo aerodinâmico adimensional utiliza a condição de 
+voo adimensional, ou seja, $$\alpha$$ e $$\delta_e$$ em radianos, 
+$$\hat{\dot\alpha}$$ e $$\hat q$$.

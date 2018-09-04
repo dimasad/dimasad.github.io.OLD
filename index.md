@@ -14,8 +14,7 @@ Mecânica do Voo
 * [Equações do movimento longitudinal](mecvoo/long-eqmov)
 * [Forças do modelo longitudinal](mecvoo/forcas-long)
 * [Mudança de sistemas de coordenadas no plano](mecvoo/rot-long)
-* [Equações do movimento nos eixos do vento](mecvoo/long-eqmov-vento) 
-  (Novo!)
+* [Equações do movimento nos eixos do vento](mecvoo/long-eqmov-vento)
 
 **Ferramentas e análise**
 
@@ -25,14 +24,14 @@ Mecânica do Voo
 **Trabalhos:**
 
 * [Trabalho 1](mecvoo/trabalho1)
+* [Trabalho 2](mecvoo/trabalho2)
 
 {::comment} 
-* [Trabalho 2](mecvoo/trabalho2)
 * [Trabalho de simulação](mecvoo/trabalho-sim)
 * [Trabalho de linearização do modelo longitudinal](mecvoo/trabalho-lin)
 * [Trabalho de análise do sistema linear](mecvoo/trabalho-asl)
 * [Trabalho final](mecvoo/trabalho-final)
-{:/comment} 
+{:/comment}
 
 Obs.: A escrita dessas notas de aula está em andamento, mais material será
 adicionado ao longo do semestre. Qualquer erro favor me informar por [e-mail].

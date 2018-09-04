@@ -123,8 +123,8 @@ $$
 
 Força Propulsiva
 ----------------
-Em nosso modelo longitudinal, consideraremos que a força propulsiva está
-alinhada com eixo $$x_B$$.
+Em nosso modelo longitudinal, consideraremos que a força propulsiva $$\vec T$$ 
+está alinhada com eixo $$x_B$$.
 
 {%
    include figure.html

@@ -5,6 +5,13 @@ title: Mecânica do voo -- Equações do movimento nos eixos do vento
 
 {{ page.title }}
 ================
+{:.no_toc}
+
+> **Conteúdo:**
+> * Tópico 1
+> * Tópico 2 ...
+> {:toc}
+
 
 Nesta seção iremos ver como representar nos eixos do vento as equações do
 movimento da dinâmica longitudinal de um avião, obtidas na 
@@ -214,11 +221,71 @@ ou, para cada componente,
 
 $$
 \begin{align*}
-  \dot V &= \textstyle\sum F_{x_W},\\
+  m\dot V &= \textstyle\sum F_{x_W},\\
   mV\dot\gamma &= -\textstyle\sum F_{z_W}.
 \end{align*}
 $$
 
+Explicitando as forças
+----------------------
+
+Como vimos nas seções anteriores, para nosso modelo longitudinal simplificado
+as [forças externas que agem sobre o veículo][forcas-long] são o peso 
+$$\vec W$$, a força aerodinâmica $$\vec F_A$$ e a força propulsiva $$\vec T$$.
+
+Se aplicarmos as [mudanças de sistemas de coordenada] nas forças, temos que
+
+$$
+\begin{align*}
+  \textstyle\sum F_{x_W} &= 
+  {\color{red}
+   \overbrace{\color{black}T\cos(\alpha)}^{\color{red}\text{propulsiva}} 
+  } 
+  {\color{blue}
+    \underbrace{\color{black}\phantom{Al}- D \phantom{A}}_{
+      \color{blue}\text{aerodinâmica}
+    }
+  } 
+  { \color{darkgreen} \overbrace{\color{black}- mg_0 \sin(\gamma)}^{\text{peso}}
+  } ,\\
+  \textstyle\sum F_{z_W} &= 
+  {\color{red}
+   \overbrace{\color{black}-T\sin(\alpha)}^{\text{propulsiva}} 
+  } 
+  {\color{blue}
+    \underbrace{\color{black}\phantom{Al}- L \phantom{AA}}_{
+      \color{blue}\text{aerodinâmica}
+    }
+  } 
+  { \color{darkgreen} \overbrace{\color{black}+ mg_0 \cos(\gamma)}^{\text{peso}}
+  }.
+\end{align*}
+$$
+
+Logo, as equações do movimento são
+
+$$
+\begin{align*}
+  m\dot V &= T\cos(\alpha) - D - mg_0\sin(\gamma),\\
+  mV\dot\gamma &= T\sin(\alpha) + L - mg_0\cos(\gamma).
+\end{align*}
+$$
+
+Reescrevendo em função de alfa
+------------------------------
+
+Para o modelo longitudinal, temos que $$\theta = \gamma + \alpha$$.
+Tomando a derivada, temos que
+
+$$
+\begin{align*}
+  \dot \alpha &= \dot \theta - \dot \gamma \\
+  \dot \alpha &= q -\frac{ T\sin(\alpha) + L}{mV} + \frac{g_0\cos(\gamma)}{V} \\
+\end{align*}
+$$
+
+[forcas-long]: /mecvoo/forcas-long/
 [long-eqmov]: /mecvoo/long-eqmov/
+[mudanças de sistemas de coordenada]: /mecvoo/rot-long/
 [trabalho 1]: /mecvoo/trabalho1/
 [atan2-wiki]: https://en.wikipedia.org/wiki/Atan2

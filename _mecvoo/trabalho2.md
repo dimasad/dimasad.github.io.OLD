@@ -60,7 +60,7 @@ $$
 $$
 
 Entregue um documento escrito com todos cálculos e equações utilizadas 
-indicados. O trabalho deverá ser entregue em sala na aula do dia 16 de setembro.
+indicados. O trabalho deverá ser entregue em sala na aula do dia 18 de setembro.
 
 **Dica:** Lembre que o modelo aerodinâmico adimensional utiliza a condição de 
 voo adimensional, ou seja, $$\alpha$$ e $$\delta_e$$ em radianos, 

@@ -1,10 +1,12 @@
 \begin{tikzpicture}
   \draw (0,0) 
-    node[vcc] (vcc) {\SI{3.3}{V}}
+    node[vcc] (vcc) {\SI{5}{V}}
     -- ++(0, -0.5)
-    to[esource, l=motor, n=motor] ++(0, -1.5)
+    to[esource, l={\color{blue}motor}, n=motor] ++(0, -1.5)
     node[npn, anchor=C] (trans) {};
 
+  \node[color=blue, anchor=west] at (trans.east) {BC639};
+  
   \draw (motor.center)
     node {M};
 

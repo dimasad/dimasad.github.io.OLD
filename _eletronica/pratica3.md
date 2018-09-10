@@ -1,25 +1,63 @@
 ---
 layout: default
+title: Eletrônica -- Prática 3
 ---
 
-Prática 3 - Controle de velocidade de uma hélice
-================================================
+{{ page.title }}
+================
+{:.no_toc}
 
-O objetivo da prática de hoje será realizar o controle de velocidade de uma
-hélice.
-A prática pode ser dividida em três etapas:
+#### Acionamento de um Motor CC
+{:.no_toc}
 
- 1. acionamento proporcional do motor com modulação por largura de pulso,
-    utilizando um transistor;
- 2. medição da velocidade da hélice com um interruptor ótico;
- 3. implementação do controle, fechando a malha.
 
-Cada uma dessas etapas é detalhada abaixo.
-Para ajudar na implementação são fornecidos exemplos para ajudar a entender
-o uso das funções e funcionalidades do Arduino.
+O objetivo da prática desta prática é fazer o acionamento de um motor de 
+corrente contínua com o Arduino. Inicialmente, o motor será acionado em 
+somente um sentido, utilizando um transistor NPN. Em seguida, será acionado
+nos dois sentidos utilizando a ponte H do circuito integrado [L293D].
 
-Modulação por largura de pulso
-------------------------------
+**Tópicos:**
+* Procedimento x
+* Procedimento y
+{:toc}
+
+
+Acionamento com um transistor NPN
+---------------------------------
+
+Abaixo temos o diagrama de um circuito para acionamento de um motor de corrente
+contínua com um Arduino usando um transistor NPN. Os terminais do transistor
+(coletor, emissor e base) estão indicados. Em antiparalelo com o motor temos
+um diodo de roda livre para proteger a chave, pois o motor é uma carga indutiva.
+O acionamento da base do transistor é feito pelo pino digital 9 do Arduino.
+Quando a saída está em nível lógico alto (5 V) o transistor está saturado,
+operando como chave fechada. Quando a saída está em nível lógico baixo (0 V) o
+transistor está em corte, operando como chave aberta.
+
+{%
+   include figure.html
+   file="motor-npn.svg"
+   caption="Circuito para acionamento do motor com um transistor NPN."
+%}
+
+Monte esse circuito em um protoboard, utilizando o transistor [BC639] e o diodo
+[1N4007]. Atenção para a pinagem do transistor, confira na folha de dados.
+No diodo, a banda marca o catodo, como indicado na sua folha de dados.
+Com esse circuito, faça as atividades abaixo.
+
+> ### Teste do acionamento
+>
+> O primeiro teste consiste em ligar o motor, aguardar 1s, desligar o motor,
+> aguardar 1s e repetir. Esse programa serve para ver se a montagem foi feita
+> corretamente.
+>
+> **Dica:** Lembre de configurar o pino 9 como saída com a função `pinMode`.
+
+
+> ### Aceleração e desaceleração gradual
+>
+> O segundo teste consiste em
+
 
 A modulação por largura de pulso é uma técnica para se variar a tensão média
 fornecida para um componente (no nosso caso o motor) utilizando chaves.
@@ -89,18 +127,8 @@ mudanças de estado do fototransistor.
 Para medir esse tempo, é necessário o uso de interrupções.
 
 [BC639]: /datasheet/BC639.pdf
+[L293D]: /datasheet/L293D.pdf
 [1N4007]: /datasheet/1N4007.pdf
-[ITR9608]: /datasheet/ITR9608.pdf
-[pwm-img]: /assets/images/pwm_sparkfun.jpg
-[schem-motor-npn-pot]: /schem/motor-npn-pot.svg
-
-[sol-pwd-pot]: ../sol-pwm-pot
-[ex-pwm-led]: ../exemplo-pwm-led
-
 
 [analogWrite]: https://www.arduino.cc/en/Reference/AnalogWrite
 [analogRead]: https://www.arduino.cc/en/Reference/AnalogRead
-
-[Tutorial PWM]: https://learn.sparkfun.com/tutorials/pulse-width-modulation
-
-[CC BY-SA 4.0]: https://creativecommons.org/licenses/by-sa/4.0/

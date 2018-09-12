@@ -32,6 +32,13 @@ Escreva essas expressões em função
 * dos componentes da velocidade da aeronave nos eixos do corpo, 
   $$u$$ e $$w$$.
 
+Considere as mesmas suposições feitas nas notas de aula:
+* a terra é plana e inercial,
+* o movimento da aeronave está restrito ao plano longitudinal,
+* não há vento,
+* a aeronave é um corpo rígido de massa constante,
+* não há momento propulsivo,
+* a força propulsiva está alinhada com o eixo $$x_B$$.
 
 Entrega
 -------

@@ -1,106 +1,134 @@
 ---
 layout: default
+title: Eletrônica -- Prática 3
 ---
 
-Prática 3 - Controle de velocidade de uma hélice
-================================================
+{{ page.title }}
+================
+{:.no_toc}
 
-O objetivo da prática de hoje será realizar o controle de velocidade de uma
-hélice.
-A prática pode ser dividida em três etapas:
+#### Acionamento de um Motor CC
+{:.no_toc}
 
- 1. acionamento proporcional do motor com modulação por largura de pulso,
-    utilizando um transistor;
- 2. medição da velocidade da hélice com um interruptor ótico;
- 3. implementação do controle, fechando a malha.
 
-Cada uma dessas etapas é detalhada abaixo.
-Para ajudar na implementação são fornecidos exemplos para ajudar a entender
-o uso das funções e funcionalidades do Arduino.
+O objetivo da prática desta prática é fazer o acionamento de um motor de 
+corrente contínua com o Arduino. Inicialmente, o motor será acionado em 
+somente um sentido, utilizando um transistor NPN. Em seguida, será acionado
+nos dois sentidos utilizando a ponte H do circuito integrado [L293D].
 
-Modulação por largura de pulso
-------------------------------
+**Tópicos:**
+* Procedimento x
+* Procedimento y
+{:toc}
 
-A modulação por largura de pulso é uma técnica para se variar a tensão média
-fornecida para um componente (no nosso caso o motor) utilizando chaves.
-Como chaves possuem somente dois estados, aberto e fechado, seu estado é
-variado em alta frequência para que, na média, a carga perceba uma tensão
-média entre os estados discretos possíveis.
 
-Considere a imagem abaixo.
-A razão cíclica (_duty cycle_) é o fração do período em que a onda permanece
-no nível lógico alto.
-Se uma onda de tensão com razão cíclica de 75% for aplicada a um componente,
-a tensão média é 75% da tensão máxima.
-Dessa forma, a tensão _média_ no componente pode ser variada entre 0
-e a tensão do nível lógico alto.
-A razão cíclica de 0% corresponde ao nível lógico baixo de de 100% corresponde
-ao nível lógico alto.
+Acionamento com um transistor NPN
+---------------------------------
 
-![pwm-img]
-Fonte: [Sparkfun][Tutorial PWM], licença [CC BY-SA 4.0]
+Abaixo temos o diagrama de um circuito para acionamento de um motor de corrente
+contínua com um Arduino usando um transistor NPN. Os terminais do transistor
+(coletor, emissor e base) estão indicados. Em antiparalelo com o motor temos
+um diodo de roda livre para proteger a chave, pois o motor é uma carga indutiva.
+O acionamento da base do transistor é feito pelo pino digital 9 do Arduino.
+Quando a saída está em nível lógico alto (5V) o transistor está saturado,
+operando como chave fechada. Quando a saída está em nível lógico baixo (0V) o
+transistor está em corte, operando como chave aberta.
 
-O microcontrolador do Arduino possui um periférico para gerar onda com
-modulação por largura de pulso (PWM, do inglês _pulse width modulation_)
-em hardware, sem intervenção do usuário.
-A função `analogWrite(pino, razao_ciclica)` é usada para gerar uma onda com
-PWM.
-O argumento `razao_ciclica` é um número de 0 a 255, correspondendo a uma razão
-de 0% a 100%.
-Antes de utilizá-la é necessário configurar o pino como saída através da função
-`pinMode(pino, OUTPUT)`.
+{%
+   include figure.html
+   file="motor-npn.svg"
+   caption="Circuito para acionamento do motor com um transistor NPN."
+%}
 
-Confira a documentação oficial da função [analogWrite] para maiores informações.
-Para ilustrar o uso da modulação por largura de pulso, veja a
-[página de exemplo][ex-pwm-led] da modulação por largura de pulso para alterar
-o brilho de um led.
+Monte esse circuito em um protoboard, utilizando o transistor [BC639] e o diodo
+[1N4007]. Atenção para a pinagem do transistor, confira na folha de dados.
+No diodo, a banda marca o catodo, como indicado na sua folha de dados.
+Com esse circuito, faça as atividades abaixo.
 
-#### Acionamento do motor por PWM
+> ### Teste do acionamento
+>
+> O primeiro teste consiste em ligar o motor, aguardar 1s, desligar o motor,
+> aguardar 1s e repetir. Esse programa serve para ver se a montagem foi feita
+> corretamente.
+>
+> **Dica:** Lembre de configurar o pino 9 como saída com a função `pinMode`.
 
-Abaixo temos um circuito para acionamento de um motor com o Arduino.
-Quando o transistor está no modo de saturação uma tensão próxima de 3,3V
-é aplicada no motor.
-Há um diodo de roda livre em paralelo com o motor para proteger a chave, já
-que o motor é uma carga indutiva.
-Há também um potenciômetro que será utilizado como entrada analógica.
 
-![schem-motor-npn-pot]
+> ### Aceleração e desaceleração gradual
+>
+> O segundo teste consiste em acionar o motor com uma tensão gradual de 0V a 5V,
+> utilizando modulação por largura de pulso, e depois desenergizar o motor 
+> também de maneira gradual.
+> 
+> **Dica:** Utilize a função [analogWrite] como na prática anterior.
 
-Para montar esse circuto utilize o transistor NPN [BC639] e o diodo [1N4007].
 
-**Atividade:**
-Implemente o acionamento do pino 9 do Arduino com modulação por
-largura de pulso para que a razão cíclica seja proporcional à posição do
-potenciômetro.
-Caso tenha dificuldade nesta tarefa, veja [uma solução possível][sol-pwd-pot]
-para esse problema.
+> ### Comando pelo potenciômetro
+>
+> Utilize um potenciômetro e uma entrada analógica do Arduino para comandar a
+> tensão no motor. A tensão média no motor deverá ser igual à tensão medida no
+> potenciômetro.
+> 
+> **Dica:** Utilize as funções [analogRead] e [map] como na prática anterior.
 
-Tacômetro ótico
----------------
+Acionamento com a ponte H L293D
+-------------------------------
 
-Junto com cada motor está um conjunto de interruptor ótico [ITR9608],
-que possui um par LED-fototransistor.
-Quando a luz do LED chega no fototransistor, ele opera como chave fechada,
-quando a luz é interrompida pela hélice o fototransistor opera no modo corte,
-como chave aberta.
-Dessa forma, é possível medir a velocidade da hélice contando o tempo entre
-mudanças de estado do fototransistor.
+O circuito integrado [L293D] contém uma ponte H dupla ou, alternativamente,
+quatro meia pontes. Esse circuito pode ser utilizado para acionar um motor de
+corrente contínua nos dois sentidos. A pinagem do CI pode ser vista na seção 5
+da sua folha de dados.
 
-Para medir esse tempo, é necessário o uso de interrupções.
+Esse circuito possui duas entradas de alimentação, VCC1 e VCC2. A alimentação
+VCC1 supre a lógica interna do dispositivo e deve ter uma tensão de 5V e a
+entrada VCC2 alimenta a carga, aceitando uma tensão de 4,5V a 36V. As duas
+fontes de alimentação devem ter uma referência comum, que é o pino terra.
+
+Cada meia ponte do L293D possui 2 entradas (EN e A) e uma saída (Y). A entrada
+EN (enable) serve para habilitar ou desabilitar a meia ponte. Quando ela está
+em nível lógico baixo a saída Y está aberta. Quando a entrada EN está nível
+lógico alto, a tensão na saída Y é VCC2 quando A está em nível lógico alto
+e 0V quando A está em nível lógico baixo.
+
+### Montagem
+
+Nesta prática, utilizaremos a mesma fonte para alimentar o CI e o motor,
+por isso VCC1 e VCC2 devem estar ligados na fonte de 5V do Arduino.
+Conecte também o terra do CI no terra do Arduino. Como manteremos a ponte
+habilitada o tempo todo, conecte também a entrada 1,2EN no 5V. Para comandar a
+ponte, conecte as entradas 1A e 2A da ponte, às saídas digitais 9 e 10 do
+Arduino, respectivamente. Por fim, conecte as saídas da ponte 1Y e 2Y aos 
+terminais do motor.
+
+> ### Teste do acionamento
+>
+> O primeiro teste consiste em ligar o motor em um sentido, aguardar 1s, 
+> desligar o motor, aguardar 1s, ligar o motor no outro sentido, aguardar 1s,
+> desligar o motor, aguardar 1s e repetir. Esse programa serve para ver se a
+> montagem foi feita corretamente e é possível acionar o motor nos dois 
+> sentidos.
+
+
+> ### Aceleração e desaceleração gradual
+>
+> O segundo teste consiste em acionar o motor com uma tensão gradual de -5V a
+> 5V, utilizando modulação por largura de pulso, e depois acionar com tensão
+> de 5V a -5V. O motor deverá parar suavemente e trocar de sentido de rotação.
+
+
+> ### Comando pelo potenciômetro
+>
+> Utilize um potenciômetro e uma entrada analógica do Arduino para comandar a
+> tensão no motor. Quando o potenciômetro estiver na posição central o motor
+> deverá estar parado, quando estiver em um extremo o motor deverá ser acionado
+> com 5V e quando estiver no outro extremo o motor deverá ser acionado com 
+> tensão -5V. Nas posições intermediárias a tesão no motor deverá ser
+> proporcional à posição do potenciômetro.
 
 [BC639]: /datasheet/BC639.pdf
+[L293D]: /datasheet/L293D.pdf
 [1N4007]: /datasheet/1N4007.pdf
-[ITR9608]: /datasheet/ITR9608.pdf
-[pwm-img]: /assets/images/pwm_sparkfun.jpg
-[schem-motor-npn-pot]: /schem/motor-npn-pot.svg
-
-[sol-pwd-pot]: ../sol-pwm-pot
-[ex-pwm-led]: ../exemplo-pwm-led
-
 
 [analogWrite]: https://www.arduino.cc/en/Reference/AnalogWrite
 [analogRead]: https://www.arduino.cc/en/Reference/AnalogRead
-
-[Tutorial PWM]: https://learn.sparkfun.com/tutorials/pulse-width-modulation
-
-[CC BY-SA 4.0]: https://creativecommons.org/licenses/by-sa/4.0/
+[map]: https://www.arduino.cc/en/Reference/map

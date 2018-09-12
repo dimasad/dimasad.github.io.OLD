@@ -1,0 +1,28 @@
+\begin{tikzpicture}
+  \draw (0,0) 
+    node[vcc] (vcc) {\SI{5}{V}}
+    -- ++(0, -0.5)
+    to[esource, l={\color{DarkBlue}motor}, n=motor] ++(0, -1.5)
+    node[npn, anchor=C] (trans) {};
+
+  \node[color=DarkBlue, anchor=west] at (trans.east) {BC639};
+  \node[color=DarkRed, anchor=north east, font=\scriptsize] at (trans.C) {c};
+  \node[color=DarkRed, anchor=south west, font=\scriptsize] at (trans.B) {b};
+  \node[color=DarkRed, anchor=south east, font=\scriptsize] at (trans.E) {e};
+  
+  \draw (motor.center)
+    node {M};
+
+  \draw (trans.C)
+    to[short, *-] ++(-1, 0)
+    to[diode, l={\color{DarkBlue}1N4007}] ++(0, 1.5)
+    |- (vcc.center)
+    node[circ] {};
+
+  \node[ground] at (trans.E) {};
+
+  \draw (trans.B)
+    to[R, l=\SI{180}{\ohm}] ++(-1.6, 0)
+    node[ocirc] {}
+    node[anchor=east] {Ard. D9};
+\end{tikzpicture}

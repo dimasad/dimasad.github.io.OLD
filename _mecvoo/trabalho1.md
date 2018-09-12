@@ -15,9 +15,7 @@ referencial do corpo.
 **Atividade:**
 derive as equações do movimento longitudinal de uma aeronave de asa fixa,
 nos eixos do corpo, a partir das leis de Newton.
-Encontre a expressão da derivada da velocidade, vista dos eixos do corpo
-($$\dot u$$ e $$\dot w$$) e da derivada da velocidade angular de arfagem
-$$\dot q$$.
+Encontre a expressão de $$\dot u$$, a expressão de $$\dot w$$ e de $$\dot q$$.
 Escreva essas expressões em função
 
 * do momento aerodinâmico de arfagem $$\emm$$ e das forças aerodinâmicas

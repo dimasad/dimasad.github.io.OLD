@@ -51,7 +51,7 @@ de entrada $$v_e = -5 \si{V}$$, qual a tensão de saída na carga, $$v_s$$?
 
 Esboce o gráfico de $$v_s$$ em função de $$v_e$$ para o diodo ideal e para
 o diodo constante por partes, para tensões de entrada $$v_e$$ entre 
-$$-5 \si{V}$$ e 5 \si{V}$$.
+$$-5 \si{V}$$ e 5 $$\si{V}$$.
 
 Entrega
 -------

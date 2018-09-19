@@ -26,9 +26,9 @@ Mecânica do Voo
 
 * [Trabalho 1](mecvoo/trabalho1)
 * [Trabalho 2](mecvoo/trabalho2)
+* [Trabalho de simulação](mecvoo/trabalho-sim)
 
 {::comment} 
-* [Trabalho de simulação](mecvoo/trabalho-sim)
 * [Trabalho de linearização do modelo longitudinal](mecvoo/trabalho-lin)
 * [Trabalho de análise do sistema linear](mecvoo/trabalho-asl)
 * [Trabalho final](mecvoo/trabalho-final)

@@ -31,7 +31,7 @@ $$v_e = 5 \si{V}$$:
 
 ### Diodo ideal, entrada $$v_e = -5 \si{V}$$
 
-Considere os diodos são ideais e a tensão de entrada $$v_e = 5 \si{V}$$,
+Considere os diodos são ideais e a tensão de entrada $$v_e = -5 \si{V}$$,
 
 * quais diodos irão conduzir e quais estarão em corte?
 * Qual a tensão de saída na carga, $$v_s$$?

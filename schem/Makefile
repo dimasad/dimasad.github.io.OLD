@@ -1,5 +1,5 @@
 all: divisor-tensao.svg pwm-led.svg motor-npn-pot.svg potenciometro-a0.svg \
-     buck.svg boost.svg motor-npn.svg
+     buck.svg boost.svg motor-npn.svg ponte-diodo.svg
 
 %.svg: %.pdf
 	pdftocairo -svg $< $@

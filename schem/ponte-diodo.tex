@@ -1,0 +1,23 @@
+\begin{tikzpicture}
+  \draw (0, 0) 
+    to[V=$v_e$, invert] ++(0, 3)
+    -- ++ (1.5, 0)
+    node[circ] (n1) {}
+    to[Do] ++(0, -1.5)
+    node[circ] (p) {}
+    to[Do, invert] ++(0, -1.5)
+    node[circ] (n2) {}
+    -- (0, 0);
+
+  \draw (n1)
+    -- ++ (2, 0)
+    coordinate (n3)
+    to[Do, invert] ++(0, -1.5)
+    node[circ] (n) {}
+    to[Do] ++(0, -1.5)
+    coordinate (n4)
+    -- (n2);
+
+  \draw (p)
+    to[R, v=$v_s$] (n);
+\end{tikzpicture}

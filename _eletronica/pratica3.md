@@ -86,9 +86,9 @@ fontes de alimentação devem ter uma referência comum, que é o pino terra.
 
 Cada meia ponte do L293D possui 2 entradas (EN e A) e uma saída (Y). A entrada
 EN (enable) serve para habilitar ou desabilitar a meia ponte. Quando ela está
-em nível lógico baixo a saída Y está aberta. Quando a entrada EN está nível
-lógico alto, a tensão na saída Y é VCC2 quando A está em nível lógico alto
-e 0V quando A está em nível lógico baixo.
+em nível lógico baixo a saída Y está aberta. Quando a ponte está habilitada 
+(entrada EN em nível lógico alto), a tensão na saída Y é VCC2 quando A está em
+nível lógico alto e 0V quando A está em nível lógico baixo.
 
 ### Montagem
 
@@ -96,7 +96,7 @@ Nesta prática, utilizaremos a mesma fonte para alimentar o CI e o motor,
 por isso VCC1 e VCC2 devem estar ligados na fonte de 5V do Arduino.
 Conecte também o terra do CI no terra do Arduino. Como manteremos a ponte
 habilitada o tempo todo, conecte também a entrada 1,2EN no 5V. Para comandar a
-ponte, conecte as entradas 1A e 2A da ponte, às saídas digitais 9 e 10 do
+ponte, conecte as entradas 1A e 2A da ponte às saídas digitais 9 e 10 do
 Arduino, respectivamente. Por fim, conecte as saídas da ponte 1Y e 2Y aos 
 terminais do motor.
 
@@ -105,15 +105,16 @@ terminais do motor.
 > O primeiro teste consiste em ligar o motor em um sentido, aguardar 1s, 
 > desligar o motor, aguardar 1s, ligar o motor no outro sentido, aguardar 1s,
 > desligar o motor, aguardar 1s e repetir. Esse programa serve para ver se a
-> montagem foi feita corretamente e é possível acionar o motor nos dois 
+> montagem foi feita corretamente e se é possível acionar o motor nos dois 
 > sentidos.
 
 
 > ### Aceleração e desaceleração gradual
 >
 > O segundo teste consiste em acionar o motor com uma tensão gradual de -5V a
-> 5V, utilizando modulação por largura de pulso, e depois acionar com tensão
-> de 5V a -5V. O motor deverá parar suavemente e trocar de sentido de rotação.
+> 5V, utilizando modulação por largura de pulso, depois acionar com tensão
+> de 5V a -5V e repetir o ciclo. O motor deverá parar suavemente e trocar de
+> sentido de rotação.
 
 
 > ### Comando pelo potenciômetro

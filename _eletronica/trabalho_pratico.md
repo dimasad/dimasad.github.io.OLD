@@ -7,16 +7,26 @@ title: Eletrônica -- Trabalho Prático
 ==============
 
 O trabalho final de eletrônica deverá ser um projeto prático utilizando os 
-conhecimentos explorados ao longo da disciplina. Exemplos de projetos realizados
-em semestres anteriores foram:
+conhecimentos explorados ao longo da disciplina. Alguns exemplos de projetos
+realizados em semestres anteriores estão listados abaixo.
 
-* um carrinho de controle remoto acionado por Arduino e com um controle remoto
-  feito com Arduino;
-* um carrinho de controle remoto acionado por Arduino e controlado por 
-  bluetooth de um celular;
-* um jogo de Tetris com um display de matriz de LEDs acionado pelo CI 
-  MAX7219 pela interface SPI de um Arduino;
-* um protótipo de controle automático longitudinal de um VANT com Arduino que
+* Jogo _TRON_ com uma matriz de LEDs
+  [(link)](https://www.hackster.io/carolina-coimbra/jogo-eletronica-80ff11).
+* Robô seguidor de linha
+  [(link)](https://www.hackster.io/azevedoarthur/line-follower-robot-arthur-azevedo-ufmg-ba01ac).
+* Sistema de controle de posição de um pêndulo acionado com uma hélice
+  [(link)](http://www.instructables.com/id/Sistema-Pêndulo-Hélice-Controle-De-Posição).
+* Jogo com uma matriz LCD 
+  [(link)](https://www.hackster.io/fabricio-franca/western-dodge-f7c633).
+* Robô com desvio de obstáculos com sensor ultrassônico
+  [(link)](https://www.hackster.io/samuel-costa/carro-desviador-de-objetos-com-arduino-207c76).
+* Instrumento musical de arco elétrico gerado com um transformador _flyback_
+  de televisão de tubo.
+* Um carrinho de controle remoto acionado por Arduino e controlado por 
+  bluetooth de um celular.
+* Jogo de Tetris com um display de matriz de LEDs acionado pelo CI 
+  MAX7219 pela interface SPI de um Arduino.
+* Protótipo de controle automático longitudinal de um VANT com Arduino que
   acionava um servo com um regulador PD baseado na informação lida de uma IMU
   MPU6050 através da interface I²C.
 
@@ -32,13 +42,12 @@ individualmente ou em duplas ou trios de alunos da mesma turma prática.
 A avaliação consistirá de:
 
 * uma apresentação inicial em sala, descrevendo o projeto, seus objetivos e
-  como planeja implementar;
+  como se planeja implementá-lo;
 * a realização do projeto nas aulas de laboratório;
 * uma apresentação final do projeto em sala, mostrando o resultado final, o
   que funcionou e o que não;
 * um guia de como reproduzir o projeto com um vídeo mostrando os resultados
   finais.
-
 
 Apresentação inicial
 --------------------
@@ -52,7 +61,6 @@ Os temas abaixo devem ser abordados:
 * uma estimativa de gastos,
 * projetos semelhantes,
 * as referências consultadas (sites, guias, livros, datasheets, etc).
-
 
 Apresentação final
 ------------------

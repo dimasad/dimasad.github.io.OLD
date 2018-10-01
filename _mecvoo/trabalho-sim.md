@@ -85,6 +85,7 @@ Entrega
 -------
 Entregue no Moodle os códigos fonte das funções e scripts de simulação e um
 documento em formato PDF contendo os gráficos gerados e uma pequena 
-análise dos resultados.
+análise dos resultados. O trabalho deverá ser entregue até a noite do domingo
+dia 14/10.
 
 

@@ -135,8 +135,8 @@ xlabel('x_1')
 ylabel('x_2')
 ```
 
-Esse exemplo de simulação está no script `sim_senoidal.m` que gera os gráficos mostrados
-abaixo.
+Esse exemplo de simulação está no script `sim_senoidal.m` que gera os gráficos 
+mostrados abaixo.
 
 {%
    include figure.html
@@ -233,15 +233,28 @@ simulações no espaço de estados.
    caption="Gráfico gerado pelo script `sim2.m`"
 %}
 
-{::comment}
 
 Implementação em Python
 -----------------------
 
 Computação científica em python é geralmente implementada utilizando dois 
-pacotes bem consolidados: NumPy e Scipy. Existem várias maneiras de
+pacotes bem consolidados: [NumPy] e [Scipy]. Existem várias maneiras de
 instalar esses pacotes, a mais simples (na minha opinião) é utilizando a 
-distribuição [Anaconda] ou [Enthought Canopy].
+distribuição [Anaconda] ou [Enthought Canopy]. O interpretador pode ser 
+executado em um terminal ou em um ambiente integrado de desenvolvimento
+como [Spyder] ou [PyCharm].
+
+Assim como o Matlab, o SciPy também possui vários 
+[métodos de simulação][scipy-integ] de equações diferenciais ordinárias.
+Uma interface unificada para esses métodos é a função [solve_ivp]. O método
+de [Dormand--Prince] (`RK45`) é o padrão, mas outros podem ser selecionados com
+o argumento `method` da função.
+
+Abaixo temos exemplos de como utilizar o Python para realizar integração 
+numérica de equações diferenciais ordinárias. O código desses exemplos está
+[disponível para download][ex-python].
+
+{::comment}
 
 Implementação em Julia
 ----------------------
@@ -276,9 +289,15 @@ oficial da [instalação de pacotes].
 [Julia]: http://julialang.org
 [matlab-solvers]: https://www.mathworks.com/help/matlab/ordinary-differential-equations.html
 [matlab-choose-solver]: http://www.mathworks.com/help/matlab/math/choose-an-ode-solver.html
+[SciPy]: http://www.scipy.org/
 [NumPy]: http://www.numpy.org/
 [ode45]: http://www.mathworks.com/help/matlab/ref/ode45.html
 [oscilador de Duffing]: http://www.scholarpedia.org/article/Duffing_oscillator
 [R]: http://www.r-project.org/
 [Runge--Kutta]: http://en.wikipedia.org/wiki/Runge-Kutta_methods
 [tutorial de indexação]: http://www.mathworks.com/help/matlab/learn_matlab/array-indexing.html
+[PyCharm]: https://www.jetbrains.com/pycharm/
+[Spyder]: https://pythonhosted.org/spyder/
+[scipy-integ]: https://docs.scipy.org/doc/scipy/reference/integrate.html
+[solve_ivp]: https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html
+[ex-python]: http://github.com/dimasad/dimasad.github.io/tree/master/_mecvoo/exemplos-python/sim.py

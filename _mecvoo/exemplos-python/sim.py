@@ -28,13 +28,13 @@ def f(x, u):
     return [x1ponto, x2ponto]
     
 
-def fp_ent_sen(t, x):
+def fm_ent_sen(t, x):
     """Função de simulação para entrada senoidal."""
     u = [0.3 * np.cos(t)]
     return f(x, u)
 
 
-def fp_ent_nula(t, x):
+def fm_ent_nula(t, x):
     """Função de simulação para entrada nula."""
     u = [0]
     return f(x, u)
@@ -42,18 +42,18 @@ def fp_ent_nula(t, x):
 
 if __name__ == '__main__':
     # Simula os sistemas
-    t_interv = [0, 30]
-    x_inicial = [0, 1]
-    options = {'max_step': 0.05}
-    sol_nula = integrate.solve_ivp(fp_ent_nula, t_interv, x_inicial, **options)
-    sol_sen = integrate.solve_ivp(fp_ent_sen, t_interv, x_inicial, **options)
+    tint = [0, 30]
+    xini = [0, 1]
+    opt = {'max_step': 0.05}
+    sol_nula = integrate.solve_ivp(fm_ent_nula, tint, xini, **opt)
+    sol_sen = integrate.solve_ivp(fm_ent_sen, tint, xini, **opt)
 
-    # Plota os gráficos
+    # Plota o gráfico
     pyplot.plot(sol_nula.y[0], sol_nula.y[1],
                 sol_sen.y[0], sol_sen.y[1])
     pyplot.xlabel('t [s]')
     pyplot.title('Evolução temporal dos estados')
-    pyplot.legend(['$u=0$', '$u=0.3 \cos(t)$'])
+    pyplot.legend(['$u=0$', r'$u=0.3 \cos(t)$'])
     
     # Salva o gráfico
     pyplot.savefig('sim-duffing-py.svg')

@@ -54,7 +54,7 @@ $$
   \\
   \begin{aligned}
     q&=\num[output-decimal-marker={,}]{14.32}\si{\degree/s} &
-    V_c&=\num[output-decimal-marker={,}]{61}\si{m/s},
+    V&=\num[output-decimal-marker={,}]{61}\si{m/s},
   \end{aligned}
 \end{gather*}
 $$

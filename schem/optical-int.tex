@@ -1,0 +1,17 @@
+\begin{tikzpicture}
+  \draw (0, 0) 
+    node[vcc] (vcc) {\SI{5}{V}}
+    to[R, l_=\SI{10}{k\ohm}] ++(0, -1.5)
+    node[circ] (meas) {}
+    to[Tnpn, photo, invert, mirror] ++(0, -1.5)
+    node[ground] {}
+    (meas)
+    to[short, -o] ++(-1, 0)
+    node[anchor=east] {Ard.~D2};
+
+  \draw (2, 0)
+    node[vcc] (vcc) {\SI{5}{V}}
+    to[R, l=\SI{180}{\ohm}] ++(0, -1.5)
+    to[led, mirror] ++(0, -1.5)
+    node[ground] {};
+\end{tikzpicture}

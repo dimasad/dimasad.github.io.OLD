@@ -45,6 +45,7 @@ Eletrônica
 * [Prática 1: Familiarização com o Laboratório][pratica1]
 * [Prática 2: Leitura analógica, Potenciômetro, PWM e Servo][pratica2].
 * [Prática 3: Acionamento de um Motor CC][pratica3].
+* [Prática 4: Uso de um interruptor ótico][pratica4].
 
 {::comment}
 * [Medição de tempo e comando de servos](eletronica/tempo).
@@ -68,3 +69,4 @@ Eletrônica
 [pratica1]: eletronica/pratica1
 [pratica2]: eletronica/pratica2
 [pratica3]: eletronica/pratica3
+[pratica4]: eletronica/pratica4

@@ -6,31 +6,17 @@ title: Mecânica do voo -- Trabalho de Análise do Sistema Linear
 {{ page.title }}
 ================
 
-Considere o modelo não linear do movimento longitudinal de uma aeronave,
-como implementado na etapa de simulação do trabalho, acrescido do modelo
-de tração abaixo:
-
-$$
-T = T_{\operatorname{ref}} + T_V \Delta V_c + T_{\delta_T}\Delta\delta_T.
-$$
-
-Os parâmetros da aeronave estão listados abaixo.
+Linearize o modelo do movimento longitudinal de uma aeronave,
+com os parâmetros abaixo, iguais aos do trabalho de simulação:
 
 $$
 \begin{gather*}
   \begin{aligned}
     S &= \num[output-decimal-marker={,}]{16}\si{m^2} & 
     \bar c &= \num[output-decimal-marker={,}]{1.5}\si{m} &
+    g_0 &= \num[output-decimal-marker={,}]{9.80665}\si{m/s^2}
     \\
-    \epsilon_T &= 0\si{\degree} &
-    g_0 &= \num[output-decimal-marker={,}]{9,80665}\si{m/s^2} &
-    \\
-    T_V & = \num[output-decimal-marker={,}]{-0.22}\si{N.s/m} &
-    T_{\delta_T} &= \num[output-decimal-marker={,}]{1500}\si{N}
-  \end{aligned}
-  \\
-  \begin{aligned}
-    m &= \num[output-decimal-marker={,}]{1200}\si{kg} &
+    m &= \num[output-decimal-marker={,}]{1000}\si{kg} &
     I_y&=\num[output-decimal-marker={,}]{1825}\si{kg.m^2} &
     \rho &= \num[output-decimal-marker={,}]{1}\si{kg/m^3}
   \end{aligned}
@@ -48,19 +34,32 @@ $$
     \\
     C_{D_0} &= \num[output-decimal-marker={,}]{0.03} &
     C_{D_\alpha} &= \num[output-decimal-marker={,}]{0.1} &
-    C_{L_0} &= \num[output-decimal-marker={,}]{0.3}&
+    C_{L_0} &= \num[output-decimal-marker={,}]{0.35} &
     C_{m_0} &= \num[output-decimal-marker={,}]{0.04}.
   \end{aligned}
 \end{gather*}
 $$
 
-Utilize como entrada do modelo a deflexão de profundor $$\delta_e$$ e a posição
-do comando propulsivo $$\delta_T$$. Utilize como estados do modelo a velocidade
-total do CG da aeronave $$V_c$$, o ângulo de ataque $$\alpha$$, a velocidade
-de arfagem da aeronave $$q$$ e o ângulo de arfagem $$\theta$$.
+Considere como entrada do modelo a deflexão de profundor $$\delta_e$$ e 
+assuma que a força propulsiva é constante e independente da velocidade.
+A condição de referência para a linearização é
 
-Linearização
-------------
+$$
+\begin{align*}
+  \alpha_{\operatorname{ref}}
+  &=\num[output-decimal-marker={,}]{0}\si{\degree} &
+  \theta_{\operatorname{ref}}
+  &=\num[output-decimal-marker={,}]{0}\si{\degree} \\
+  V_{\operatorname{ref}}
+  &=\num[output-decimal-marker={,}]{58}\si{m/s} &
+  q_{\operatorname{ref}}
+  &=\num[output-decimal-marker={,}]{0}\si{\degree/s} \\
+  {\delta_e}_{\operatorname{ref}}
+  &=\num[output-decimal-marker={,}]{2.0835}\si{\degree} &
+  T_{\operatorname{ref}} &= 807 \si{N}.
+\end{align*}
+$$
+
 Obtenha os valores numéricos das matrizes $$A$$ e $$B$$ do modelo linearizado
 
 $$
@@ -69,50 +68,29 @@ $$
 \end{equation*}
 $$
 
-Linearize o modelo em torno da condição de referência:
-
-$$
-\begin{align*}
-  \alpha_{\operatorname{ref}}
-  &=\num[output-decimal-marker={,}]{0.5}\si{\degree} &
-  \theta_{\operatorname{ref}}
-  &=\num[output-decimal-marker={,}]{0.5}\si{\degree} \\
-  {V_c}_{\operatorname{ref}}
-  &=\num[output-decimal-marker={,}]{64.7}\si{m/s} &
-  q_{\operatorname{ref}}
-  &=\num[output-decimal-marker={,}]{0}\si{\degree/s} \\
-  {\delta_e}_{\operatorname{ref}}
-  &=\num[output-decimal-marker={,}]{1.81}\si{\degree} &
-  T_{\operatorname{ref}}
-  &=\num[output-decimal-marker={,}]{1034.2}\si{N} \\
-\end{align*}
-$$
-
 Modos do sistema
 ----------------
 
 Encontre e identifique cada um dos modos do sistema do movimento longitudinal
 (fugóide e período curto). Obtenha a frequência natural, a frequência 
-amortecida, e o fator de amortecimento de cada modo. Para cada modo, calcule
-os ângulos de fase entre as respostas de cada variável de estado.
+amortecida, e o fator de amortecimento de cada modo. Para o modo fugóide, qual
+é o ângulo de fase entre a velocidade e o ângulo de arfagem?
 
 Pulso de profundor
 -------------------
 
 Simule o modelo não linear e o modelo linear para uma entrada de pulso de
-profundor e comando de propulsão constante no valor de referência:
+profundor:
 
 $$
 \begin{align*}
   \delta_e(t) &= 
     \begin{cases}
-      \num[output-decimal-marker={,}]{0.81}\si{\degree} &
+      \num[output-decimal-marker={,}]{1}\si{\degree} &
       \text{se } 1 \leq t \leq 2 \\
-      \num[output-decimal-marker={,}]{1.81}\si{\degree} &
+      \num[output-decimal-marker={,}]{2.0835}\si{\degree} &
       \text{caso contrário}
     \end{cases}
-   \\
-  \Delta \delta_T(t) &= \num[output-decimal-marker={,}]{0}.
 \end{align*}
 $$
 
@@ -128,8 +106,8 @@ linear com linha contínua.
 
 Entrega
 -------
+
 Entregue no Moodle os códigos fonte das funções e scripts de simulação e um
 documento em formato PDF contendo os gráficos gerados e uma pequena 
 análise dos resultados. Compacte todos os arquivos em um único arquivo .zip ou 
-similar para entrega.
-O trabalho deverá ser entregue até o dia 26 de junho.
+similar para entrega. O trabalho deverá ser entregue até o dia 11 de novembro.

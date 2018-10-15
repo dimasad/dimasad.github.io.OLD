@@ -8,7 +8,9 @@ title: Mecânica do voo -- Linearização por diferenças finitas
 {:.no_toc}
 
 Nesta página será detalhado como realizar a linearização de sistemas dinâmicos 
-não lineares por diferenças finitas. 
+não lineares por diferenças finitas. Os códigos dos exemplos estão
+[disponíveis para download][ex]. Para executá-los, baixe todos os arquivos e
+coloque na mesma pasta.
 
 **Índice:**
 * ítem 1
@@ -194,6 +196,7 @@ $$
 podemos utilizar o código abaixo.
 
 ```matlab
+%% Lineariza
 xref = [1;0];
 uref = 0;
 
@@ -204,10 +207,58 @@ A = jac(fx, xref);
 B = jac(fu, uref);
 ```
 
-Os códigos deste exemplo estão [disponíveis para download][ex]. Baixe todos os arquivos
-e coloque na mesma pasta. Esse exemplo utiliza [funções anônimas][fa], uma
-funcionalidade do Matlab que permite simplificar muitos programas. Confira na
-[documentação][fa] mais detalhes sobre sua sintaxe e utilização.
+Esse código utiliza [funções anônimas][fa], uma funcionalidade do Matlab que
+permite simplificar muitos programas. Confira na [documentação][fa] mais
+detalhes sobre sua sintaxe e utilização.
+
+Simulação do sistema linear
+---------------------------
+
+Para simular o sistema linear, os mesmos métodos de simulação de sistemas 
+não-lineares podem ser utilizados, como por exemplo a função `ode45`.
+Abaixo temos um exemplo de simulação do oscilador de Duffing para uma entrada 
+em pulso:
+
+$$
+u(t) =
+\begin{cases}
+  \num[output-decimal-marker={,}]{0.5} & \text{se } 1 \geq t\leq 2, \\
+  0 & \text{caso contrário}.
+\end{cases}
+$$
+
+```matlab
+%% Simula o sistema linear para uma entrada em pulso
+u = @(t) (t>=1 & t<=2) * 0.5;
+flin = @(t, x) A*(x-xref) + B*(u(t) - uref);
+tfinal = 40;
+[tlin, xlin] = ode45(flin, [0, tfinal], xref);
+```
+
+Podemos comparar o resultado da simulação dos sistemas não-linear e linearizado.
+Para pequenos desvios da condição de referência, os resultados devem ser
+próximos. Isso pode ser feito com o código abaixo.
+
+```matlab
+%% Simula o sistema nao linear para uma entrada em pulso
+fnlin = @(t,x) f(x, u(t));
+[tnlin, xnlin] = ode45(fnlin, [0, tfinal], xref);
+
+%% Mostra os resultados
+plot(tlin, xlin, '--', tnlin, xnlin, '-')
+title('Resposta do sistema nao linear e linearizado')
+xlabel('t')
+ylabel('estados')
+```
+
+Abaixo temos o gráfico gerado.
+
+{%
+   include figure.html
+   file="lin-matlab-duffing.svg"
+   caption="Comparação entre a resposta do oscilador de Duffing 
+            <br>não-linear e linearizado, para uma entrada em pulso."
+%}
 
 
 [ex]: http://github.com/dimasad/dimasad.github.io/tree/master/_mecvoo/exemplos-matlab/lin

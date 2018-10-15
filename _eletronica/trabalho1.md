@@ -8,8 +8,8 @@ title: Eletrônica -- Trabalho 1
 
 Considere a ponte de diodos do circuito abaixo. Esse circuito é muito utilizado
 para retificação de corrente alternada e está disponível como circuito integrado
-em vários encapsulamentos. Um exemplo de CI com uma ponte desse estilo é o 
-[DF005S].
+em vários encapsulamentos. Um exemplo de circuito integrado com uma ponte como
+essa é o [DF005S].
 
 {%
    include figure.html

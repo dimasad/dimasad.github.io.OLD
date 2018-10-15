@@ -205,9 +205,9 @@ B = jac(fu, uref);
 ```
 
 Os códigos deste exemplo estão [disponíveis para download][ex]. Baixe todos os arquivos
-e coloque na mesma pasta. Esse exemplo utiliza [funções anônimas](fa), uma
+e coloque na mesma pasta. Esse exemplo utiliza [funções anônimas][fa], uma
 funcionalidade do Matlab que permite simplificar muitos programas. Confira na
-[documentação](fa) mais detalhes sobre sua sintaxe e utilização.
+[documentação][fa] mais detalhes sobre sua sintaxe e utilização.
 
 
 [ex]: http://github.com/dimasad/dimasad.github.io/tree/master/_mecvoo/exemplos-matlab/lin

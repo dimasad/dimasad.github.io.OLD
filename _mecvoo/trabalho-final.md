@@ -31,26 +31,19 @@ aeronave com 6 graus de liberdade e os seguintes parâmetros:
 $$
 \begin{gather*}
   \begin{aligned}
-    S &= \num[output-decimal-marker={,}]{16}\si{m^2} & 
-    \bar c &= \num[output-decimal-marker={,}]{1.5}\si{m} &
-    T_{\operatorname{ref}}
-    &=\num[output-decimal-marker={,}]{1034.2}\si{N}
-    \\
-    b &= \num[output-decimal-marker={,}]{11}\si{m} &
-    \epsilon_T &= 0\si{\degree} &
-    g_0 &= \num[output-decimal-marker={,}]{9,80665}\si{m/s^2} &
-  \end{aligned}
-  \\
-  \begin{aligned}
     I_x&=\num{1280}\si{kg.m^2} &
     I_y&=\num{1825}\si{kg.m^2} &
     I_z&=\num{2660}\si{kg.m^2} \\
     I_{xz}&=\num[output-decimal-marker={,}]{0}\si{kg.m^2} &
-    m &= \num[output-decimal-marker={,}]{1200}\si{kg} &
+    m &= \num[output-decimal-marker={,}]{1000}\si{kg} &
     \rho &= \num[output-decimal-marker={,}]{1}\si{kg/m^3}
   \end{aligned}
   \\
   \begin{aligned}
+    S &= \num[output-decimal-marker={,}]{16}\si{m^2} & 
+    \bar c &= \num[output-decimal-marker={,}]{1.5}\si{m} &
+    b &= \num[output-decimal-marker={,}]{11}\si{m} &
+    g_0 &= \num[output-decimal-marker={,}]{9,80665}\si{m/s^2} \\
     C_{L_\alpha} &= \num[output-decimal-marker={,}]{4.4} &
     C_{L_{\dot\alpha}} &= \num[output-decimal-marker={,}]{1.7} &
     C_{L_q} &= \num[output-decimal-marker={,}]{4} &
@@ -63,7 +56,7 @@ $$
     \\
     C_{D_0} &= \num[output-decimal-marker={,}]{0.03} &
     C_{D_\alpha} &= \num[output-decimal-marker={,}]{0.1} &
-    C_{L_0} &= \num[output-decimal-marker={,}]{0.3}&
+    C_{L_0} &= \num[output-decimal-marker={,}]{0.35}&
     C_{m_0} &= \num[output-decimal-marker={,}]{0.04}
     \\
     C_{C_\beta} &= \num[output-decimal-marker={,}]{0.4} &
@@ -83,19 +76,12 @@ $$
     \\
     C_{n_{\delta_a}} &= \num[output-decimal-marker={,}]{-0.02} & 
     C_{n_{\delta_r}} &= \num[output-decimal-marker={,}]{0.065} &
-    T_V & = \num[output-decimal-marker={,}]{-0.22}\si{N.s/m} &
   \end{aligned}
 \end{gather*}
 $$
 
 Utilize como entrada do modelo as deflexões de aileron $$\delta_a$$ profundor 
-$$\delta_e$$ e leme $$\delta_r$$. Utilize o modelo propulsivo abaixo
-
-$$
-T = T_{\operatorname{ref}} + T_V \Delta V_c + T_{\delta_T}\Delta\delta_T.
-$$
-
-O estado inicial das simulações deverá ser:
+$$\delta_e$$ e leme $$\delta_r$$. O estado inicial das simulações deverá ser:
 
 $$
 \begin{align*}
@@ -105,8 +91,8 @@ $$
   p &= \num[output-decimal-marker={,}]{0}\si{\degree/s} &
   q &= \num[output-decimal-marker={,}]{0}\si{\degree/s} &
   r &= \num[output-decimal-marker={,}]{0}\si{\degree/s} \\ 
-  V_c&=\num[output-decimal-marker={,}]{64.7}\si{m/s} &
-  \alpha&=\num[output-decimal-marker={,}]{0.5}\si{\degree} &
+  V&=\num[output-decimal-marker={,}]{58}\si{m/s} &
+  \alpha&=\num[output-decimal-marker={,}]{0}\si{\degree} &
   \beta&=\num[output-decimal-marker={,}]{0}\si{\degree} \\
 \end{align*}
 $$
@@ -121,7 +107,7 @@ nos seus valores de referência:
 $$
 \begin{align*}
   \delta_a(t) &= 0\si{\degree} \\
-  \delta_e(t) &= \num[output-decimal-marker={,}]{1.81}\si{\degree} \\
+  \delta_e(t) &= \num[output-decimal-marker={,}]{2.0835}\si{\degree} \\
   \delta_r(t) &= 
     \begin{cases}
       \num[output-decimal-marker={,}]{2}\si{\degree} &
@@ -129,8 +115,6 @@ $$
       \num[output-decimal-marker={,}]{0}\si{\degree} &
       \text{caso contrário}
     \end{cases}
-   \\
-  \Delta\delta_T(t) &= 0.
 \end{align*}
 $$
 
@@ -145,4 +129,4 @@ Entrega
 Entregue no Moodle os códigos fonte das funções e scripts de simulação e um
 documento em formato PDF contendo os gráficos gerados e uma pequena 
 análise dos resultados.
-O trabalho deverá ser entregue até o dia 8 de julho.
+O trabalho deverá ser entregue até o dia 9 de dezembro.

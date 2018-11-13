@@ -28,10 +28,10 @@ Mecânica do Voo
 * [Trabalho 2](mecvoo/trabalho2)
 * [Trabalho de simulação](mecvoo/trabalho-sim)
 * [Trabalho de análise do sistema linear](mecvoo/trabalho-asl)
+* [Trabalho final](mecvoo/trabalho-final)
 
 {::comment} 
 * [Trabalho de linearização do modelo longitudinal](mecvoo/trabalho-lin)
-* [Trabalho final](mecvoo/trabalho-final)
 {:/comment}
 
 Obs.: A escrita dessas notas de aula está em andamento, mais material será

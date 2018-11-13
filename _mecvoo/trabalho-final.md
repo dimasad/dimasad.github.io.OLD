@@ -62,7 +62,7 @@ $$
 $$
 
 Utilize como entrada do modelo as deflexões de aileron $$\delta_a$$ profundor 
-$$\delta_e$$ e leme $$\delta_r$$. O estado inicial das simulações deverá ser:
+$$\delta_e$$ e leme $$\delta_r$$. O estado inicial da simulação deverá ser:
 
 $$
 \begin{align*}

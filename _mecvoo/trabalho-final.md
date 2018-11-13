@@ -6,27 +6,8 @@ title: Mecânica do voo -- Trabalho Final
 {{ page.title }}
 ================
 
-Para esta última etapa do trabalho, há duas alternativas: simular e analisar
-o modelo de 6 graus de liberdade da aeronave leve abaixo ou propor
-algum outro projeto diferente envolvendo os conteúdos aprendidos na disciplina.
-
-Para projetos diferentes há algumas sugestões abaixo.
-* Modelar algum veículo diferente, como helicóptero, foguete, avião 
-  com propulsão vetorizada, dirigível. 
-  Pesquise valores de parâmetros aerodinâmicos e propulsivos ou tente
-  estimar com cálculos teóricos e métodos numéricos.
-* Projetar e simular um sistema de controle realimentado.
-  Várias das referências tem exemplos de projeto de sistemas de controle.
-  Tente utilizar algumas das arquiteturas sugeridas com modelos de outras
-  aeronaves.
-* Simular os transitórios de alguma condição de voo específica, como estol,
-  alijamento de carga, corrida e decolagem ou voo rasante com efeito de solo.
-
-Modelo de 6 Graus de Liberdade
-------------------------------
 Implemente o modelo de simulação não linear da dinâmica de uma
 aeronave com 6 graus de liberdade e os seguintes parâmetros:
-
 
 $$
 \begin{gather*}

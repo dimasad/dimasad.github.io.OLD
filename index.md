@@ -59,10 +59,10 @@ Eletrônica
 
 * [Trabalho 1](eletronica/trabalho1)
 * [Trabalho 2](eletronica/trabalho2)
+* [Trabalho 3](eletronica/trabalho3)
 * [Trabalho Prático](eletronica/trabalho_pratico)
 
 {::comment}
-* [Trabalho 3](eletronica/trabalho3)
 * [Trabalho 4](eletronica/trabalho4)
 {:/comment} 
 

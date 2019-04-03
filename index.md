@@ -15,13 +15,13 @@ Mecânica do Voo
 * [Forças do modelo longitudinal](mecvoo/forcas-long)
 * [Mudança de sistemas de coordenadas no plano](mecvoo/rot-long)
 * [Equações do movimento nos eixos do vento](mecvoo/long-eqmov-vento) 
- (+conteúdo em 4/09)
 
 **Ferramentas e análise**
 
 * [Simulação de sistemas dinâmicos](mecvoo/sim)
 * [Linearização por diferenças finitas](mecvoo/lineariz-diferencas-finitas)
 
+{::comment} 
 **Trabalhos:**
 
 * [Trabalho 1](mecvoo/trabalho1)
@@ -31,7 +31,6 @@ Mecânica do Voo
 * [Trabalho final](mecvoo/trabalho-final)
 * [Discussão sobre qualidade de voo](mecvoo/discussao)
 
-{::comment} 
 * [Trabalho de linearização do modelo longitudinal](mecvoo/trabalho-lin)
 {:/comment}
 

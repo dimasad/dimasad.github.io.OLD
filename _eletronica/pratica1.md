@@ -349,9 +349,11 @@ pino de entrada digital número 9 do Arduino é 5 V.
 
 > ### Atividade
 >
-> Monte o LED e o botão e configure o Arduino para que, quando o botão
-> estiver pressionado o LED apague e quando estiver liberado o LED acenda
-> (estado do LED deverá ser o _oposto_ do estado do botão).
+> Monte o LED e o botão fazendo as montagens da Figura 8 e 9 no mesmo
+> protoboard. Configure o Arduino para que, quando o botão
+> estiver pressionado o LED pisque com a frequência de 2 Hz.
+> A leitura do botão e o acionamento do LED serão conectados pela lógica do
+> programa.
 
 
 [arduino.cc/en/Reference/]: http://arduino.cc/en/Reference/

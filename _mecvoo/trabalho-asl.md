@@ -94,7 +94,7 @@ $$
 \end{align*}
 $$
 
-Gere três gráficos para a simulação do intervalo de $$t\in [0, 60\si{s}]$$:
+Gere três gráficos para as simulações do intervalo de $$t\in [0, 60\si{s}]$$:
 
 * um gráfico contendo o ângulo de ataque $$\alpha$$, o ângulo de arfagem 
 $$\theta$$ e o ângulo de trajetória $$\gamma$$, em graus;
@@ -102,7 +102,7 @@ $$\theta$$ e o ângulo de trajetória $$\gamma$$, em graus;
 * um gráfico contendo a velocidade $$V_c$$ em $$\si{m/s}$$.
 
 Plote os resultados do sistema linear com linha tracejada e do sistema não
-linear com linha contínua.
+linear com linha contínua, ambos em todos os gráficos.
 
 Entrega
 -------

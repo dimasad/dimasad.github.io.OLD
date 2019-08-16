@@ -52,8 +52,8 @@ A avaliação consistirá de:
 Apresentação inicial
 --------------------
 
-A apresentação inicial deverá ser feita em 10 minutos com um período 5 minutos
-de perguntas. O projetor e o quadro da sala poderão ser utilizados.
+A apresentação inicial deverá ser feita em até 10 minutos. 
+O projetor e o quadro da sala poderão ser utilizados.
 Os temas abaixo devem ser abordados:
 
 * os objetivos do projeto,
@@ -65,16 +65,16 @@ Os temas abaixo devem ser abordados:
 Apresentação final
 ------------------
 
-A apresentação final deverá ser feita em 10 minutos com um período 5 minutos
-de perguntas. O projetor e o quadro da sala poderão ser utilizados.
-Se possível, o projeto deverá ser demonstrado em funcionamento. Caso isso não
-seja possível, um vídeo deverá ser exibido. Além disso, deverão ser apresentados
+A apresentação final deverá ser feita em até 10 minutos.
+O projetor e o quadro da sala poderão ser utilizados.
+O projeto deverá ser apresentado novamente e, se possível, demonstrado em
+funcionamento. 
+Caso isso não seja possível, um vídeo deverá ser exibido.
+Além disso, deverão ser apresentados
 
 * o que foi revisado do projeto inicial e por quê,
 * os principais componentes utilizados (eletrônicos e mecânicos),
-* as maiores dificuldades e as soluções encontradas,
-* as referências consultadas (sites, guias, livros, datasheets, etc).
-
+* as maiores dificuldades e as soluções encontradas.
 
 Documentação do projeto 
 -----------------------

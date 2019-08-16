@@ -15,13 +15,13 @@ Mecânica do Voo
 * [Forças do modelo longitudinal](mecvoo/forcas-long)
 * [Mudança de sistemas de coordenadas no plano](mecvoo/rot-long)
 * [Equações do movimento nos eixos do vento](mecvoo/long-eqmov-vento) 
- (+conteúdo em 4/09)
 
 **Ferramentas e análise**
 
 * [Simulação de sistemas dinâmicos](mecvoo/sim)
 * [Linearização por diferenças finitas](mecvoo/lineariz-diferencas-finitas)
 
+{::comment} 
 **Trabalhos:**
 
 * [Trabalho 1](mecvoo/trabalho1)
@@ -31,7 +31,6 @@ Mecânica do Voo
 * [Trabalho final](mecvoo/trabalho-final)
 * [Discussão sobre qualidade de voo](mecvoo/discussao)
 
-{::comment} 
 * [Trabalho de linearização do modelo longitudinal](mecvoo/trabalho-lin)
 {:/comment}
 
@@ -46,7 +45,7 @@ Eletrônica
 * [Prática 1: Familiarização com o Laboratório][pratica1]
 * [Prática 2: Leitura analógica, Potenciômetro, PWM e Servo][pratica2].
 * [Prática 3: Acionamento de um Motor CC][pratica3].
-* [Prática 4: Uso de um interruptor ótico][pratica4].
+* [Prática 4: Sensores de proximidade][pratica4].
 
 {::comment}
 * [Medição de tempo e comando de servos](eletronica/tempo).
@@ -57,11 +56,11 @@ Eletrônica
 
 ### Trabalhos
 
-* [Trabalho 1](eletronica/trabalho1)
-* [Trabalho 2](eletronica/trabalho2)
 * [Trabalho Prático](eletronica/trabalho_pratico)
 
 {::comment}
+* [Trabalho 1](eletronica/trabalho1)
+* [Trabalho 2](eletronica/trabalho2)
 * [Trabalho 3](eletronica/trabalho3)
 * [Trabalho 4](eletronica/trabalho4)
 {:/comment} 

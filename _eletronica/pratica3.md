@@ -56,11 +56,13 @@ Com esse circuito, faça as atividades abaixo.
 
 > ### Aceleração e desaceleração gradual
 >
-> O segundo teste consiste em acionar o motor com uma tensão gradual de 0V a 5V,
-> utilizando modulação por largura de pulso, e depois desenergizar o motor 
-> também de maneira gradual.
+> Utilizando modulação por largura de pulso, como na prática anterior, é 
+> possível fornecer uma tensão média no motor entre 0V e 5V. Para o segundo 
+> teste, faça um programa que, periodicamente, varie a tensão média no motor
+> gradualmente de 0V a 5V e depois de 5V a 0V.
 > 
-> **Dica:** Utilize a função [analogWrite] como na prática anterior.
+> **Dica:** Utilize a função [analogWrite], como feito com o LED na prática
+> anterior.
 
 
 > ### Comando pelo potenciômetro

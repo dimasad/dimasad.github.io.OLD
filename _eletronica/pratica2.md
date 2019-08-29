@@ -176,7 +176,7 @@ Confira a documentação oficial da função [analogWrite] para maiores informa�
 
 Este procedimento utiliza o circuito representado no diagrama esquemático
 abaixo. O LED é alimentado pela saída digital número 9 do Arduino.
-Quando a razão cíclica da onda PWM no pino 9 for 0% o LED irá apagar e quando
+Quando a razão cíclica da onda no pino 9 for 0% o LED irá apagar e quando
 for 100% o LED estará no brilho máximo.
 
 {%
@@ -213,6 +213,9 @@ void loop() {
 > potenciômetro em cada um dos extremos o LED deverá estar com brilho máximo ou
 > apagado. Nas posições intermediárias o brilho deverá ser proporcional à tensão
 > medida.
+>
+> A montagem consiste dos circuitos das Figuras 5 e 7.
+
 
 Servomotor de radiocontrole
 ---------------------------
@@ -252,8 +255,7 @@ servomotores é o [tutorial de servos da Sparkfun][tut-servo].
 
 Abaixo temos um código de exemplo para comando de um servomotor de 
 radiocontrole utilizando a biblioteca Servo do Arduino. Nesse exemplo,
-o servo é comandado da posição 0 a 180 graus, e de volta de 179 a 0.
-Seu movimento deverá ser contínuo.
+o servo é comandado entre três posições: 0, 90 e 180 graus.
 
 ```c++
 
@@ -268,17 +270,17 @@ void setup() {
 }
 
 void loop() {
-  // Varia a posição de 0 a 180 graus
-  for (int pos=0; pos<=180; pos++) {
-    servo1.write(pos); // Comanda o servo para a posição
-    delay(15); // Aguarda 15 milissegundos entre incrementos
-  }
-  
-  // Varia a posição de 179 a 0 graus
-  for (int pos=179; pos>=0; pos--) {
-    servo1.write(pos); // Comanda o servo para a posição
-    delay(15); // Aguarda 15 milissegundos entre incrementos
-  }
+  servo1.write(0); // Manda para posição 0 graus
+  delay(500); // Aguarda meio segundo
+
+  servo1.write(90);
+  delay(500);
+
+  servo1.write(180);
+  delay(500);
+
+  servo1.write(90);
+  delay(500);
 }
 ```
 
@@ -302,6 +304,11 @@ ao pino digital 9 do Arduino, como mostrado na figura abaixo.
 > proporcional à do potenciômetro.
 > 
 > **Dica:** Utilize a função [map].
+
+> ### Atividade: Movimento constante do servo
+>
+> De maneira semelhante ao procedimento do LED, faça o servo ir com velocidade
+> constante de 0 a 180 graus e depois de volta a 0 graus, repetidamente.
 
 [analogRead]: https://www.arduino.cc/en/Reference/AnalogRead
 [analogWrite]: https://www.arduino.cc/en/Reference/AnalogWrite

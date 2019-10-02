@@ -12,8 +12,8 @@ e diferenciais não lineares, também conhecidas como sistemas descritores,
 com alguns sistemas computacionais, em especial o Matlab. No entanto, vale 
 ressaltar que as idéias básicas são as mesmas para qualquer linguagem de
 programação. Além do Matlab, vários pacotes de computação numérica de software
-livre como  [NumPy], [Julia] ou [R] podem ser utilizados, muitos deles com 
-desempenho até superior ao Matlab.
+livre como  [Scilab], [NumPy], [Julia] ou [R] podem ser utilizados, muitos
+deles com desempenho até superior ao Matlab.
 
 **Índice:**
 * ítem 1
@@ -255,25 +255,16 @@ simulações no espaço de estados.
 %}
 
 
-Implementação em Python
+Implementação em Scilab
 -----------------------
 
-Computação científica em python é geralmente implementada utilizando dois 
-pacotes bem consolidados: [NumPy] e [Scipy]. Existem várias maneiras de
-instalar esses pacotes, a mais simples (na minha opinião) é utilizando a 
-distribuição [Anaconda] ou [Enthought Canopy]. O interpretador pode ser 
-executado em um terminal ou em um ambiente integrado de desenvolvimento
-como [Spyder] ou [PyCharm].
+O [Scilab] é uma alternativa de software livre ao Matlab que já vem com
+funções para simulação de equações algébricas e diferenciais. Para isso,
+pode ser utilizada a função [dae].
 
-Assim como o Matlab, o SciPy também possui vários 
-[métodos de simulação][scipy-integ] de equações diferenciais ordinárias.
-Uma interface unificada para esses métodos é a função [solve_ivp]. O método
-de [Dormand--Prince] (`RK45`) é o padrão, mas outros podem ser selecionados com
-o argumento `method` da função.
-
-Abaixo temos exemplos de como utilizar o Python para realizar integração 
-numérica de equações diferenciais ordinárias. O código desses exemplos está
-[disponível para download][ex-python]. O primeiro passo é fazer a importação
+Abaixo temos exemplos de como utilizar o Scilab para simular o oscilador
+de Duffing com entrada nula e entrada senoidal. O código desse exemplo está
+[disponível para download][ex-scilab]. O primeiro passo é fazer a importação
 dos pacotes e módulos que serão utilizados. O _namespace_ no python é organizado
 em módulos e pacotes, evitando assim conflitos de nomes e facilitando a 
 manutenção de projetos grandes com múltiplas bibliotecas.
@@ -360,8 +351,8 @@ pyplot.savefig('sim-duffing-py.svg')
 
 {%
    include figure.html
-   file="sim-duffing-py.svg"
-   caption="Gráfico gerado pelo exemplo `sim.py`."
+   file="sim-duffing-scilab.svg"
+   caption="Gráfico gerado pelo exemplo `sim-dae.sci`."
 %}
 
 
@@ -392,6 +383,7 @@ oficial da [instalação de pacotes].
 
 [Anaconda]: https://www.anaconda.com/download/
 [artigo sobre indexação]: http://www.mathworks.com/company/newsletters/articles/matrix-indexing-in-matlab.html
+[dae]: https://help.scilab.org/docs/6.0.2/pt_BR/dae.html
 [Dormand--Prince]: https://en.wikipedia.org/wiki/Dormand-Prince_method
 [Enthought Canopy]: https://store.enthought.com/downloads/
 [ex1]: http://github.com/dimasad/dimasad.github.io/tree/master/_mecvoo/exemplos-matlab/sim-dae
@@ -409,8 +401,9 @@ oficial da [instalação de pacotes].
 [Runge--Kutta]: http://en.wikipedia.org/wiki/Runge-Kutta_methods
 [tutorial de indexação]: http://www.mathworks.com/help/matlab/learn_matlab/array-indexing.html
 [PyCharm]: https://www.jetbrains.com/pycharm/
+[Scilab]: https://www.scilab.org/
 [Spyder]: https://pythonhosted.org/spyder/
 [scipy-integ]: https://docs.scipy.org/doc/scipy/reference/integrate.html
 [solve_ivp]: https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html
-[ex-python]: http://github.com/dimasad/dimasad.github.io/tree/master/_mecvoo/exemplos-python/sim.py
+[ex-python]: http://github.com/dimasad/dimasad.github.io/tree/master/_mecvoo/exemplos-scilab/sim_dae.sci
 [Matplotlib]: https://matplotlib.org/

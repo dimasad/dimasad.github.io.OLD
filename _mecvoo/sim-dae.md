@@ -1,13 +1,14 @@
 ---
 layout: default
-title: Mecânica do voo -- Simulação de equações diferenciais ordinárias
+title: Mecânica do voo -- Simulação de equações algébricas e diferenciais
 ---
 
 {{ page.title }}
 ================
 {:.no_toc}
 
-Nesta página será detalhado como realizar a simulação de sistemas dinâmicos 
+Nesta página será detalhado como realizar a simulação de equações algébricas
+e diferenciais não lineares, também conhecidas como sistemas descritores,
 com alguns sistemas computacionais, em especial o Matlab. No entanto, vale 
 ressaltar que as idéias básicas são as mesmas para qualquer linguagem de
 programação. Além do Matlab, vários pacotes de computação numérica de software
@@ -20,8 +21,8 @@ desempenho até superior ao Matlab.
 {:toc}
 
 
-Sistemas de exemplo
--------------------
+Sistema de exemplo
+------------------
 
 O primeiro sistema que será simulado nos exemplos é o [oscilador de Duffing], 
 um sistema caótico muito utilizado na análise de sistemas não lineares. Ele 
@@ -29,88 +30,106 @@ possui dois estados, $$x_1$$ e $$x_2$$, e uma entrada, $$u_1$$. Sua dinâmica,
 no espaço de estados, é dada por
 
 $$
-\begin{align}
+\begin{align*}
   \dot x_1 &= x_2
   \\
   \dot x_2 &= -dx_2 - bx_1 - ax_1^3 + u_1,
-\end{align}
+\end{align*}
 $$
 
 onde $$a=1$$, $$b=-1$$ e $$d=\tfrac15$$ são os parâmetros do sistema.
 Iremos simular esse sistema dinâmico para a entrada $$u_1(t) = 0$$ e 
-$$u_1(t) = \num[output-decimal-marker={,}]{0.3}\cos(t)$$.
+$$u_1(t) = \num[output-decimal-marker={,}]{0.3}\sin(t)$$.
+
+Para simulação via equação algébrica e diferencial, converteremos esse 
+sistema para a forma implícita, $$\eff(\dot x, x, u) = 0$$. Cada elemento da
+função de erro $$\eff$$ é dado por
+
+$$
+\begin{align*}
+  \eff_1(\dot x, x, u)&=\dot x_1 - x_2
+  \\
+  \eff_2(\dot x, x, u)&= \dot x_2 + dx_2 + bx_1 + ax_1^3 - u_1.
+\end{align*}
+$$
+
 
 Implementação em Matlab
 -----------------------
 
 O Matlab possui [vários métodos](matlab-solvers) de simulação de equações
- diferenciais ordinárias. A função [ode45], que é uma implementação do método
-de [Dormand--Prince], é o recomendado para a maior parte dos casos. Essa função
-utiliza o método de [Runge--Kutta] de quarta e quinta ordens para simular e 
-estimar o erro de integração. Quando o erro está acima da tolerância, o passo de
-integração é diminuído. Quando o erro está muito abaixo da tolerância, o passo
-de integração é aumentado para acelerar a simulação. Para maiores informações
-sobre os outros métodos de simulação do Matlab e suas vantagens, veja a 
+diferenciais. A função [ode15i] é o método de simulação de equações algébricas
+e diferenciais na forma implícita que possui a interface de programação mais
+simples. Essa função realiza integração de ordem variável e escolhe o passo de
+forma a garantir que o erro está dentro de uma tolerância aceitável. Quando o
+erro está acima da tolerância, o passo de integração é diminuído. Quando o erro
+está muito abaixo da tolerância, o passo de integração é aumentado para 
+acelerar a simulação. Para maiores informações sobre os outros métodos de
+simulação do Matlab e suas vantagens, veja a 
 [documentação oficial sobre a escolha do método](matlab-choose-solver).
 
 Abaixo temos exemplos de como utilizar o Matlab para realizar integração 
-numérica de equações diferenciais ordinárias. O código desses exemplos está
-[disponível para download][ex1]. Baixe todos os scripts e coloque na mesma
-pasta.
+numérica de sistemas utilizando a função `ode15i`. O código desses exemplos está
+[disponível para download][ex1]. Para testar, baixe todos os arquivos de 
+extensão `.m` e coloque na mesma pasta.
 
 ### Simulação com entrada senoidal
 
-Os métodos de simulação do Matlab esperam receber uma função para simulação
-$$\mathbf{f}_m:\reals\times\reals^n\to\reals^n$$ que codifica a equação
+A função `ode15i` espera receber uma função para simulação
+$$\eff_m:\reals\times\reals^n\times\reals^n\to\reals^n$$ que codifica a equação
 diferencial
 
 $$
-\dot {\mathbf{x}}(t) = \mathbf{f}_m\big(t, \mathbf{x}(t)\big).
+\eff\big(t, x(t), \dot x(t)\big) = 0.
 $$
 
 Para o oscilador  de Duffing com a entrada senoidal, essa função pode ser
 implementada como mostrado abaixo.
 
 ```matlab
-% Arquivo <fm.m>
-function xponto = fm(t, x)
+% Arquivo <fim.m>
+function err = fim(t, x, xponto) % f implita matlab
 % Define os parametros do sistema
 a = 1; 
 b = -1;
 d = 0.2;
 
-% Desempacota os estados e calcula a entrada
+% Desempacota os estados, suas derivadas, e calcula a entrada
 x1 = x(1);
 x2 = x(2);
-u1 = 0.3 * cos(t);
+x1ponto = xponto(1);
+x2ponto = xponto(2);
+u1 = 0.3 * sin(t);
 
-% Calcula a derivada das variáveis de estado
-x1ponto = x2;
-x2ponto = -d*x2 - b*x1 - a*x1^3 + u1;
+% Calcula o erro da solucao
+err1 = x1ponto - x2;
+err2 = x2ponto + d*x2 + b*x1 + a*x1^3 - u1;
 
-% Monta o vetor x ponto
-xponto = [x1ponto; x2ponto];
+% Monta o vetor erro
+err = [err1; err2];
 ```
 
-Para a simulação com a função `ode45`, podemos utilizar o código abaixo, com
-o arquivo `fm.m` no diretório atual ou algum outro diretório no caminho de busca
-do Matlab.
+Para a simulação com a função `ode15i`, podemos utilizar o código abaixo, com
+o arquivo `fim.m` no diretório atual ou algum outro diretório no caminho de
+busca do Matlab.
 
 ```matlab
 tinterv = [0, 30]; % Intervalo de tempo da simulacao
-xinicial = [0; 1]; % Valor inicial do vetor de estados
+xinicial = [0; 0]; % Valor inicial do vetor de estados
+xpinicial = [0; 0]; % Valor inicial de x ponto
 
 % Simula o sistema dinamico
-[tsim, xsim] = ode45(@fm, tinterv, xinicial);
+[tsim, xsim] = ode15i(@fim, tinterv, xinicial, xpinicial);
 ```
 
-Os argumentos de entrada da função `ode45` são
-* `fm`, o [function handle] da função 
-  $$\mathbf{f}_m\big(t, \mathbf{x}(t)\big)$$ que representa a dinâmica do
+Os argumentos de entrada da função `ode15i` são
+* `@fim`, o [function handle] da função 
+  $$\eff_m\big(t, x(t), \dot x(t)\big)$$ que representa a dinâmica do
   sistema; 
 * `tinterv`, o intervalo de tempo da simulação, com o primeiro elemento
   definindo o tempo inicial e o segundo elemento definindo o tempo final; e
 * `xinicial` o valor inicial do vetor de estados. 
+* `xpinicial` o valor inicial da derivada do vetor de estados. 
 
 Os argumentos de saída são
 * `tsim`, um vetor coluna com cada instante de tempo da simulação; e 
@@ -140,13 +159,13 @@ mostrados abaixo.
 
 {%
    include figure.html
-   file="sim_senoidal.m.plot1.svg"
+   file="sim_senoidal_dae.m.plot1.svg"
    caption="Primeiro gráfico gerado pelo script `sim_senoidal.m`"
 %}
 
 {%
    include figure.html
-   file="sim_senoidal.m.plot2.svg"
+   file="sim_senoidal_dae.m.plot2.svg"
    caption="Segundo gráfico gerado pelo script `sim_senoidal.m`"
 %}
 
@@ -154,50 +173,51 @@ mostrados abaixo.
 ### Simulação com as duas entradas
 
 Quando queremos simular o sistema para várias entradas diferentes, é boa
-prática implementar a função $$\mathbf f(\mathbf x, \mathbf u)$$ genérica
-e depois fazer uma implementação de $$\mathbf f_m(t, \mathbf x)$$ para
-cada entrada, chamando a função $$\mathbf f$$. Isso evita a duplicação de 
+prática implementar a função $$\eff(\dot x, x, u)$$ genérica
+e depois fazer uma implementação de $$\eff_m(t, x, \dot x)$$ para
+cada entrada, chamando a função $$\eff$$. Isso evita a duplicação de 
 código e simplifica o desenvolvimento e depuração do software.
 
-
 Abaixo temos um exemplo da  simulação do oscilador de Duffing para entrada nula
-e senoidal. A dinâmica do sistema é implementada na função `f.m` e as função
-de simulação no formato esperado pelo `ode45` são `fm_ent_nula.m` para entrada
-nula e `fm_ent_senoidal.m` para entrada senoidal.
+e senoidal. A dinâmica do sistema é implementada na função `fi.m` e as funções
+de simulação no formato esperado pelo `ode15i` são `fim_ent_nula.m` para entrada
+nula e `fim_ent_senoidal.m` para entrada senoidal.
 
 ```matlab
-% Arquivo <f.m>
-function xponto = f(x, u)
+% Arquivo <fi.m>
+function err = fi(xponto, x, u) % f implita
 % Define os parametros do sistema
 a = 1; 
 b = -1;
 d = 0.2;
 
-% Desempacota os estados e calcula a entrada
+% Desempacota os estados, suas derivadas, e a entrada
 x1 = x(1);
 x2 = x(2);
+x1ponto = xponto(1);
+x2ponto = xponto(2);
 u1 = u(1);
 
-% Calcula a derivada das variáveis de estado
-x1ponto = x2;
-x2ponto = -d*x2 - b*x1 - a*x1^3 + u1;
+% Calcula o erro da solucao
+err1 = x1ponto - x2;
+err2 = x2ponto + d*x2 + b*x1 + a*x1^3 - u1;
 
-% Monta o vetor x ponto
-xponto = [x1ponto; x2ponto];
+% Monta o vetor erro
+err = [err1; err2];
 ```
 
 ```matlab
-% Arquivo <fm_ent_nula.m>
-function xponto = fm_ent_nula(t, x)
+% Arquivo <fim_ent_nula.m>
+function err = fim_ent_nula(t, x, xponto)
 u = 0;
-xponto = f(x, u);
+err = fi(xponto, x, u);
 ```
 
 ```matlab
-% Arquivo <fm_ent_senoidal.m>
-function xponto = fm_ent_senoidal(t, x)
-u = 0.3 * cos(t);
-xponto = f(x, u);
+% Arquivo <fim_ent_senoidal.m>
+function err = fim_ent_senoidal(t, x, xponto)
+u = 0.3 * sin(t);
+err = fi(xponto, x, u);
 ```
 
 Com os arquivos acima no caminho de busca do Matlab, as simulações podem ser 
@@ -206,16 +226,17 @@ realizadas com o código abaixo.
 ```matlab
 % Arquivo <sim2.m>
 %% Simulacao do sistema
-tinterv = [0, 30]; % Intervalo de tempo da simulacao
-xinicial = [0; 1.5]; % Valor inicial do vetor de estados
+tint = [0, 30];    % Intervalo de tempo da simulacao
+xini = [0; 1];     % Valor inicial do vetor de estados
+xpini = [1; -0.2]; % Valor inicial de x ponto
 
 % Simula o sistema dinamico para entrada nula
-[tsim_nula, xsim_nula] = ode45(@fm_ent_nula, tinterv, xinicial);
+[tsim_nula, xsim_nula] = ode15i(@fim_ent_nula, tint, xini, xpini);
 
 % Simula o sistema dinamico para entrada senoidal
-[tsim_sen, xsim_sen] = ode45(@fm_ent_senoidal, tinterv, xinicial);
+[tsim_sen, xsim_sen] = ode15i(@fim_ent_senoidal, tint, xini, xpini);
 
-%% Plota as simulacao no espaço de estados
+%% Plota as simulacao no espaco de estados
 plot(xsim_nula(:, 1), xsim_nula(:, 2), ...
      xsim_sen(:, 1), xsim_sen(:, 2));
 title('Trajetorias no espaco de estados')
@@ -229,7 +250,7 @@ simulações no espaço de estados.
 
 {%
    include figure.html
-   file="sim2.m.plot.svg"
+   file="sim2-dae.m.plot.svg"
    caption="Gráfico gerado pelo script `sim2.m`"
 %}
 
@@ -301,7 +322,7 @@ def f(x, u):
 
 def fm_ent_sen(t, x):
     """Função de simulação para entrada senoidal."""
-    u = [0.3 * np.cos(t)]
+    u = [0.3 * np.sin(t)]
     return f(x, u)
 
 
@@ -331,7 +352,7 @@ pyplot.plot(sol_nula.y[0], sol_nula.y[1],
             sol_sen.y[0], sol_sen.y[1])
 pyplot.xlabel('t [s]')
 pyplot.title('Evolução temporal dos estados')
-pyplot.legend(['$u=0$', r'$u=0.3 \cos(t)$'])
+pyplot.legend(['$u=0$', r'$u=0.3 \sin(t)$'])
 
 # Salva o gráfico
 pyplot.savefig('sim-duffing-py.svg')
@@ -373,7 +394,7 @@ oficial da [instalação de pacotes].
 [artigo sobre indexação]: http://www.mathworks.com/company/newsletters/articles/matrix-indexing-in-matlab.html
 [Dormand--Prince]: https://en.wikipedia.org/wiki/Dormand-Prince_method
 [Enthought Canopy]: https://store.enthought.com/downloads/
-[ex1]: http://github.com/dimasad/dimasad.github.io/tree/master/_mecvoo/exemplos-matlab/sim
+[ex1]: http://github.com/dimasad/dimasad.github.io/tree/master/_mecvoo/exemplos-matlab/sim-dae
 [function handle]: https://www.mathworks.com/help/matlab/function-handles.html
 [instalação de pacotes]: http://docs.julialang.org/en/stable/manual/packages/
 [Julia]: http://julialang.org
@@ -381,6 +402,7 @@ oficial da [instalação de pacotes].
 [matlab-choose-solver]: http://www.mathworks.com/help/matlab/math/choose-an-ode-solver.html
 [SciPy]: http://www.scipy.org/
 [NumPy]: http://www.numpy.org/
+[ode15i]: http://www.mathworks.com/help/matlab/ref/ode15i.html
 [ode45]: http://www.mathworks.com/help/matlab/ref/ode45.html
 [oscilador de Duffing]: http://www.scholarpedia.org/article/Duffing_oscillator
 [R]: http://www.r-project.org/

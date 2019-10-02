@@ -80,7 +80,7 @@ $$\eff_m:\reals\times\reals^n\times\reals^n\to\reals^n$$ que codifica a equaçã
 diferencial
 
 $$
-\eff\big(t, x(t), \dot x(t)\big) = 0.
+\eff_m\big(t, x(t), \dot x(t)\big) = 0.
 $$
 
 Para o oscilador  de Duffing com a entrada senoidal, essa função pode ser
@@ -264,89 +264,79 @@ pode ser utilizada a função [dae].
 
 Abaixo temos exemplos de como utilizar o Scilab para simular o oscilador
 de Duffing com entrada nula e entrada senoidal. O código desse exemplo está
-[disponível para download][ex-scilab]. O primeiro passo é fazer a importação
-dos pacotes e módulos que serão utilizados. O _namespace_ no python é organizado
-em módulos e pacotes, evitando assim conflitos de nomes e facilitando a 
-manutenção de projetos grandes com múltiplas bibliotecas.
-
-
-```python
-import numpy as np
-from matplotlib import pyplot
-from scipy import integrate
-```
-
-As funções de simulação do SciPy esperam receber uma função para simulação
-$$\mathbf{f}_m:\reals\times\reals^n\to\reals^n$$ que codifica a equação
+[disponível para download][ex-scilab]. As rotinas de simulação no Scilab
+esperam receber uma função para simulação 
+$$\eff_s:\reals\times\reals^n\times\reals^n\to\reals^n$$ que codifica a equação
 diferencial
 
 $$
-\dot {\mathbf{x}}(t) = \mathbf{f}_m\big(t, \mathbf{x}(t)\big).
+\eff_s\big(t, x(t), \dot x(t)\big) = 0.
 $$
 
 Como nossos sistemas podem receber múltiplas entradas, para evitar duplicar
-código iremos fazer uma função $$\mathbf f(\mathbf x, \mathbf u)$$ genérica
-e depois uma implementação de $$\mathbf f_m(t, \mathbf x)$$ para
-cada entrada, chamando a função $$\mathbf f$$. Isso é feito com o código
+código iremos fazer uma função $$\eff(\dot x, x, u)$$ genérica
+e depois uma implementação de $$\eff_s(t, x, \dot x)$$ para
+cada entrada, chamando a função $$\eff$$. Isso é feito com o código
 abaixo.
 
-```python
-def f(x, u):
-    """Função de simulação do oscilador de Duffing."""
-    
-    # Define os parâmetros do sistema
-    a = 1 
-    b = -1
-    d = 0.2
-    
-    # Desempacota os vetores
-    x1, x2 = x
-    u1, = u
-    
-    # Calcula a derivada das variáveis de estado
-    x1ponto = x2
-    x2ponto = -d*x2 - b*x1 - a*x1**3 + u1
-    
-    # Monta o vetor x ponto, saída da função
-    return [x1ponto, x2ponto]
-    
+```matlab
+function err = fi(xponto, x, u) // f implita
+//% Define os parametros do sistema
+a = 1; 
+b = -1;
+d = 0.2;
 
-def fm_ent_sen(t, x):
-    """Função de simulação para entrada senoidal."""
-    u = [0.3 * np.sin(t)]
-    return f(x, u)
+//% Desempacota os estados, suas derivadas, e a entrada
+x1 = x(1);
+x2 = x(2);
+x1ponto = xponto(1);
+x2ponto = xponto(2);
+u1 = u(1);
 
+//% Calcula o erro da solucao
+err1 = x1ponto - x2;
+err2 = x2ponto + d*x2 + b*x1 + a*x1^3 - u1;
 
-def fm_ent_nula(t, x):
-    """Função de simulação para entrada nula."""
-    u = [0]
-    return f(x, u)
+//% Monta o vetor erro
+err = [err1; err2];
+endfunction
+
+//%////////////////////////////////////////
+function [err, ires] = fim_ent_nula(t, x, xponto)
+u = 0;
+err = fi(xponto, x, u);
+ires = 0; //Variavel indicadora de erro
+endfunction
+
+//%////////////////////////////////////////
+function [err, ires] = fim_ent_sen(t, x, xponto)
+u = 0.3 * sin(t);
+err = fi(xponto, x, u);
+ires = 0; //Variavel indicadora de erro
+endfunction
 ```
 
-Em seguida, temos somente que chamar a função `solve_ivp` para as duas
+Em seguida, temos somente que chamar a função `dae` para as duas
 funções de simulação.
 
-```python
-# Simula os sistemas
-tint = [0, 30]
-xini = [0, 1]
-opt = {'max_step': 0.05}
-sol_nula = integrate.solve_ivp(fm_ent_nula, tint, xini, **opt)
-sol_sen = integrate.solve_ivp(fm_ent_sen, tint, xini, **opt)
+```matlab
+tsim = 0:0.05:30; //% Tempo da simulacao
+xini = [0; 1];     //% Valor inicial do vetor de estados
+xpini = [1; -0.2]; //% Valor inicial de x ponto
+
+xsim_nula = dae([xini, xpini], 0, tsim, fim_ent_nula);
+xsim_sen = dae([xini, xpini], 0, tsim, fim_ent_sen);
 ```
 
-A plotagem dos gráficos pode ser feita com a biblioteca [Matplotlib].
+A plotagem dos gráficos pode ser feita com o código abaixo
 
-```python
-# Plota o gráfico
-pyplot.plot(sol_nula.y[0], sol_nula.y[1],
-            sol_sen.y[0], sol_sen.y[1])
-pyplot.xlabel('t [s]')
-pyplot.title('Evolução temporal dos estados')
-pyplot.legend(['$u=0$', r'$u=0.3 \sin(t)$'])
-
-# Salva o gráfico
-pyplot.savefig('sim-duffing-py.svg')
+```matlab
+//% Mostra os resultados no espaco de estados
+plot(xsim_nula(1, :), xsim_nula(2, :), ...
+     xsim_sen(1, :), xsim_sen(2, :))
+xlabel('x1')
+ylabel('x2')
+legend('entrada nula', 'entrada senoidal')
 ```
 
 {%
@@ -405,5 +395,5 @@ oficial da [instalação de pacotes].
 [Spyder]: https://pythonhosted.org/spyder/
 [scipy-integ]: https://docs.scipy.org/doc/scipy/reference/integrate.html
 [solve_ivp]: https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html
-[ex-python]: http://github.com/dimasad/dimasad.github.io/tree/master/_mecvoo/exemplos-scilab/sim_dae.sci
+[ex-scilab]: http://github.com/dimasad/dimasad.github.io/tree/master/_mecvoo/exemplos-scilab/sim_dae.sci
 [Matplotlib]: https://matplotlib.org/

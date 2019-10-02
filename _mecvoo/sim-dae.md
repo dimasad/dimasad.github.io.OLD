@@ -24,7 +24,7 @@ deles com desempenho até superior ao Matlab.
 Sistema de exemplo
 ------------------
 
-O primeiro sistema que será simulado nos exemplos é o [oscilador de Duffing], 
+O sistema que será simulado nos exemplos é o [oscilador de Duffing], 
 um sistema caótico muito utilizado na análise de sistemas não lineares. Ele 
 possui dois estados, $$x_1$$ e $$x_2$$, e uma entrada, $$u_1$$. Sua dinâmica,
 no espaço de estados, é dada por
@@ -345,6 +345,17 @@ legend('entrada nula', 'entrada senoidal')
    caption="Gráfico gerado pelo exemplo `sim-dae.sci`."
 %}
 
+Outras Linguagens de Programação
+--------------------------------
+
+- Em [Julia], a simulação de equações algébricas e diferenciais e equações 
+diferenciais ordinárias pode ser feito com o pacote `DifferentialEquations.jl`,
+cuja documentação está disponível em <http://juliadiffeq.org/>.
+- Em Python existem vários pacotes, mas a instalação geralmente é mais 
+complicada. No Linux, o pacote `scikits-odes` é o mais recomendado, que é
+uma interface para a biblioteca Sundials. Consulte a 
+[documentação](https://scikits-odes.readthedocs.io/en/latest/) para mais
+informações a respeito do seu uso e instalação.
 
 {::comment}
 

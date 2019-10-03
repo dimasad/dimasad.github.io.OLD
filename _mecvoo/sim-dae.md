@@ -355,7 +355,9 @@ cuja documentação está disponível em <http://juliadiffeq.org/>.
 complicada. No Linux, o pacote `scikits-odes` é o mais recomendado, que é
 uma interface para a biblioteca Sundials. Consulte a 
 [documentação](https://scikits-odes.readthedocs.io/en/latest/) para mais
-informações a respeito do seu uso e instalação.
+informações a respeito do seu uso e instalação. Para utilizá-lo no Windows,
+uma possibilidade é com máquina virtual VirtualBox ou WSL, o _Windows
+Subsystem for Linux_.
 
 {::comment}
 

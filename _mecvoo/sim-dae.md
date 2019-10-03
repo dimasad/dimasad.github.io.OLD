@@ -9,9 +9,9 @@ title: Mecânica do voo -- Simulação de equações algébricas e diferenciais
 
 Nesta página será detalhado como realizar a simulação de equações algébricas
 e diferenciais não lineares, também conhecidas como sistemas descritores,
-com alguns sistemas computacionais, em especial o Matlab. No entanto, vale 
+com alguns pacotes computacionais, em especial o Matlab. No entanto, vale 
 ressaltar que as idéias básicas são as mesmas para qualquer linguagem de
-programação. Além do Matlab, vários pacotes de computação numérica de software
+programação. Além do Matlab, vários softwares de computação numérica de código
 livre como  [Scilab], [NumPy], [Julia] ou [R] podem ser utilizados, muitos
 deles com desempenho até superior ao Matlab.
 
@@ -38,7 +38,7 @@ $$
 $$
 
 onde $$a=1$$, $$b=-1$$ e $$d=\tfrac15$$ são os parâmetros do sistema.
-Iremos simular esse sistema dinâmico para a entrada $$u_1(t) = 0$$ e 
+Iremos simular esse sistema dinâmico para as entradas $$u_1(t) = 0$$ e 
 $$u_1(t) = \num[output-decimal-marker={,}]{0.3}\sin(t)$$.
 
 Para simulação via equação algébrica e diferencial, converteremos esse 
@@ -69,7 +69,7 @@ simulação do Matlab e suas vantagens, veja a
 [documentação oficial sobre a escolha do método](matlab-choose-solver).
 
 Abaixo temos exemplos de como utilizar o Matlab para realizar integração 
-numérica de sistemas utilizando a função `ode15i`. O código desses exemplos está
+numérica de sistemas com a função `ode15i`. O código desses exemplos está
 [disponível para download][ex1]. Para testar, baixe todos os arquivos de 
 extensão `.m` e coloque na mesma pasta.
 

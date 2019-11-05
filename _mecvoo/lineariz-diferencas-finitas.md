@@ -153,11 +153,11 @@ $$
 \end{align*}
 $$
 
-Linearização do Sistema
------------------------
+Linearização de um Sistema Descrito por EDO
+-------------------------------------------
 
 Para linearização de um sistema dinâmico não linear no espaço de estados
-representado da forma
+representado na forma da equação diferencial ordinária (EDO) abaixo,
 
 $$
 \dot x(t) = f\big(x(t), u(t)\big),
@@ -210,6 +210,70 @@ B = jac(fu, uref);
 Esse código utiliza [funções anônimas][fa], uma funcionalidade do Matlab que
 permite simplificar muitos programas. Confira na [documentação][fa] mais
 detalhes sobre sua sintaxe e utilização.
+
+Linearização de um Sistema Descrito por EDA
+-------------------------------------------
+
+Para linearização de um sistema dinâmico não linear representado na forma da
+equação diferencial e algébrica ordinária (EDA) abaixo,
+
+$$
+\eff\big(\dot x(t), x(t), u(t)\big) = 0,
+$$
+
+o primeiro passo é implementar a função $$\eff$$ da dinâmica não linear. Para o
+oscilador de Duffing, isso pode ser implementado como no código abaixo.
+
+```matlab
+% Arquivo <fi.m>
+function err = fi(xponto, x, u) % f implita
+% Define os parametros do sistema
+a = 1; 
+b = -1;
+d = 0.2;
+
+% Desempacota os estados, suas derivadas, e a entrada
+x1 = x(1);
+x2 = x(2);
+x1ponto = xponto(1);
+x2ponto = xponto(2);
+u1 = u(1);
+
+% Calcula o erro da solucao
+err1 = x1ponto - x2;
+err2 = x2ponto + d*x2 + b*x1 + a*x1^3 - u1;
+
+% Monta o vetor erro
+err = [err1; err2];
+```
+
+Para encontrar as matrizes $$\mathcal{A}$$, $$\mathcal{B}$$ e $$\mathcal{E}$$ 
+do sistema descritor linear na forma
+
+$$
+\mathcal{E}\Delta \dot x(t) = \mathcal{A}\Delta x(t) + \mathcal{B}\Delta u(t),
+$$
+
+podemos utilizar o código abaixo.
+
+```matlab
+%% Lineariza
+xpref = [0;0];
+xref = [1;0];
+uref = 0;
+
+fixp = @(xp) fi(xp, xref, uref);
+fix = @(x) fi(xpref, x, uref);
+fiu = @(u) fi(xpref, xref, u);
+
+Ai = jac(fix, xref); %A do sistema descritor (implicito)
+Bi = jac(fiu, uref); %B do sistema descritor (implicito)
+Ei = -jac(fixp, xpref); %E do sistema descritor (implicito)
+
+%% Converte para explicito
+A = Ei\Ai; % Equivalente a A = inv(Ei)*Ai
+B = Ei\Bi;
+```
 
 Simulação do sistema linear
 ---------------------------

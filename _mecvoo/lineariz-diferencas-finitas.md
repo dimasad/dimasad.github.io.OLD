@@ -14,7 +14,6 @@ coloque na mesma pasta.
 
 **Índice:**
 * ítem 1
-* ítem 2
 {:toc}
 
 Definição de matriz jacobiana

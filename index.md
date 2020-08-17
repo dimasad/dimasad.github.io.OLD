@@ -41,6 +41,10 @@ adicionado ao longo do semestre. Qualquer erro favor me informar por [e-mail].
 Eletrônica
 ----------
 
+### Exercícios
+
+* [Exercício Sobre Diodos][ex-diodo]
+
 ### Práticas
 
 * [Prática 1: Familiarização com o Laboratório][pratica1]
@@ -71,3 +75,4 @@ Eletrônica
 [pratica2]: eletronica/pratica2
 [pratica3]: eletronica/pratica3
 [pratica4]: eletronica/pratica4
+[ex-diodo]: eletronica/ex-diodo-solenoide

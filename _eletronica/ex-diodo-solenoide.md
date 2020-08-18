@@ -116,6 +116,17 @@ Fig. 1.18 de Boylestad e Nashelsky), a bobina se descarrega mais rápido ou mais
 devagar? Nesse circuito, o que acontece com a energia armazenada na bobina, 
 durante a descarga?
 
+Comentários finais
+------------------
+
+Esse fenômeno da tensão induzida na descarga de indutores acontece no 
+acionamento de vários outros atuadores eletromecânicos, como por exemplo
+motores CC. Em aplicações com chaves eletrônicas, é importante utilizar
+diodo de roda livre ou outros dispositivos para proteger a chave e o sistema
+computacional que a comanda. Na [montagem experimental] utilizada nas 
+demonstrações de teoria de controle, são usados diodos de roda livre para
+proteger os componentes eletrônicos do sistema.
+
 [instrumento musical]: https://youtu.be/W9j6ZRsOUrI?t=57s
 [mini solenóide na Eletrodex]: http://www.eletrodex.com.br/mini-solenoid-12v-jf-0530b.html
 [mini solenóide na Sparkfun]: https://www.sparkfun.com/products/11015
@@ -124,3 +135,4 @@ durante a descarga?
 [válvula solenóide na eletrogate]: https://www.eletrogate.com/valvula-solenoide-de-entrada-de-agua-180-1-2-12v-dc
 [vid pg]: https://youtu.be/g1Ld8D2bnJM?t=106
 [demonstração do MIT]: https://youtu.be/aSmMFog10D0
+[montagem experimental]: https://youtu.be/34iimWnLA-E?t=209

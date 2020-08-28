@@ -162,50 +162,105 @@ instalados no avião, e eu ainda como aluno em um dos voos da campanha.
    estava voando no avião do meu TCC."
 %}
 
-Leitura analógica
------------------
+Conversão analógico-digital
+---------------------------
 
-O Arduino Uno, utilizado nas práticas, possui 6 entradas analógicas.
-Essas entradas funcionam como voltímetros digitais que medem níveis de tensão
-entre 0V e 5V.
-O conversor analógico/digital do Arduino possui resolução de 10 bits, o que
-significa que os valores lidos variam de 0 a 1023 ($$2^{10}$$ valores
-possíveis).
-A função `analogRead(pino)` retorna a leitura analógica do canal especificado.
+Processadores digitais como o Arduino representam toda a informação disponível
+na forma de números inteiros. A combinação de números inteiros em estruturas
+de dados mais complexas permite, por exemplo, a representação de frações 
+(como números de ponto fixo) ou de números em notação científica (chamados de
+ponto flutante). No entanto, grandezas contínuas no mundo real devem ser 
+convertidas para números inteiros para representação e manipulação no
+processador. O dispositivo que faz isso é o conversor analógico-digital,
+às vezes abreviado como conversor A/D ou ADC).
+
+O ADC converte uma tensão contínua para um número inteiro, e é parte integral
+de qualquer sistema de sensoriamento ou instrumentação digital. O conversor
+do Arduino é de uso geral e funciona como um voltímetro digital que mede níveis
+de tensão entre 0V e 5V, em relação ao potencial terra da placa. O conversor
+analógico/digital do Arduino possui resolução de 10 bits, o que significa que
+os valores lidos variam de 0 a 1023 ($$2^{10}$$ valores possíveis). A função
+`analogRead(pino)` retorna a leitura analógica do canal especificado.
 Confira a documentação oficial [dessa função][analogRead] para
-mais informações.
+mais informações. [Este vídeo][QE Portas] do Vinícius Alves também apresenta
+o funcionamento básico das portas analógicas e a diferença entre sinais 
+analógicos e digitais.
 
-### Procedimento: Arduino como voltímetro
-
-O código abaixo mostra como transformar o Arduino em um voltímetro com fundo de
-escala 5V. A tensão entre o terra e o pino analógico será impressa na porta
-Serial.
-
-```c++
-void setup() {
-  Serial.begin(230400);
-}
-
-void loop() {
-  int medida = analogRead(A0);
-  
-  //medida será um inteiro de 0 a 1023
-  //o fator de conversão para volts é 0.0048828125
-  
-  Serial.print(0.0048828125 * medida); 
-  Serial.println(" V");
-}
-```
-
-Teste esse código medindo a tensão do potencial móvel de um potenciômetro,
-como mostrado na figura abaixo. A tensão medida pelo Arduino deverá
-variar de 0 a 5V.
-
-{%
-   include figure.html
-   file="potenciometro-a0.svg"
-   caption="Montagem com potenciômetro para leitura analógica."   
-%}
+> Montagem: Arduino como voltímetro
+> ---------------------------------
+> 
+> Vamos então fazer uma montagem (ou simulação) simples para explorar o uso
+> do potenciômetro como divisor de tensão e da conversão analógico-digital:
+> utilizar o Arduino como voltímetro. Este é, inclusive, um dos exemplos
+> Básicos do Arduino, cujo código vem junto com a IDE e pode ser acessado
+> através do menu _Arquivo_ $$\to$$ _Exemplos_ $$\to$$ _01.Basics_
+> $$\to$$ _[AnalogReadSerial]_. Este procedimento mostra como utilizar
+> elementos que são importantes para as outras atividades da prática.
+>
+> Para começar, monte no protoboard o circuito mostrado na figura abaixo, onde
+> um potenciômetro tem seus terminais fixos ligados à alimentação e o terminal
+> móvel conectado na entrada analógica _A0_. A tensão no ADC analógica será
+> proporcional à posição do potenciômetro.
+>
+> <figure>
+>   <img src="/assets/images/potenciometro-a0.svg" class="figure-img" />
+>   <figcaption class="figure-caption" markdown="span">
+>     Montagem com potenciômetro para leitura analógica.
+>   </figcaption>
+> </figure>
+>
+> Este circuito pode ser testado com o código abaixo, cuja lógica é explicada
+> nos comentários. Os dados coletados podem ser visualizados com o 
+> _Monitor Serial_ ou _Plotter Serial_, como mostrado nas figuras abaixo,
+> onde eu estava girando o potenciômetro para teste. Carregue o programa no
+> Arduino (real ou simulado), varie a posição do potenciômetro e veja seu 
+> funcionamento. Para carregar o código no Tinkercad, escolha o formato de
+> texto (o default é uma programação simplificada em blocos). Observe também
+> que para utilizar o _Plotter Serial_ do Tinkercad é necessário remover o
+> texto da impressão Serial, mantendo só os números com espaços para separar as
+> as colunas e quebra de linha para separar as amostras (eixo x).
+> 
+> ```c++
+> void setup() {
+>   Serial.begin(230400); //Inicializa porta serial
+> }
+> 
+> void loop() {
+>   int leitura = analogRead(A0);
+>   
+>   //leitura será um inteiro de 0 a 1023
+>   //o fator de conversão para volts é  0.0048828125, ou 5 / 1024.0
+>   
+>   //Imprime a leitura do conversor
+>   Serial.print("leitura: ");
+>   Serial.print(leitura);
+>   
+>   //Imprime o valor em Volts
+>   Serial.print(" tensao: ");
+>   Serial.print(0.0048828125 * leitura); 
+>   Serial.print(" V");
+>   Serial.print("\n"); //Imprime quebra de linha
+>
+>   delay(100); // Aguarda 100ms
+> }
+> ```
+>
+> <figure>
+>   <img src="/assets/images/monitor_serial_volt.png" class="figure-img"
+>        style="width: 95%"/>
+>   <figcaption class="figure-caption" markdown="span">
+>     Dados enviados pelo Arduino, vistos com o _Monitor Serial_.
+>   </figcaption>
+> </figure>
+>
+> <figure>
+>   <img src="/assets/images/plotter_serial_volt.png" class="figure-img" 
+>        style="width: 95%"/>
+>   <figcaption class="figure-caption" markdown="span">
+>     Dados enviados pelo Arduino, vistos com o _Plotter Serial_. A tensão
+>     em Volts é mais difícil de visualizar devido à escala vertical.
+>   </figcaption>
+> </figure>
 
 Modulação por largura de pulso
 ------------------------------
@@ -390,6 +445,7 @@ ao pino digital 9 do Arduino, como mostrado na figura abaixo.
 [map]: https://www.arduino.cc/reference/pt/language/functions/math/map/
 [pot-src]: https://commons.wikimedia.org/wiki/File:Single-turn_potentiometer_with_internals_exposed,_oblique_view.jpg
 [servo-sweep]: https://www.arduino.cc/en/Tutorial/Sweep
+[AnalogReadSerial]: https://www.arduino.cc/en/Tutorial/AnalogReadSerial
 [tut-servo]: https://learn.sparkfun.com/tutorials/hobby-servo-tutorial
 
 [Tutorial PWM]: https://learn.sparkfun.com/tutorials/pulse-width-modulation

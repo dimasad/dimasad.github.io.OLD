@@ -7,11 +7,32 @@ title: Eletrônica -- Prática 2
 ================
 {:.no_toc}
 
-#### Leitura analógica, Potenciômetro, PWM e Servo
+#### Leitura analógica, Potenciômetro, Modelo do LED e PWM
 {:.no_toc}
 
-Nesta prática, continuaremos abordamos as funcionalidades básicas do Arduino e
-dispositivos comumente utilizados em projetos de eletrônica.
+Nesta prática, continuaremos abordando as funcionalidades básicas do Arduino e
+dispositivos comumente utilizados em projetos de eletrônica. Vamos começar com
+um texto apresentando a construção, modelo, e uso do pontenciômetro, que vai
+ser nosso dispositivo para enviar comandos de ajuste ao Arduino. Em seguida,
+eu explico o que é leitura analógica e como utilizar no Arduino. Esses dois
+assuntos são demonstrados com uma montagem de teste para vocês fazerem em casa,
+utilizando os componentes ou o ambiente de simulação do [Tinkercad].
+
+Em seguida, usamos as entradas analógicas para comparar o comportamento do LED
+com os modelos aproximados que a gente usa para projetar e analisar circuitos
+com diodos. Há uma atividade para escolher o resistor para acionamento de um
+LED, e em seguida utilizamos as entradas analógicas para comparar o 
+comportamento do LED no circuito com o esperado pelo modelo.
+
+A prática termina com uma explicação da modulação por largura de pulso, que
+é a técnica utilizada para emular saídas analógicas com saídas digitais.
+Há uma demonstração do uso do PWM para variação contínua da intensidade de um
+LED e a prática termina com uma atividade simples para juntar todos esses 
+elementos: a utilização do potenciômetro para comandar a intensidade do LED.
+
+Para fazer essa prática, será necessário utilizar um protoboard. Se você não
+lembra o que é ou como usar um protoboard, veja o roteiro da prática anterior
+ou [este vídeo][QE Protoboard] do Vinícius Alves.
 
 **Tópicos:**
 * Procedimento x
@@ -41,7 +62,11 @@ terminais fixos e o móvel depende da distância entre eles.
 
 Um potenciômetro sem a cobertura externa pode ser visto na figura abaixo.
 Em primeiro plano temos o terminal móvel fazendo contato com a tira de material
-resistivo. Ao fundo temos os três terminais do dispositivo.
+resistivo. Ao fundo temos os três terminais do dispositivo. Para ver melhor
+o que há dentro de um potenciômetro, você pode abrir ele e sacrificá-lo, em
+nome da ciência, ou ver outra pessoa fazendo isso 
+[neste vídeo][Potenciômetro aberto] ou [este outro][Potentiometer inside]
+que é um pouco melhor produzido, mas em inglês.
 
 {%
    include figure.html
@@ -51,8 +76,6 @@ resistivo. Ao fundo temos os três terminais do dispositivo.
             [CC0 1.0] Universal -- Dedicação ao Domínio Público."
    img_style="width: 60%"
 %}
-
-### Modelo do potenciômetro
 
 Abaixo temos o símbolo do potenciômetro em diagramas de circuito.
 
@@ -64,7 +87,12 @@ Abaixo temos o símbolo do potenciômetro em diagramas de circuito.
    img_class="width-200px"
 %}
 
-Para analisar seu comportamento em um circuito, temos um modelo linear simples.
+Existem 2 tipos principais de potenciômetros: o linear e o logarítmico.
+O logarítmico geralmente é usado em aplicações analógicas de áudio, pois
+a percepção humana de quase todos os estímulos segue escala logarítmica,
+o que é conhecido como a [Lei de Weber-Fechner].
+O comportamento do potenciômetro linear, que é o mais comum em circuitos
+de uso geral, pode ser modelado de uma maneira bem simples.
 Representando a posição do terminal móvel por $$p\in[0,1]$$, onde $$p=0$$
 corresponde ao terminal móvel sobre o terminal _A_ e $$p=1$$  correponde
 ao terminal móvel sobre o terminal _B_, o potenciômetro equivale ao
@@ -88,6 +116,51 @@ proporcional à sua posição:
 $$
   V_m = p \cdot 5V.
 $$
+
+#### Aplicações aeronáuticas
+
+O funcionamento simples do potenciômetro como divisor de tensão tem uma
+aplicação interessante: medição de posição ou ângulo. Um desses dispositivos
+que muitos já utilizaram é servomotor de aeromodelo. O eixo do servo é um
+potenciômetro bem parecido com o da prática, e a tensão é proporcional ao
+ângulo de rotação. Quando ligado
+a um circuito de controle, essa medida define o acionamento de um motor de
+corrente contínua que atua em uma caixa de engrenagens conectada ao eixo,
+fechando a malha. O potenciômetro e os outros componentes de um pequeno servo
+podem ser vistos na figura abaixo, obtida do [tutorial de servos][tut-servo]
+da Sparkfun.
+
+{%
+   include figure.html
+   file="sparkfun_servo_guts.jpg"
+   caption="O interior de um servo sacrificado em nome da ciência.
+            O potenciômetro é o dispositivo da direita, de três terminais,
+            conectados nos fios preto, vermelho e branco.
+            Fonte: [Sparkfun][tut-servo], licença [CC BY-SA 4.0]."
+   img_style="width: 60%"
+%}
+
+Mesmo em aeronaves tripuladas, potenciômetros são sensores simples para medição
+das deflexões de superfícies de comando em ensaios em voo. Nos ensaios em voo
+do ACS-100 Sora, [do qual participei][ens sora] para realização do meu TCC,
+utilizamos potenciômetros de deslocamento linear para medição das deflexões do
+manche e da manete de potência. Apesar de maiores e um pouco mais caros que
+os potenciômetros pequenos utilizados nesta prática, seu funcionamento e 
+princípio de operação são idênticos. Na figura abaixo temos os potenciômetros 
+instalados no avião, e eu ainda como aluno em um dos voos da campanha.
+
+{%
+   include figure.html
+   file="colagem-ensaio.jpg"
+   caption="Potenciômetros usados na campanha de ensaios em voo do ACS-100 Sora,
+   realizada pelo Centro de Estudos Aeronáuticos da UFMG. Em sentido horário,
+   a partir do canto superior direito: potenciômetros na cadeia de comando da
+   aeronave para medição do comando de profundor; do pedal de leme; e da posição
+   da manete de potência. Os potenciômetros estão indicados com uma linha rosa.
+   No canto superior esquerdo: eu sem bigode, ainda como aluno e não professor,
+   feliz de estar voando no avião do meu TCC e ao mesmo tempo apreensivo porque
+   estava voando no avião do meu TCC."
+%}
 
 Leitura analógica
 -----------------
@@ -310,8 +383,8 @@ ao pino digital 9 do Arduino, como mostrado na figura abaixo.
 > De maneira semelhante ao procedimento do LED, faça o servo ir com velocidade
 > constante de 0 a 180 graus e depois de volta a 0 graus, repetidamente.
 
-[analogRead]: https://www.arduino.cc/en/Reference/AnalogRead
-[analogWrite]: https://www.arduino.cc/en/Reference/AnalogWrite
+[analogRead]: https://www.arduino.cc/reference/pt/language/functions/analog-io/analogread/
+[analogWrite]: https://www.arduino.cc/reference/pt/language/functions/analog-io/analogwrite/
 [CC0 1.0]: https://creativecommons.org/publicdomain/zero/1.0/deed.pt
 [CC BY-SA 4.0]: https://creativecommons.org/licenses/by-sa/4.0/
 [map]: https://www.arduino.cc/reference/pt/language/functions/math/map/
@@ -320,3 +393,10 @@ ao pino digital 9 do Arduino, como mostrado na figura abaixo.
 [tut-servo]: https://learn.sparkfun.com/tutorials/hobby-servo-tutorial
 
 [Tutorial PWM]: https://learn.sparkfun.com/tutorials/pulse-width-modulation
+[Tinkercad]: https://www.tinkercad.com/
+[QE Protoboard]: https://youtu.be/8OzfA0GQt-c
+[QE Portas]: https://youtu.be/tkKIsG-aIzA
+[Potenciômetro aberto]: https://youtu.be/ZRAZAWDDxRk
+[Potentiometer inside]: https://youtu.be/PDfnQIAnXpo
+[Lei de Weber-Fechner]: https://pt.wikipedia.org/wiki/Lei_de_Weber-Fechner
+[ens sora]: http://ufmg-cea.blogspot.com/2010/09/right-stuff-acs100-sora-flight-tests.html

@@ -3,7 +3,6 @@ layout: default
 title: Página do Dimas
 ---
 
-
 Mecânica do Voo
 ---------------
 
@@ -48,11 +47,10 @@ Eletrônica
 ### Práticas
 
 * [Prática 1: Familiarização com o Laboratório][pratica1]
-* [Prática 2: Leitura analógica, Potenciômetro, PWM e Servo][pratica2].
+* [Prática 2: Leitura analógica, Potenciômetro, Modelo do LED e PWM][pratica2].
+{::comment}
 * [Prática 3: Acionamento de um Motor CC][pratica3].
 * [Prática 4: Sensores de proximidade][pratica4].
-
-{::comment}
 * [Medição de tempo e comando de servos](eletronica/tempo).
 * [Entradas analógicas e o uso do potenciômetro](eletronica/leitura_analogica).
 * [Interrupções](eletronica/interrupcoes).

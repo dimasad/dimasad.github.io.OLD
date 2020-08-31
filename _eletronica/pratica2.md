@@ -199,8 +199,9 @@ analógicos e digitais.
 >
 > Para começar, monte no protoboard o circuito mostrado na figura abaixo, onde
 > um potenciômetro tem seus terminais fixos ligados à alimentação e o terminal
-> móvel conectado na entrada analógica _A0_. A tensão no ADC analógica será
-> proporcional à posição do potenciômetro.
+> móvel (que no Tinkercad é chamado de _limpador_ devido a uma falha de 
+> tradução automática) conectado na entrada analógica _A0_. A tensão no ADC
+> será proporcional à posição do potenciômetro.
 >
 > <figure>
 >   <img src="/assets/images/potenciometro-a0.svg" class="figure-img" />
@@ -261,6 +262,50 @@ analógicos e digitais.
 >     em Volts é mais difícil de visualizar devido à escala vertical.
 >   </figcaption>
 > </figure>
+
+> Atividade: Quão realista é nosso modelo do LED?
+> -----------------------------------------------
+> 
+> Temos agora uma atividade para dimensionamento do resistor para acionamento 
+> de um LED, e depois a observação do funcionamento do dispositivo no circuito
+> e avaliação do modelo utilizado para o dimensionamento. A montagem desta
+> atividade é igual a da prática 1, mostrada na figura abaixo, mas agora iremos
+> variar o resistor.
+>
+> <figure>
+>   <img src="/assets/images/led-fonte.svg" class="figure-img"
+>        style="width: 50%"/>
+>   <figcaption class="figure-caption" markdown="span">
+>     Montagem para acionamento do LED.
+>   </figcaption>
+> </figure>
+> 
+> O modelo mais comum para dimensionamento de LEDs é o modelo simplificado,
+> onde o LED no modo de polarização direta é modelado como uma queda de tensão
+> constante. Como LEDs não são feitos de semicondutores elementares como 
+> silício, o valor da queda de tensão utilizado depende do tipo de semicondutor
+> composto utilizado na construção do dispositivo, que geralmente está associado
+> à cor do LED. A Tabela 1.9 do livro do Boylestad e Nashelsky tem valores
+> comuns de tensão e cor.
+>
+> Fornecedores de componentes eletrônicos menos especializados nem sempre 
+> fornecem a folha de dados ou modelo específico de LEDs, pois esses 
+> componentes não são críticos na maior parte das aplicações e isso facilita sua
+> logística ao permitir a troca de fabricantes. No entanto, é comum termos
+> a tensão e corrente nominais do dispositivo. Também não sabemos o modelo
+> dos LEDs do Tinkercad ou do laboratório, por isso iremos utilizar uma folha
+> de dados de um LED circular de 5mm vermelho de uso geral, o [L-7113EC]
+> da [Kingbright]. Se você sabe a tensão e corrente nominais do seu LED ou
+> possui sua folha de dados, utilize essa informação.
+>
+> Escolha
+>
+> No relatório, inclua
+>
+> - O valor de tensão queda de tensão $$V_K$$ do modelo do LED utilizado.
+> - A corrente esperada para cada resistor, e a corrente estimada.
+> - O gráfico da curva de corrente e tensão do LED, da folha de dados, com
+> os pontos observados sobrepostos.
 
 Modulação por largura de pulso
 ------------------------------
@@ -456,3 +501,5 @@ ao pino digital 9 do Arduino, como mostrado na figura abaixo.
 [Potentiometer inside]: https://youtu.be/PDfnQIAnXpo
 [Lei de Weber-Fechner]: https://pt.wikipedia.org/wiki/Lei_de_Weber-Fechner
 [ens sora]: http://ufmg-cea.blogspot.com/2010/09/right-stuff-acs100-sora-flight-tests.html
+[L-7113EC]: /datasheet/L-7113EC(Ver.21A).pdf
+[Kingbright]: https://www.kingbright.com/

@@ -67,6 +67,7 @@ mostrado na figura abaixo.
 No ambiente de simulação não é necessário utilizar um protoboard para fazer as
 montagens, mas eu gostaria que eles fossem utilizados para que vocês aprendam a
 transformar especificações de diagramas de circuito em uma possível montagens
-física.
+física. No Tinkercad é usado o nome em inglês, _breadboard_, protoboard é 
+o nome em português, por incrível que pareça.
 
 [Tinkercad]: https://www.tinkercad.com/

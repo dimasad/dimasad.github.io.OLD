@@ -45,8 +45,8 @@ Eletrônica
 * [Exercício Sobre Diodos][ex-diodo]
 
 ### Práticas
-
-* [Prática 1: Familiarização com o Laboratório][pratica1]
+* [Informações sobre as práticas no Ensino Remoto Emergencial][praticas-ere].
+* [Prática 1: Familiarização com o Laboratório][pratica1].
 * [Prática 2: Leitura analógica, Potenciômetro, Modelo do LED e PWM][pratica2].
 
 {::comment}
@@ -74,4 +74,5 @@ Eletrônica
 [pratica2]: eletronica/pratica2
 [pratica3]: eletronica/pratica3
 [pratica4]: eletronica/pratica4
+[praticas-ere]: eletronica/praticas-ere
 [ex-diodo]: eletronica/ex-diodo-solenoide

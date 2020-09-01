@@ -118,6 +118,7 @@ $$
 $$
 
 #### Aplicações aeronáuticas
+{:.no_toc}
 
 O funcionamento simples do potenciômetro como divisor de tensão tem uma
 aplicação interessante: medição de posição ou ângulo. Um desses dispositivos
@@ -298,25 +299,45 @@ analógicos e digitais.
 > da [Kingbright]. Se você sabe a tensão e corrente nominais do seu LED ou
 > possui sua folha de dados, utilize essa informação.
 >
-> Escolha
+> Com o modelo do LED, escolha pelo menos 3 valores de resistência para variar
+> a corrente no LED, mantendo por segurança a corrente abaixo de 20 mA. No caso
+> de simulação utilize pelo menos 10 valores. Meça a queda de tensão no LED com
+> o ADC do Arduino e compare a corrente e tensão com o previsto pelo modelo.
+> Observe que a corrente pode ser estimada pela queda de tensão no resistor, 
+> que é aproximadamente  $$i = \frac{\si{5}{V} - V_{\operatorname{LED}}}{R}$$.
 >
-> No relatório, inclua
+> No caso de simulação, salve a montagem com o nome "Prática 2 - LED". Observe
+> que no Tinkercad mostra uma mensagem de aviso quando você "queima" o LED 
+> virtual, ou mesmo o sobrecarrega com uma corrente muito alta que poderia
+> diminuir sua vida útil. No Tinkercad o catodo do LED está marcado como 
+> _catódico_ devido à tradução automática. 
+> 
+> No relatório, inclua:
 >
 > - O valor de tensão queda de tensão $$V_K$$ do modelo do LED utilizado.
+> - A tensão no LED observada para cada resistor.
 > - A corrente esperada para cada resistor, e a corrente estimada.
 > - O gráfico da curva de corrente e tensão do LED, da folha de dados, com
-> os pontos observados sobrepostos.
+> os pontos observados sobrepostos. Eu sugiro carregar a imagem do gráfico
+> em um programa de desenho e plotar os pontos observados em cima, ou então
+> imprimir o gráfico, marcar os pontos, e digitalizar.
+> - Por fim, avalie se o modelo simplificado do diodo é apropriado para 
+> esse uso.
 
 Modulação por largura de pulso
 ------------------------------
 
-A modulação por largura de pulso é uma técnica para se variar a tensão média
-fornecida para um componente utilizando uma saída de dois estados (digital).
-É a mesma técnica utilizada para se variar a luminosidade do LED na prática 1.
-
+A modulação por largura de pulso (_pulse width modulation_, ou PWM) é uma
+técnica para se emular saídas analógicas utilizando saídas digitais. 
 Como as saídas digitais do Arduino possuem somente dois estados, 0V e 5V, 
 seu estado é variado em alta frequência para que, na média, a carga perceba
 uma tensão média entre os estados discretos possíveis.
+PWM é uma técnica muito utilizada pois o hardware para sua implementação é
+bem simples e eficiente, especialmente para aplicações de potência.
+Essa é a mesma técnica utilizada para se variar a luminosidade do LED na
+prática 1, e é muito utilizada em controle de motores (como veremos na próxima
+prática), reguladores de tensão, carregadores de celular, ou telas de
+OLED e AMOLED.
 
 Considere a imagem abaixo.
 A razão cíclica (_duty cycle_) é o fração do período em que a onda permanece
@@ -334,154 +355,90 @@ ao nível lógico alto.
    caption="Fonte: [Sparkfun][Tutorial PWM], licença [CC BY-SA 4.0]."
 %}
 
-O microcontrolador do Arduino possui um periférico para gerar onda com
-modulação por largura de pulso (PWM, do inglês _pulse width modulation_)
-em hardware, sem intervenção do usuário.
+O microcontrolador do Arduino possui um periférico para sinal de PWM em
+hardware, sem intervenção do usuário.
 A função `analogWrite(pino, razao_ciclica)` é usada para gerar uma onda com
 PWM.
 O argumento `razao_ciclica` é um número de 0 a 255, correspondendo a uma razão
 de 0% a 100%.
-Antes de utilizá-la é necessário configurar o pino como saída através da função
-`pinMode(pino, OUTPUT)`.
 Confira a documentação oficial da função [analogWrite] para maiores informações.
 
-### Procedimento: modulação por largura de pulso para alterar o brilho de um led
-
-Este procedimento utiliza o circuito representado no diagrama esquemático
-abaixo. O LED é alimentado pela saída digital número 9 do Arduino.
-Quando a razão cíclica da onda no pino 9 for 0% o LED irá apagar e quando
-for 100% o LED estará no brilho máximo.
-
-{%
-   include figure.html
-   file="pwm-led.svg"
-   caption="Montagem para acionamento do LED por PWM."   
-%}
-
-O código altera a razão cíclica periodicamente de 0 a 100% e de volta a 0%.
-
-```
-int pino_led = 9; // Número do pino do LED
-
-void setup() {
-  pinMode(pino_led, OUTPUT); // Define o pino do LED como saída
-}
-
-void loop() {
-  for (int rc=0; rc<255; rc++) {
-    analogWrite(pino_led, rc);
-    delay(10);
-  }
-
-  for (int rc=255; rc>0; rc--) {
-    analogWrite(pino_led, rc);
-    delay(10);
-  }
-}
-```
-
-> ### Atividade: Comando do brilho do LED com potenciômetro
+> Montagem: PWM para alterar o brilho de um LED
+> ---------------------------------------------
 >
-> Comande a razão cíclica do LED com um potenciômetro. Para o terminal móvel do
+> Vamos então fazer uma montagem (ou simulação) simples para explorar o uso
+> do PWM: utilizá-lo no acionamento de um LED para alterar a intensidade do
+> brilho. Este também é um dos exemplos básicos do Arduino, cujo código vem
+> junto com a IDE e pode ser acessado através do menu _Arquivo_ $$\to$$
+> _Exemplos_ $$\to$$ _01.Basics_ $$\to$$ _[Fade]_. Este procedimento mostra
+> como utilizar elementos que são importantes para as outras atividades desta
+> prática e da próxima.
+>
+> Este procedimento utiliza o circuito representado no diagrama esquemático
+> abaixo. O LED é alimentado pela saída digital número 9 do Arduino.
+> Quando a razão cíclica da onda no pino 9 for 0% o LED irá apagar e quando
+> for 100% o LED estará no brilho máximo. O resistor pode ser qualquer um
+> acima de 150 Ω ou o apropriado para o seu LED. Lembre-se também que a corrente
+> de cada pino do microcontrolador deve ser mantida abaixo de 20 mA por
+> segurança.
+>
+> <figure>
+>   <img src="/assets/images/pwm-led.svg" class="figure-img"
+>        style="width: 65%"/>
+>   <figcaption class="figure-caption" markdown="span">
+>     Montagem para acionamento do LED por PWM.
+>   </figcaption>
+> </figure>
+>
+> 
+> O código abaixo altera a razão cíclica periodicamente de 0 a 100% e de 
+> volta a 0%. Carrege-o, conecte à montage e observe o comportamento do LED.
+> 
+> ```c++
+> int pino_led = 9; // Número do pino do LED
+> 
+> void setup() {
+>   pinMode(pino_led, OUTPUT); // Define o pino do LED como saída
+> }
+> 
+> void loop() {
+>   for (int rc=0; rc<255; rc++) {
+>     analogWrite(pino_led, rc);
+>     delay(10);
+>   }
+> 
+>   for (int rc=255; rc>0; rc--) {
+>     analogWrite(pino_led, rc);
+>     delay(10);
+>   }
+> }
+> ```
+
+> Atividade: Comando do brilho do LED com potenciômetro
+> -----------------------------------------------------
+> 
+> Temos agora uma atividade simples que utiliza tanto as leituras analógicas 
+> quanto a modulação por largura de pulso: comandar o brilho do LED com o 
+> potenciômetro. Realize a leitura analógica e utilize o valor lido para definir
+> a razão cíclica da saída que aciona o LED. Para o terminal móvel do
 > potenciômetro em cada um dos extremos o LED deverá estar com brilho máximo ou
 > apagado. Nas posições intermediárias o brilho deverá ser proporcional à tensão
-> medida.
+> medida. Observe que a conexão entre o potenciômetro e o LED deve ser feita em
+> software, e **não** colocando o potenciômetro em série com o LED. O resistor
+> $$R$$ é o mesmo da montagem anterior.
 >
-> A montagem consiste dos circuitos das Figuras 5 e 7.
-
-
-Servomotor de radiocontrole
----------------------------
-
-Servomotores são sistemas controlados com motores que permitem comandar a
-posição do eixo de saída.
-Servomotores de radiocontrole são utilizados para comando remoto de veículos
-não tripulados como aeromodelos ou automodelos.
-Eles geralmente são compostos de um pequeno motor de corrente contínua
-conectado a um sistema de engrenagens cujo eixo de saída é um potenciômetro.
-Dessa forma, a posição do eixo é medida e controlada por um sistema 
-realimentado que atua no motor.
-
-Esses dispositivos possuem 3 terminais: alimentação, terra e sinal.
-A alimentação é o terminal central, de cor vermelha.
-O terra é o terminal correspondente ao cabo preto ou marrom e o sinal
-corresponde ao fio amarelo ou laranja.
-A referência de posição é enviada pelo terminal de sinal como um pulso.
-A duração do pulso codifica a posição desejada do eixo.
-Um pulso de 1500 microssegundos corresponde à posição central do eixo, de
-90 graus, enquanto
-que as durações de 600 microssegundos e 2400 microssegundos correspondem, 
-respectivamente, a deflexões de aproximadamente 0 graus e
-180 graus.
-Os pulsos devem estar espaçados de pelo menos 20 milissegundos entre si.
-
-Usar um pulso de duração variável permite diferenciar o comando nulo de perda
-de sinal de rádio.
-Quando nenhum pulso é recebido o servo mantém a última referência recebida
-ao invés de dar a deflexão máxima.
-Esse comportamento é mais seguro para o comando de aeronaves remotamente 
-pilotadas.
-Um recurso adicional para mais informações sobre o funcionamento e uso de
-servomotores é o [tutorial de servos da Sparkfun][tut-servo].
-
-### Procedimento: Comando de um Servo
-
-Abaixo temos um código de exemplo para comando de um servomotor de 
-radiocontrole utilizando a biblioteca Servo do Arduino. Nesse exemplo,
-o servo é comandado entre três posições: 0, 90 e 180 graus.
-
-```c++
-
-// Inclui a biblioteca ao programa
-#include <Servo.h> 
-
-// Declara um objeto servo. Até 6 servos podem ser criados
-Servo servo1; 
-
-void setup() {
-  servo1.attach(9);  // Define o pino 9 para o comando do servo
-}
-
-void loop() {
-  servo1.write(0); // Manda para posição 0 graus
-  delay(500); // Aguarda meio segundo
-
-  servo1.write(90);
-  delay(500);
-
-  servo1.write(180);
-  delay(500);
-
-  servo1.write(90);
-  delay(500);
-}
-```
-
-Para executar esse exemplo, o terminal vermelho do servo deve ser conectado
-ao 5V, o terminal marrom ou preto ao terra e o terminal laranja ou branco
-ao pino digital 9 do Arduino, como mostrado na figura abaixo.
-
-{%
-   include figure.html
-   file="montagem_servo_protoboard.png"
-   caption="Montagem para comando de um servo com o Arduino.
-            Fonte: [arduino.cc][servo-sweep], 
-            licença Creative Commons Attribution Share-Alike."
-%}
-
-> ### Atividade: Comando do servo com potenciômetro
->
-> Comande a posição do servo com um potenciômetro. Para o terminal móvel do
-> potenciômetro em cada um dos extremos a haste do servo deverá estar nos seus
-> extremos. Nas posições intermediárias a haste estará em uma posição
-> proporcional à do potenciômetro.
+> <figure>
+>   <img src="/assets/images/potenciometro-a0.svg" class="figure-img" />
+>   <img src="/assets/images/pwm-led.svg" class="figure-img" />
+>   <figcaption class="figure-caption" markdown="span">
+>     Montagem para comando do brilho do LED com potenciômetro, uma combinação
+>      das montagens feitas anteriormente.
+>   </figcaption>
+> </figure>
 > 
-> **Dica:** Utilize a função [map].
-
-> ### Atividade: Movimento constante do servo
->
-> De maneira semelhante ao procedimento do LED, faça o servo ir com velocidade
-> constante de 0 a 180 graus e depois de volta a 0 graus, repetidamente.
+> Para quem fizer por simulação, salve a montagem no Tinkercad com o nome 
+> "Prática 2 - PWM". Para quem fizer com os componentes, basta incluir o
+> código e uma foto da montagem no relatório.
 
 [analogRead]: https://www.arduino.cc/reference/pt/language/functions/analog-io/analogread/
 [analogWrite]: https://www.arduino.cc/reference/pt/language/functions/analog-io/analogwrite/
@@ -491,6 +448,7 @@ ao pino digital 9 do Arduino, como mostrado na figura abaixo.
 [pot-src]: https://commons.wikimedia.org/wiki/File:Single-turn_potentiometer_with_internals_exposed,_oblique_view.jpg
 [servo-sweep]: https://www.arduino.cc/en/Tutorial/Sweep
 [AnalogReadSerial]: https://www.arduino.cc/en/Tutorial/AnalogReadSerial
+[Fade]: https://www.arduino.cc/en/Tutorial/Fade
 [tut-servo]: https://learn.sparkfun.com/tutorials/hobby-servo-tutorial
 
 [Tutorial PWM]: https://learn.sparkfun.com/tutorials/pulse-width-modulation

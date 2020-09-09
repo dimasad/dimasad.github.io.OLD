@@ -17,11 +17,12 @@ Mecânica do Voo
 
 **Ferramentas e análise**
 
-* [Simulação de equações algébricas e diferenciais](mecvoo/sim-dae)
 * [Simulação de equações diferenciais ordinárias](mecvoo/sim)
 * [Linearização por diferenças finitas](mecvoo/lineariz-diferencas-finitas)
 
 {::comment} 
+* [Simulação de equações algébricas e diferenciais](mecvoo/sim-dae)
+
 **Trabalhos:**
 
 * [Trabalho 1](mecvoo/trabalho1)

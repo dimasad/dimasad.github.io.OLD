@@ -76,4 +76,4 @@ Eletrônica
 [pratica4]: eletronica/pratica4
 [praticas-ere]: eletronica/praticas-ere
 [ex-diodo]: eletronica/ex-diodo-solenoide
-[ex-diodo]: eletronica/ex-npn
+[ex-npn]: eletronica/ex-npn

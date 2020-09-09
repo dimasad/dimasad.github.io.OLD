@@ -39,7 +39,7 @@ Para esse circuito,
 
 - Escolha o valor de $$R$$ para acionar o LED com sua corrente nominal
   quando a saída do Arduino estiver em nível lógico alto, 5V.
-- Estime a corrente de base quando o LED estiver aceso.
+- Estime a corrente de base $$i_B$$ quando o LED estiver aceso.
 - Estime as correntes e quedas de tensão no LED e resistor no caso típico.
 - Estime a potência dissipada no transistor. Esse valor é aceitável, de acordo
   com as informações da [folha de dados][BC549]?

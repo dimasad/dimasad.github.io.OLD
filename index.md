@@ -58,12 +58,10 @@ Eletrônica
 * [Interrupções](eletronica/interrupcoes).
 {:/comment} 
 
-
+{::comment}
 ### Trabalhos
 
 * [Trabalho Prático](eletronica/trabalho_pratico)
-
-{::comment}
 * [Trabalho 1](eletronica/trabalho1)
 * [Trabalho 2](eletronica/trabalho2)
 * [Trabalho 3](eletronica/trabalho3)

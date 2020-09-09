@@ -1,0 +1,15 @@
+\begin{tikzpicture}
+  \draw (0,0) 
+    node[anchor=south, align=center] {Arduino\\Digital 9}
+    node[ocirc] {}
+    to [short, f_=$i_B$] ++(1, 0)
+    node[npn, anchor=B] (T1) {}
+    (T1.east)
+    node[anchor=west]  {BC549}
+    (T1.C)
+    node[vcc] (vcc) {\SI{5}{V}}
+    (T1.E)
+    to[R=$R$] ++(0, -1.5)
+    to[led, l_=VLWR9632] ++(0, -1.5)
+    node[ground] {};
+\end{tikzpicture}

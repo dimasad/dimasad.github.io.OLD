@@ -43,7 +43,8 @@ Eletrônica
 
 ### Exercícios
 
-* [Exercício Sobre Diodos][ex-diodo]
+* [Diodo de roda livre][ex-diodo].
+* [Análise e dimensionamento de circuitos com transistores][ex-npn].
 
 ### Práticas
 * [Informações sobre as práticas no Ensino Remoto Emergencial][praticas-ere].

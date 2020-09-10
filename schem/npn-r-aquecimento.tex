@@ -1,0 +1,14 @@
+\begin{tikzpicture}
+  \draw (0,0) 
+    node[anchor=east, align=center] {Arduino\\Digital 9}
+    node[ocirc] {}
+    to[R=$R_B$, f_=$i_B$] ++(2, 0)
+    node[npn, anchor=B] (T1) {}
+    (T1.east)
+    node[anchor=west]  {BC639}
+    (T1.E)
+    node[ground] {}
+    (T1.C)
+    to[R=$R_a$] ++(0, 1.5)
+    node[vcc] (vcc) {\SI{12}{V}};
+\end{tikzpicture}

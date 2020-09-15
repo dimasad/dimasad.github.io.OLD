@@ -15,6 +15,11 @@ O objetivo da prática desta prática é fazer o acionamento de um motor de
 corrente contínua com o Arduino. Inicialmente, o motor será acionado em 
 somente um sentido, utilizando um transistor NPN. Em seguida, será acionado
 nos dois sentidos utilizando a ponte H do circuito integrado [L293D].
+Essas aplicações são representativas do acionamento de cargas de potência
+com dispositivos eletrônicos. Variações desses circuitos são utilizados, por
+exemplo, para acionamento de placas de Peltier para aquecimento ou resfriamento,
+solenóides, motores de passo, e motores de corrente alternada _brushless_
+ou de indução.
 
 **Tópicos:**
 * Procedimento x
@@ -22,8 +27,8 @@ nos dois sentidos utilizando a ponte H do circuito integrado [L293D].
 {:toc}
 
 
-Acionamento com um transistor NPN
----------------------------------
+Circuito de acionamento com um transistor NPN
+---------------------------------------------
 
 Abaixo temos o diagrama de um circuito para acionamento de um motor de corrente
 contínua com um Arduino usando um transistor NPN. Os terminais do transistor
@@ -40,21 +45,48 @@ transistor está em corte, operando como chave aberta.
    caption="Circuito para acionamento do motor com um transistor NPN."
 %}
 
-Monte esse circuito em um protoboard, utilizando o transistor [BC639] e o diodo
-[1N4007]. Atenção para a pinagem do transistor, confira na folha de dados.
-No diodo, a banda marca o catodo, como indicado na sua folha de dados.
-Com esse circuito, faça as atividades abaixo.
+Se utilizarmos o modelo de chave para o transistor, o circuito acima é 
+equivalente a este mostrado abaixo. Observe que com este circuito, só é
+possível acionar o motor em um sentido. Isso porque o torque, em um motor
+de corrente contínua de ímã permanente, é proporcional à corrente. Para se
+inverter o sentido do torque, é necessário inverter o sentido da corrente,
+o que não é possível com este circuito.
 
-> ### Teste do acionamento
+{%
+   include figure.html
+   file="motor-chave.svg"
+   caption="Circuito equivalente ao de acionamento do motor, 
+            com o transistor modelado como uma chave."
+%}
+
+Monte esse circuito em um protoboard, utilizando o transistor [BC639] e o diodo
+[1N4007]. Para saber qual a função de cada pino do dispositivo (pinagem), 
+consulte a folha de dados, onde há um diagrama como o da figura abaixo.
+No Tinkercad, há somente um transistor NPN genérico, e sua pinagem é indicada
+no próprio dispositivo. No diodo, a banda marca o catodo, como indicado na sua
+folha de dados. Por fim, ambos terminais do motor tem a mesma função, se forem
+trocados a única coisa que vai alterar será o sentido da rotação mecânica que,
+nesta prática, não faz diferença. Com esse circuito, faça as atividades abaixo.
+
+{%
+   include figure.html
+   file="pinagem_bc639.png"
+   caption="Identificação dos pinos do transistor BC639."
+%}
+
+
+> ## Montagem: Teste do acionamento
 >
-> O primeiro teste consiste em ligar o motor, aguardar 1s, desligar o motor,
-> aguardar 1s e repetir. Esse programa serve para ver se a montagem foi feita
-> corretamente.
+> A função da primeira montagem é testar as conexões do circuito. Consiste
+> simplesmente em testar a funcionalidade básica do sistema: abrir e fechar
+> a chave. Faça então um código para o Arduino que liga o motor, aguarda 1s, 
+> desliga o motor, aguarda 1s e repete o processo do início. Esse é o programa
+> mais simples que testa se tudo está ligado corretamente.
 >
 > **Dica:** Lembre de configurar o pino 9 como saída com a função `pinMode`.
 
 
-> ### Aceleração e desaceleração gradual
+> ## Montagem: Aceleração e desaceleração gradual
 >
 > Utilizando modulação por largura de pulso, como na prática anterior, é 
 > possível fornecer uma tensão média no motor entre 0V e 5V. Para o segundo 
@@ -65,7 +97,7 @@ Com esse circuito, faça as atividades abaixo.
 > anterior.
 
 
-> ### Comando pelo potenciômetro
+> ## Atividade: Comando pelo potenciômetro
 >
 > Utilize um potenciômetro e uma entrada analógica do Arduino para comandar a
 > tensão no motor. A tensão média no motor deverá ser igual à tensão medida no

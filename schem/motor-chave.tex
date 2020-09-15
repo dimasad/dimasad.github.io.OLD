@@ -1,0 +1,19 @@
+\begin{tikzpicture}
+  \draw (0,0) 
+    node[vcc] (vcc) {\SI{5}{V}}
+    to[Telmech=M, n=motor] ++(0, -1.5)
+    node[circ] (n1) {}
+    to[nos, n=chave] ++(0, -1)
+    node[ground] {};
+
+  \draw (n1)
+    to[short] ++(-1, 0)
+    to[diode, l={\color{DarkBlue}1N4007}] ++(0, 1.5)
+    |- (vcc.center)
+    node[circ] {};
+
+  \node[color=DarkBlue, anchor=west] at (motor.west) {motor};
+  \node[color=DarkBlue, anchor=east, align=center] at (chave) 
+    {modelo do\\transistor};
+
+\end{tikzpicture}

@@ -99,11 +99,18 @@ nesta prática, não faz diferença. Com esse circuito, faça as atividades abai
 
 > ## Atividade: Comando pelo potenciômetro
 >
-> Utilize um potenciômetro e uma entrada analógica do Arduino para comandar a
-> tensão no motor. A tensão média no motor deverá ser igual à tensão medida no
-> potenciômetro.
+> Faça agora a atividade para a entrega, que combina elementos testados 
+> nas duas montagens anteriores. Adicione um potenciômetro ao circuito, leia
+> a tensão com uma entrada analógica e utilize esse valor para comandar a 
+> tensão média no motor, através da modulação por largura de pulso. A tensão 
+> média no motor deverá ser igual à tensão medida no potenciômetro.
 > 
-> **Dica:** Utilize as funções [analogRead] e [map] como na prática anterior.
+> Para quem fizer esta prática no Tinkercad, salve o circuito com o nome
+> "Prática 3: NPN". Para quem fizer a prática com montagem física, envie uma
+> foto da montagem e o código utilizado.
+> 
+> **Dica:** Utilize as funções [analogRead] e [analogWrite] como feito na 
+> prática anterior.
 
 Acionamento com a ponte H L293D
 -------------------------------

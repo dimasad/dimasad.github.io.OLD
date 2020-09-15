@@ -1,0 +1,56 @@
+\begin{tikzpicture}
+  \draw[thick] (0,0) 
+    node[anchor=north, font=\tiny] (vcc1) {$V_{\operatorname{CC1}}$}
+    -- ++(1,0)
+    node[anchor=north, font=\tiny] (vcc2) {$V_{\operatorname{CC2}}$}
+    -- ++(1,0)
+    -- ++(0, -0.5)
+    node[anchor=east, font=\tiny] (1Y) {1Y}
+    -- ++(0, -1.5)
+    node[anchor=east, font=\tiny] (2Y) {2Y}
+    |- ++(-2, -0.5)
+    coordinate (gnd) 
+    node[anchor=south, font=\tiny] {GROUND}
+    -| ++(-2, 0.5)
+    node[anchor=west, font=\tiny] (2A) {2A}
+    -- ++(0, 1.5)
+    node[anchor=west, font=\tiny] (1A) {1A}
+    |- ++(1, 0.5)
+    node[anchor=north, font=\tiny] (EN) {1,2EN}
+    -- ++(1,0);
+
+  \draw (0, 0.5)
+    node[vcc] (vcc) {\SI{5}{V}}
+    node[circ] {}
+    -| (vcc1);
+
+  \draw (vcc)
+    -| (vcc2);
+
+  \draw (vcc)
+    -| (EN);
+
+  \draw (1Y)
+    -- ++(1, 0)
+    to[Telmech=M, n=motor] ++(0, -1.5)
+    |- (2Y);
+
+  \node[anchor=west] at (motor.west) {\color{DarkBlue}motor};
+
+
+  \draw (gnd)
+    node[ground] {};
+
+  \draw (0, -1.25)
+    node[color=DarkRed] {L293D};
+
+  \draw (1A.west)
+    to[short, -o] ++(-0.5, 0)
+    node[anchor=east, align=right] {Arduino\\D9};
+
+  \draw (2A.west)
+    to[short, -o] ++(-0.5, 0)
+    node[anchor=east, align=right] {Arduino\\D10};
+
+
+\end{tikzpicture}

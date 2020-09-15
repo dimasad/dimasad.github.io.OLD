@@ -112,13 +112,33 @@ nesta prática, não faz diferença. Com esse circuito, faça as atividades abai
 > **Dica:** Utilize as funções [analogRead] e [analogWrite] como feito na 
 > prática anterior.
 
-Acionamento com a ponte H L293D
--------------------------------
+Circuito de acionamento com a ponte H
+-------------------------------------
 
-O circuito integrado [L293D] contém uma ponte H dupla ou, alternativamente,
-quatro meia pontes. Esse circuito pode ser utilizado para acionar um motor de
-corrente contínua nos dois sentidos. A pinagem do CI pode ser vista na seção 5
-da sua folha de dados.
+Para operar o motor nos dois sentidos, é necessário um circuito que possibilite
+aplicar a tensão da fonte no motor nos dois sentidos, isto é, invertendo os
+terminais do motor. A ponte H é um dispositivo com 4 chaves que permite isso,
+como mostrado no circuito abaixo. Quando as chaves $S_1$ e $S_4$ estão fechadas,
+é aplicada tensão no motor em um sentido. Já quando as chaves $S_2$ e $S_3$
+são fechadas, e as restantes estão abertas, é aplicada tensão no motor no
+outro sentido. Dessa maneira, é possível fazer com que o motor gire em ambos
+sentidos de rotação.
+
+{%
+   include figure.html
+   file="ponte-h-chave.svg"
+   caption="Ponte H para acionamento de um motor, representada com chaves."
+%}
+
+É possível construir uma ponte H com pelo menos 4 transistores bipolares,
+mas iremos, para esta prática, utilizar o circuito integrado [L293D] que
+possui 4 meia-ponte já implementadas, o que simplifica nossa montagem.
+Com um L293D é possível fazer 2 ponte H, o que pode ser utilizado para acionar
+2 motores CC ou um motor de passo bipolar de duas fases. Os circuito com 
+transistores da saída de cada meia ponte é mostrado na Figura 5 da folha de 
+dados. Observe que o dispositivo já tem os diodos de roda livre para proteção
+contra cargas indutivas como motores. A folha de dados também mostra vários
+exemplos de aplicação.
 
 Esse circuito possui duas entradas de alimentação, VCC1 e VCC2. A alimentação
 VCC1 supre a lógica interna do dispositivo e deve ter uma tensão de 5V e a
@@ -129,10 +149,10 @@ Cada meia ponte do L293D possui 2 entradas (EN e A) e uma saída (Y). A entrada
 EN (enable) serve para habilitar ou desabilitar a meia ponte. Quando ela está
 em nível lógico baixo a saída Y está aberta. Quando a ponte está habilitada 
 (entrada EN em nível lógico alto), a tensão na saída Y é VCC2 quando A está em
-nível lógico alto e 0V quando A está em nível lógico baixo.
+nível lógico alto e 0V quando A está em nível lógico baixo. Observe também
+que temos só duas entradas de enable, uma entrada para cada par de meia ponte.
 
-### Montagem
-
+A montagem desta parte da prática está mostrada na figura abaixo.
 Nesta prática, utilizaremos a mesma fonte para alimentar o CI e o motor,
 por isso VCC1 e VCC2 devem estar ligados na fonte de 5V do Arduino.
 Conecte também o terra do CI no terra do Arduino. Como manteremos a ponte

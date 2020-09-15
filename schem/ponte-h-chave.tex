@@ -1,0 +1,22 @@
+\begin{tikzpicture}
+  \draw (0,0) 
+    node[vcc] (vcc) {$V_{\operatorname{cc}}$}
+    to[short] ++(-1, 0)
+    to[nos, l_={\color{DarkBlue}$S_1$}] ++(0, -1.5)
+    node[circ] (n1) {}
+    to[nos, l_={\color{DarkBlue}$S_2$}] ++(0, -1.5)
+    to[short] ++(1, 0)    
+    node[ground] (gnd) {};    
+
+ \draw (vcc) 
+    to[short, *-] ++(1, 0)
+    to[nos, l={\color{DarkBlue}$S_3$}] ++(0, -1.5)
+    node[circ] (n2) {}
+    to[nos, l={\color{DarkBlue}$S_4$}] ++(0, -1.5)
+    to[short, -*] (gnd);
+
+ \draw (n1) 
+    to[Telmech=M, n=motor] (n2);
+
+
+\end{tikzpicture}

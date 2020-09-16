@@ -153,13 +153,19 @@ nível lógico alto e 0V quando A está em nível lógico baixo. Observe também
 que temos só duas entradas de enable, uma entrada para cada par de meia ponte.
 
 A montagem desta parte da prática está mostrada na figura abaixo.
-Nesta prática, utilizaremos a mesma fonte para alimentar o CI e o motor,
+Utilizaremos a mesma fonte para alimentar o CI e o motor,
 por isso VCC1 e VCC2 devem estar ligados na fonte de 5V do Arduino.
-Conecte também o terra do CI no terra do Arduino. Como manteremos a ponte
+Conecte também os pinos terra do CI no terra do Arduino. Como manteremos a ponte
 habilitada o tempo todo, conecte também a entrada 1,2EN no 5V. Para comandar a
 ponte, conecte as entradas 1A e 2A da ponte às saídas digitais 9 e 10 do
 Arduino, respectivamente. Por fim, conecte as saídas da ponte 1Y e 2Y aos 
-terminais do motor.
+terminais do motor. Os demais pinos não precisam ser conectados.
+
+{%
+   include figure.html
+   file="l293-montagem.svg"
+   caption="Montagem para acionamento do motor com a ponte H integrada L293D."
+%}
 
 > ### Teste do acionamento
 >

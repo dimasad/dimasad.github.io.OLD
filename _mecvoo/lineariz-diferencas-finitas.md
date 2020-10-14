@@ -285,7 +285,7 @@ em pulso:
 $$
 u(t) =
 \begin{cases}
-  \num[output-decimal-marker={,}]{0.5} & \text{se } 1 \geq t\leq 2, \\
+  \num[output-decimal-marker={,}]{0.5} & \text{se } 1 \leq t\leq 2, \\
   0 & \text{caso contrário}.
 \end{cases}
 $$

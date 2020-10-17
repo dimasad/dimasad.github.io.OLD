@@ -37,7 +37,7 @@
   \draw
     (n3)
     to[short, *-] ++(0, -0.5)
-    to[open, o-o, v=$v_s$] ++(0, -1)
+    to[open, o-o, v^>=Osciloscópio] ++(0, -1)
     node[ground] {};
 
   
@@ -54,7 +54,6 @@
     to[battery, l=\SI{9}{V}, -*] ++(1.5, 0)
     node[ground] {}
     to[battery, l=\SI{9}{V}] ++(1.5, 0)
-    ++(0, -3)
+    -- ++(0, -3)
     -| (U.down);
-    
 \end{tikzpicture}

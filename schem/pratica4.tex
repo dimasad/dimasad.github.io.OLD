@@ -36,7 +36,7 @@
   
   \draw
     (n3)
-    to[short, *-] ++(0, -0.5)
+    to[short, *-] ++(0.3, 0)
     to[open, o-o, v^>=Osciloscópio] ++(0, -1)
     node[ground] {};
 
@@ -54,6 +54,17 @@
     to[battery, l=\SI{9}{V}, -*] ++(1.5, 0)
     node[ground] {}
     to[battery, l=\SI{9}{V}] ++(1.5, 0)
-    -- ++(0, -3)
+    -- ++(0, -2.5)
     -| (U.down);
+
+  \draw (U)
+    node[color=DarkRed] {741};
+
+  \draw[color=DarkBlue, font=\tiny]
+    (U.up) node[anchor=south west] {7}
+    (U.down) node[anchor=north west] {4}
+    (U.+) node[anchor=south west] {3}
+    (U.-) node[anchor=south west] {2}
+    (U.out) node[anchor=south east] {6};
+
 \end{tikzpicture}

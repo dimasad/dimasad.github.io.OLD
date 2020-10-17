@@ -1,4 +1,15 @@
 \begin{tikzpicture}
+  \tikzset{
+    connect/.style args={(#1) to (#2) over (#3) by #4}{
+        insert path={
+            let \p1=($(#1)-(#3)$), \n1={veclen(\x1,\y1)}, 
+            \n2={atan2(\y1,\x1)}, \n3={abs(#4)}, \n4={#4>0 ?180:-180}  in 
+            (#1) -- ($(#1)!\n1-\n3!(#3)$) 
+            arc (\n2:\n2+\n4:\n3) -- (#2)
+        }
+    },
+  }
+  
   \draw (0,0) 
     node[op amp] (U) {}
     (U.+)
@@ -13,12 +24,37 @@
     (U.-)
     -- ++(0, 1)
     coordinate (n1)
-    to[R, *-*] ++(2.5, 0)
+    to[R, *-*, l=\SI{10}{\kilo\ohm}] ++(2.5, 0)
     coordinate (n2)
-    -- ++(0, 1)
-    to[C] ++(-2.5, 0)
-    -- (n1)
-    (n2) |-
-    (U.out)
-    ;
+    -- ++(0, 1.5)
+    to[C, l_=\SI{100}{nF}] ++(-2.5, 0)
+    -- (n1);
+
+  \draw[name path=a] (n2)
+    |- (U.out)
+    coordinate[midway] (n3);
+  
+  \draw
+    (n3)
+    to[short, *-] ++(0, -0.5)
+    to[open, o-o, v=$v_s$] ++(0, -1)
+    node[ground] {};
+
+  
+  \draw (U.up)
+    -- ++(0, 0.3)
+    coordinate (n5);
+    
+  \path[name path=b] (n5)
+    -- ++(1.5, 0) coordinate (n4);
+  \path[name intersections={of=a and b, by=inter}];  
+  \draw[connect=(n5) to (n4) over (inter) by -3pt];
+  
+  \draw (n4)
+    to[battery, l=\SI{9}{V}, -*] ++(1.5, 0)
+    node[ground] {}
+    to[battery, l=\SI{9}{V}] ++(1.5, 0)
+    ++(0, -3)
+    -| (U.down);
+    
 \end{tikzpicture}

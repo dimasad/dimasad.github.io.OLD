@@ -32,6 +32,7 @@
   }
   \usetikzlibrary{arrows}
     \tikzset{>=stealth}
+  \usetikzlibrary{calc}
   \usetikzlibrary{external}
     \tikzexternalize
     \tikzset{external/only named}
@@ -41,6 +42,7 @@
         {lualatex \tikzexternalcheckshellescape -synctex=1 %
         -interaction=batchmode -jobname "\image" "\texsource"}%
     }
+  \usetikzlibrary{intersections}
   \usetikzlibrary{plotmarks}
   \usetikzlibrary{positioning}
 \usepackage{pgfplots}

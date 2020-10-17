@@ -1,0 +1,24 @@
+\begin{tikzpicture}
+  \draw (0,0) 
+    node[op amp] (U) {}
+    (U.+)
+    to[short] ++(-0.5, 0)
+    node[ground] {}
+    (U.-)
+    to[R, l_={\SI{1}{\kilo\ohm}}, *-] ++(-2, 0)
+    to[sV, n=gs] ++(0, -1.5)
+    node[ground] {}
+    (gs)
+    node[left=1em, align=right] {Gerador\\de sinais}
+    (U.-)
+    -- ++(0, 1)
+    coordinate (n1)
+    to[R, *-*] ++(2.5, 0)
+    coordinate (n2)
+    -- ++(0, 1)
+    to[C] ++(-2.5, 0)
+    -- (n1)
+    (n2) |-
+    (U.out)
+    ;
+\end{tikzpicture}

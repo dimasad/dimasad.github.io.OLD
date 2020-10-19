@@ -51,6 +51,7 @@ Eletrônica
 * [Prática 1: Familiarização com o Laboratório][pratica1].
 * [Prática 2: Leitura analógica, Potenciômetro, Modelo do LED e PWM][pratica2].
 * [Prática 3: Acionamento de um Motor CC][pratica3].
+* [Prática 4: Filtro ativo e amplificador operacional][pratica4].
 
 {::comment}
 * [Prática 4: Sensores de proximidade][pratica4].

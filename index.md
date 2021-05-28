@@ -41,6 +41,6 @@ adicionado ao longo do semestre. Qualquer erro favor me informar por [e-mail].
 Eletrônica
 ----------
 
-[Página da disciplina de Eletrônica Industrial (EMA248)][ema248/].
+[Página da disciplina de Eletrônica Industrial (EMA248)](ema248/).
 
 [e-mail]: mailto:dimasad@ufmg.br

@@ -41,40 +41,6 @@ adicionado ao longo do semestre. Qualquer erro favor me informar por [e-mail].
 Eletrônica
 ----------
 
-### Exercícios
-
-* [Diodo de roda livre][ex-diodo].
-* [Análise e dimensionamento de circuitos com transistores][ex-npn].
-
-### Práticas
-* [Informações sobre as práticas no Ensino Remoto Emergencial][praticas-ere].
-* [Prática 1: Familiarização com o Laboratório][pratica1].
-* [Prática 2: Leitura analógica, Potenciômetro, Modelo do LED e PWM][pratica2].
-* [Prática 3: Acionamento de um Motor CC][pratica3].
-* [Prática 4: Filtro ativo e amplificador operacional][pratica4].
-
-{::comment}
-* [Prática 4: Sensores de proximidade][pratica4].
-* [Medição de tempo e comando de servos](eletronica/tempo).
-* [Entradas analógicas e o uso do potenciômetro](eletronica/leitura_analogica).
-* [Interrupções](eletronica/interrupcoes).
-{:/comment} 
-
-{::comment}
-### Trabalhos
-
-* [Trabalho Prático](eletronica/trabalho_pratico)
-* [Trabalho 1](eletronica/trabalho1)
-* [Trabalho 2](eletronica/trabalho2)
-* [Trabalho 3](eletronica/trabalho3)
-* [Trabalho 4](eletronica/trabalho4)
-{:/comment} 
+[Página da disciplina de Eletrônica Industrial (EMA248)][ema248/].
 
 [e-mail]: mailto:dimasad@ufmg.br
-[pratica1]: eletronica/pratica1
-[pratica2]: eletronica/pratica2
-[pratica3]: eletronica/pratica3
-[pratica4]: eletronica/pratica4
-[praticas-ere]: eletronica/praticas-ere
-[ex-diodo]: eletronica/ex-diodo-solenoide
-[ex-npn]: eletronica/ex-npn
